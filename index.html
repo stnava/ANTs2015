@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Brian B. Avants (PENN) and Nicholas J. Tustison (UVA)" />
+  <title>How to build a house withAdvanced Normalization Tools (ANTs)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/reveal.min.css"/>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+</style>
+
+<link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'index_files/reveal.js-2.6.1/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="index_files/reveal.js-2.6.1/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title"><span style="color:red;">How to build a house with<br />Advanced Normalization Tools (<em>ANTs</em>)</span></h1>
+    <h2 class="author">Brian B. Avants (<span style="color:blue;">PENN</span>) and <br />Nicholas J. Tustison (<span style="color:orange;">UVA</span>)</h2>
+    <h3 class="date"></h3>
+</section>
+
+<section id="section" class="slide level2">
+<h1></h1>
+<div align="center">
+<img src="logo.png" frameborder="0"></img>
+</div>
+<p>This talk is online at <a href="http://stnava.github.io/ANTs2015/"><a href="http://stnava.github.io/ANTs2015/" class="uri">http://stnava.github.io/ANTs2015/</a></a> with colored <a href="http://stnava.github.io/ANTs2015/">links</a> meant to be clicked for more information.</p>
+</section>
+<section id="ants-neuroscience" class="slide level2">
+<h1>ANTs &amp; Neuroscience</h1>
+<p>We need statistical image analysis <br />at several scales in modern neuroscience</p>
+<ul>
+<li class="fragment"><p>Macro: <em>in vivo</em> structural and functional MRI</p></li>
+<li class="fragment"><p>Micro: high-resolution post-mortem MRI links with in vivo MRI</p></li>
+<li class="fragment"><p>Nano: neuron reconstruction …</p></li>
+<li class="fragment"><p>Solutions that are consistent across these scales have the potential to build multi-scale feature sets or templates and provide new insights into brain structure and function</p></li>
+<li class="fragment"><p>E.g. Parcellation constraints based on histology, tractography, function …</p></li>
+<li class="fragment"><p>Statistical definitions of anatomy/pathology?</p></li>
+<li class="fragment"><p>Reinvention of these solutions within each lab … can we mitigate this?</p></li>
+<li class="fragment"><p>Reduce, reuse, recycle …</p></li>
+</ul>
+</section>
+<section><section id="ants-optimizes-mathematically-well-defined-objective-functions-guided-by-prior-knowledge" class="titleslide slide level1"><h1><em>ANTs</em> optimizes mathematically <br /> well-defined <br /><span style="color:red;">objective functions</span> <br />guided by <br /> <span style="color:red;">prior knowledge</span> …</h1></section></section>
+<section><section id="plug-your-ideas-into-our-software-innovation-insight-from-biomedical-data" class="titleslide slide level1"><h1>plug <em>your ideas</em> <br />into our software: <br /> <span style="color:blue;"> <span style="color:red;">innovation, insight</span> <br />from biomedical data</span> …</h1></section><section id="diffeomorphisms" class="slide level2">
+<h1>Diffeomorphisms</h1>
+<div align="center">
+<img width="1433" src="./figures/sillyputty.png" frameborder="0"></img>
+</div>
+<p>plausible physical modeling of large, invertible deformations</p>
+<p>“differentiable map with differentiable inverse”</p>
+</section><section id="ants-beyond-registration" class="slide level2">
+<h1>ANTs: Beyond Registration</h1>
+<p><img src="./figures/antscapabilities.jpg" /></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison">Atropos</a> segmentation, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison">N4 inhomogeneity correction</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants">Eigenanatomy</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants">SCCAN</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24852460">Prior-constrained PCA</a>, and <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/">atlas-based label fusion</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/21237273">MALF</a> (powerful expert systems for segmentation)</p>
+</section><section id="founding-developers" class="slide level2">
+<h1>Founding developers</h1>
+<div align="center">
+<img width="1433" src="./figures/bant2.png" frameborder="0"></img>
+</div>
+</section><section id="long-term-collaborators" class="slide level2">
+<h1>Long-term collaborators</h1>
+<p><img src="./figures/antscollab.jpg" /></p>
+<p><span class="math">\(+\)</span> <a href="http://neuro.debian.net/pkgs/ants.html">neurodebian</a>, <a href="http://www.slicer.org/">slicer</a>, <a href="https://github.com/BRAINSia/BRAINSTools">brainsfit</a>, <a href="http://nipy.sourceforge.net/nipype/">nipype</a>, <a href="http://www.itk.org">itk</a> and more …</p>
+</section><section id="general-purpose-library-for-multivariate-image-registration-segmentation-statistical-analysis-tools" class="slide level2">
+<h1>General purpose library for multivariate image registration, segmentation &amp; statistical analysis tools</h1>
+<ul>
+<li class="fragment"><p>170,000+ lines of C++, 6<span class="math">\(+\)</span> years of work, 15+ collaborators.</p></li>
+<li class="fragment"><p>Generic mathematical methods that are tunable for application specific domains: no-free lunch</p></li>
+<li class="fragment"><p>Deep testing on multiple platforms … osx, linux, windows.</p></li>
+<li class="fragment"><p>Several “wins” in public knock-abouts ( <a href="http://www.ncbi.nlm.nih.gov/pubmed/19195496">Klein 2009</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21632295">Murphy 2011</a>, <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/">SATA 2012 and 2013</a>, <a href="http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf">BRATS 2013</a>, others )</p></li>
+</ul>
+<pre><code>    An algorithm must use prior knowledge about a problem 
+    to do well on that problem </code></pre>
+</section></section>
+<section><section id="medical-image-registration-fundamental-tool-for-morphometry-segmentation-motion-estimation-and-data-cleaning" class="titleslide slide level1"><h1><span style="color:red;">Medical Image Registration</span> <br /> Fundamental tool for<br /> morphometry, segmentation,<br /> motion estimation and <br /> <span style="color:blue;">data cleaning</span></h1></section><section id="definitions" class="slide level2">
+<h1>Definitions</h1>
+<ul>
+<li class="fragment"><p>Registration <span class="math">\(=\)</span> estimate an “optimal” geometric mapping between image pairs or image sets (e.g. Affine)</p></li>
+<li class="fragment"><p>Similarity <span class="math">\(=\)</span> a function relating one image to another, given a transformation (e.g. mutual information)</p></li>
+<li class="fragment"><p><span style="color:grey;"> Diffeomorphisms <span class="math">\(=\)</span> differentiable map with differentiable inverse (e.g. “silly putty”, viscous fluid) </span></p></li>
+<li class="fragment"><p>Segmentation <span class="math">\(=\)</span> labeling tissue or anatomy in images, usually automated (e.g. K-means)</p></li>
+<li class="fragment"><p><span style="color:grey;"> Multivariate <span class="math">\(=\)</span> using many voxels or measurements at once (e.g. PCA, <span class="math">\(p &gt;&gt; n\)</span> ridge regression)</span></p></li>
+<li class="fragment"><p>Multiple modality <span class="math">\(=\)</span> using many modalities at once (e.g. DTI and T1 and BOLD)</p></li>
+<li class="fragment"><p>MALF: multi-atlas label fusion - using anatomical dictionaries to label new data</p></li>
+<li class="fragment"><p>Solutions to challenging statistical image processing problems usually need elements from each of the above</p></li>
+</ul>
+</section><section id="the-technical-framework" class="slide level2">
+<h1>The Technical Framework</h1>
+<p><img src="./figures/designprinciples.png" /></p>
+<p>… and most of it multivariate.</p>
+</section><section id="syn-for-optimization-symmetry" class="slide level2">
+<h1><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2276735/">SyN</a> for optimization symmetry</h1>
+<p><img src="./figures/fishSyN.png" /> Images deform symmetrically along the shape manifold. This eliminates bias in the measurement of image differences.</p>
+</section><section id="syn-link-example" class="slide level2">
+<h1><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2276735/">SyN (link)</a> Example</h1>
+<!-- syn example -->
+<div align="center">
+<iframe width="1220" height="730" src="http://www.youtube.com/embed/3I9RcRtpOvw" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<p><a href="http://www.youtube.com/embed/3I9RcRtpOvw">SyN movie</a></p>
+</section><section id="concatenated-transformation-metric-stages-are-necessary-in-real-data" class="slide level2">
+<h1>Concatenated transformation <span class="math">\(+\)</span> metric stages are necessary in real data</h1>
+<ol start="0" type="1">
+<li class="fragment"><p>Initialize the mapping ( more on this later )</p></li>
+<li class="fragment"><p>Start with a <em>rigid transformation</em>: <span class="math">\(I(x) \approx J(R(x))\)</span> s.t. negative <span class="math">\(MI\)</span> is minimized</p></li>
+<li class="fragment"><p>Follow by an <em>affine transformation</em>: <span class="math">\(I(x) \approx J(R(A(x)))\)</span> s.t. negative <span class="math">\(MI\)</span> is minimized with fixed <span class="math">\(R\)</span></p></li>
+<li class="fragment"><p>Finally, a <em>diffeomorphism</em>: <span class="math">\(I(x) \approx J(R(A(\phi(x))))\)</span> s.t. <span class="math">\(k\)</span>-neighborhood correlation <span class="math">\(CC_k\)</span> is minimized with fixed <span class="math">\(R, A\)</span></p></li>
+<li class="fragment"><p>Output the <em>composite transform</em> <span class="math">\(A \circ R\)</span> as a matrix transformation and <span class="math">\(\phi\)</span> and <span class="math">\(\phi^{-1}\)</span> as deformation fields.</p></li>
+</ol>
+<p>standard in <a href="http://stnava.github.io/ANTsDoc/">recommended</a> <code>antsRegistration</code> application scripts</p>
+</section><section id="registration-benefits-from-optimal-sampling-strategy" class="slide level2">
+<h1>Registration benefits from<br /> <em>optimal sampling strategy</em></h1>
+<ul>
+<li class="fragment"><p>sampling for <em>both</em> the metric and the transformation</p></li>
+<li class="fragment"><p>impacts scalability, memory, optimization accuracy, speed, robustness …</p></li>
+<li class="fragment">could be done optimally <em>with massive improvements in performance</em>
+<ul>
+<li class="fragment">but needs investment in order to achieve “dream” registration scenario</li>
+</ul></li>
+<li class="fragment"><p>important for new schemes that <em>elect</em> solutions from <strong>anatomical or transformation</strong> dictionaries</p></li>
+<li class="fragment"><p>overall, relatively little translational work on this important problem in biomedical imaging</p></li>
+</ul>
+</section><section id="sampling-feature-selection-multi-start" class="slide level2">
+<h1>Sampling &amp; feature selection: Multi-start</h1>
+<p><img src="./figures/multistart.png" /></p>
+<p>Theoretical guarantee of global optimum: improves local optimizers.</p>
+<p>Default in <code>antsCorticalThickness</code> pipeline and <code>FSL</code>.</p>
+</section><section id="sampling-feature-selection-biomedical-imagery" class="slide level2">
+<h1>Sampling &amp; feature selection: Biomedical imagery</h1>
+<p><img src="./figures/slides1.png" /></p>
+<p>Initial configuration of data</p>
+</section><section id="sampling-feature-selection-biomedical-imagery-1" class="slide level2">
+<h1>Sampling &amp; feature selection: Biomedical imagery</h1>
+<p><img src="./figures/slides2.png" /></p>
+<p>Automatic feature selection</p>
+</section><section id="sampling-feature-selection-biomedical-imagery-2" class="slide level2">
+<h1>Sampling &amp; feature selection: Biomedical imagery</h1>
+<p><img src="./figures/slides3.png" /></p>
+<p>Resampling allows comparison &amp; slide alignment and <br /> validates the feature selection</p>
+<p>Dramatic reduction in computation time / memory requirements</p>
+</section><section id="sampling-feature-selection-lesioned-brains" class="slide level2">
+<h1>Sampling &amp; feature selection: Lesioned brains</h1>
+<p><img src="./figures/lesionedbrains.jpg" /></p>
+</section><section id="sampling-feature-selection-summary" class="slide level2">
+<h1>Sampling &amp; feature selection: Summary</h1>
+<ul>
+<li class="fragment">we exploit these strategies to:
+<ul>
+<li class="fragment">accelerate</li>
+<li class="fragment">focus</li>
+<li class="fragment">validate</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="evaluation-results" class="titleslide slide level1"><h1>Evaluation results</h1></section><section id="section-1" class="slide level2">
+<h1></h1>
+<p><img src="./figures/evalhistory.png" /></p>
+</section><section id="anatomical-dictionaries" class="slide level2">
+<h1>Anatomical dictionaries</h1>
+<p><img src="./figures/sata2013.png" /></p>
+<p>we provided the <em>standard</em> registration results for <span class="math">\(&gt;\)</span> 20,000 image pairs at <a href="https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events">SATA 2013</a></p>
+</section><section id="label-fusion-link" class="slide level2">
+<h1><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049832/">label fusion (link)</a></h1>
+<p><img src="./figures/sata2013.jpg" /></p>
+</section><section id="multiple-metrics-improve-performance" class="slide level2">
+<h1>Multiple metrics improve performance</h1>
+<p><img src="./figures/multivariateSATA.jpg" /></p>
+<p>to our knowledge, ANTs is the only freely available system that can solve this problem in a fully multivariate manner.</p>
+<p>Hongzhi Wang won the “walk in the park” award for this work …</p>
+</section></section>
+<section><section id="differentiable-maps-with-differentiable-inverse-statistics-in-these-spaces" class="titleslide slide level1"><h1>Differentiable maps with<br /> differentiable inverse <br /><span class="math">\(+\)</span> <em>statistics in these spaces</em></h1></section><section id="brain-templates-as-high-dimensional-averages" class="slide level2">
+<h1>Brain templates as <em>high-dimensional averages</em></h1>
+<p><img src="./figures/speciestemplates.png" /></p>
+</section><section id="sygn---templates-and-averages-in-deformation-space" class="slide level2">
+<h1>SyGN - templates and averages in deformation space</h1>
+<p><img src="figures/normvsnorm.png" /> from <a href="http://miykael.github.io/nipype-beginner-s-guide/ANTS.html">miykael</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/15501083">geodesic image averages</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/19818860">optimal templates 2</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/23284904">canine template</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/23516289">chimpanzees</a></p>
+</section><section id="statistics-in-deformation-space" class="slide level2">
+<h1>Statistics in deformation space</h1>
+<p><a href="http://www.youtube.com/embed/8GgHG-rApiE">AIBS movie</a></p>
+</section><section id="average-republican-and-democratic-congressmen" class="slide level2">
+<h1>Average Republican and Democratic congressmen</h1>
+<div align="center">
+<img src="figures/democrat_left_repub_right.png" frameborder="0"></img>
+</div>
+<p><a href="http://ntustison.github.io/CongressionalFaceTemplates/">congress</a></p>
+</section></section>
+<section><section id="ants-versus-freesurfer-quantifying-life-span-brain-health" class="titleslide slide level1"><h1>ANTs versus Freesurfer:<br /> Quantifying <em>life span</em> brain health</h1></section><section id="ants-versus-freesurfer-quantifying-life-span-brain-health-1" class="slide level2">
+<h1>ANTs versus Freesurfer:<br /> Quantifying <em>life span</em> brain health</h1>
+<ul>
+<li class="fragment"><p>Freesurfer is the historical standard for measuring cortical thickness</p></li>
+<li class="fragment"><p>instead of using surfaces to measure cortical thickness, we use the image space <em>DiReCTly</em></p></li>
+<li class="fragment"><p><a href="http://stnava.github.io/ANTsTalk/#/putting-it-all-together-can-we-quantify-life-span-brain-health-in-individuals-and-in-populations">see this section of a different talk</a></p></li>
+<li class="fragment"><p>and this “big data” paper: <a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923">Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements</a></p></li>
+<li class="fragment"><p>comparison of prediction from automated cortical thickness measurement from 4 public datasets</p></li>
+<li class="fragment"><p><span class="math">\(&gt;\)</span> 1200 subjects, age 7 to over 90 years old</p></li>
+<li class="fragment"><p><em>hint</em>: ANTs thickness measurements have higher prediction accuracy relative to Freesurfer ( implying we extract more information from the data )</p></li>
+<li class="fragment"><p>ANTs methods consistently improve statistical power <a href="http://www.ncbi.nlm.nih.gov/pubmed/24687814">eigenanatomy</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=syn+epstein+avants">syn</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24817849">itkv4</a> … also, see <a href="http://www.ncbi.nlm.nih.gov/pubmed/24650605">Schwarz CG, et al.</a> re: TBSS and related work in fMRI <a href="http://www.ncbi.nlm.nih.gov/pubmed/15980148">Miller, PNAS</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24167043">Azab, et al in Hippocampus</a>.</p></li>
+</ul>
+</section></section>
+<section><section id="registration-statistics-frontiers-and-innovation" class="titleslide slide level1"><h1>Registration &amp; statistics:<br /> Frontiers and innovation</h1></section><section id="multivariate-statistical-fields-arise-from-fused-modalities" class="slide level2">
+<h1>multivariate statistical fields arise from fused modalities</h1>
+<p><img src="figures/statisticalfields.png" alt="images at measurement fields" /></p>
+<p><em>Many opportunities for statistical advancements</em></p>
+</section><section id="scientific-data-2014" class="slide level2">
+<h1>Scientific Data 2014</h1>
+<p><img src="./figures/ptbp2.png" /></p>
+</section><section id="network-of-predictors-for-age" class="slide level2">
+<h1>“Network” of predictors for age</h1>
+<p>…</p>
+</section><section id="itkantsr-antsr" class="slide level2">
+<h1>ITK+ANTs+R = <span style="color:red;"><em>ANTsR</em></span></h1>
+</section><section id="agnostic-statistics" class="slide level2">
+<h1>Agnostic statistics</h1>
+<p><img src="./figures/antsrex.jpg" /></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3961542/">McMillan et al.</a></p>
+</section><section id="a-quick-antsr-example" class="slide level2">
+<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
+<p>This is an executable <em>ANTsR</em> code block - <em>N</em>-dimensional statistics to go with our <em>N</em>-dimensional image processing software!</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ANTsR)
+dim&lt;-<span class="dv">2</span>
+filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r16&#39;</span>)
+img&lt;-<span class="kw">antsImageRead</span>( filename , dim )
+filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r64&#39;</span>)
+img2&lt;-<span class="kw">antsImageRead</span>( filename , dim )
+mask&lt;-<span class="kw">getMask</span>(img,<span class="dv">50</span>,<span class="kw">max</span>(img),T)
+mask2&lt;-<span class="kw">getMask</span>(img,<span class="dv">150</span>,<span class="kw">max</span>(img),T)
+nvox&lt;-<span class="kw">sum</span>( mask ==<span class="st"> </span><span class="dv">1</span> )
+nvox2&lt;-<span class="kw">sum</span>( mask2 ==<span class="st"> </span><span class="dv">1</span> )</code></pre>
+<p>The brain has 17395 voxels …</p>
+</section><section id="a-quick-antsr-example-1" class="slide level2">
+<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
+<p>Simulate a population morphometry study - a “VBM” …</p>
+<pre class="sourceCode r"><code class="sourceCode r">simnum&lt;-<span class="dv">10</span>
+imglist&lt;-<span class="kw">list</span>()
+imglist2&lt;-<span class="kw">list</span>()
+for ( i in <span class="dv">1</span>:simnum ) {
+  img1sim&lt;-<span class="kw">antsImageClone</span>(img)
+  img1sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.5</span>)
+  img1sim[ mask2==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox2,<span class="dt">mean=</span><span class="fl">2.0</span>)
+  img2sim&lt;-<span class="kw">antsImageClone</span>(img2)
+  img2sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.20</span>)
+  imglist&lt;-<span class="kw">lappend</span>(imglist,img1sim)
+  imglist2&lt;-<span class="kw">lappend</span>(imglist2,img2sim)
+}
+imglist&lt;-<span class="kw">lappend</span>( imglist, imglist2 )
+mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
+DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
+mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
+qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
+<p>The minimum q-value is 1.2986 × 10<sup>-4</sup> …</p>
+</section><section id="visualize-the-histograms-of-effects" class="slide level2">
+<h1>Visualize the histograms of effects</h1>
+<pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>
+voxdf&lt;-<span class="kw">data.frame</span>( <span class="dt">volume=</span><span class="kw">c</span>( <span class="kw">as.numeric</span>( mat[,whichvox] ) ), <span class="dt">DX=</span>DX )
+<span class="kw">ggplot</span>(voxdf, <span class="kw">aes</span>(volume, <span class="dt">fill =</span> DX)) +<span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.2</span>)</code></pre>
+<p><img src="figures/vizmorph.png" title="plot of chunk vizmorph" alt="plot of chunk vizmorph" width="864" /></p>
+</section><section id="visualize-the-anatomical-distribution" class="slide level2">
+<h1>Visualize the anatomical distribution</h1>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotANTsImage</span>(img,<span class="dt">functional=</span><span class="kw">list</span>(betas),<span class="dt">threshold=</span>thresh,
+  <span class="dt">outname=</span>ofn)</code></pre>
+<p><img src="figures/vizmorph2.jpg" /></p>
+</section><section id="network-visualization" class="slide level2">
+<h1>Network visualization</h1>
+<p>see <code>?plotBasicNetwork</code></p>
+<p><img src="figures/network.png" /></p>
+</section><section id="the-power-of-ants-r-rightarrow-reproducible-imaging-science" class="slide level2">
+<h1>The power of <em>ANTs</em> <span class="math">\(+\)</span> <em>R</em> <span class="math">\(\rightarrow\)</span><br /> <span style="color:red;"><strong>Reproducible imaging science</strong></span></h1>
+<p><img src="./figures/antsgoals.png" /></p>
+<p>… used in <a href="http://www.ncbi.nlm.nih.gov/pubmed/24096125">“Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population”</a> and several upcoming …</p>
+</section><section id="can-we-customize-these-methods-for-a-challenging-multivariate-segmentation-problem-with-clinical-relevance" class="slide level2">
+<h1>Can we customize these methods for a challenging multivariate segmentation problem with clinical relevance?</h1>
+</section><section id="automated-tumor-segmentation-from-multiple-mri" class="slide level2">
+<h1>Automated tumor segmentation from multiple MRI</h1>
+<p><img src="./figures/tumorsegmentation.png" /></p>
+</section><section id="general-theory-tunable-to-specific-domains-no-free-lunch" class="slide level2">
+<h1>General theory tunable to specific domains: <em>no-free lunch</em></h1>
+<p><img src="./figures/brats.png" /></p>
+<p><a href="http://hal.inria.fr/docs/00/93/56/40/PDF/brats_preprint.pdf">BRATS 2013 Challenge</a> <strong>won</strong> with <a href="https://github.com/stnava/ANTsR"><em>ANTsR</em></a></p>
+</section><section id="can-we-address-subtle-questions-in-brain-and-cognition-via-imaging-specific-dimensionality-reduction" class="slide level2">
+<h1>Can we address subtle questions in brain and cognition via imaging-specific dimensionality reduction?</h1>
+</section><section id="eigenanatomy-sccan" class="slide level2">
+<h1><a href="http://www.ncbi.nlm.nih.gov/pubmed/24852460">Eigenanatomy</a> &amp; <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=avants+SCCAN">SCCAN</a></h1>
+</section><section id="antsr-rightarrow-new-insight-via-better-analytics" class="slide level2">
+<h1>ANTs<em>R</em> <span class="math">\(\rightarrow\)</span> new insight <br />via better analytics</h1>
+<p>Good software should fade into the background … however …</p>
+<p><span style="color:red;"> As is common in science, the first big breakthrough in our understanding … [came from] an improvement in measurement. </span></p>
+<p><span style="color:blue;"> &gt; Daniel Kahnemann, <em>Thinking, Fast and Slow</em> (2011) </span></p>
+</section></section>
+<section><section id="conclusion" class="titleslide slide level1"><h1>Conclusion</h1></section><section id="recap" class="slide level2">
+<h1>Recap</h1>
+<ul>
+<li class="fragment"><p>Powerful, general-purpose, <span style="color:red;">well-evaluated</span> registration and segmentation.</p></li>
+<li class="fragment"><p>Differentiable maps with differentiable inverse <span style="color:red;"><span class="math">\(+\)</span> statistics in these spaces</span></p></li>
+<li class="fragment"><p>Evaluated in multiple problem domains</span> via internal studies &amp; open competition</p></li>
+<li class="fragment"><p>Borg philosophy: <span style="color:red;">“best of”</span> from I/O, to processing to statistical methods</p></li>
+<li class="fragment"><p>Open source, testing, many examples, consistent style, multiple platforms, active community support …</p></li>
+<li class="fragment"><p>Integration with <em>R</em> <span class="math">\(+\)</span> novel tools for prediction, decoding, high-to-low dimensional statistics.</p></li>
+<li class="fragment"><p>Collaborations with <a href="http://neuro.debian.net/pkgs/ants.html">neurodebian</a>, <a href="http://www.slicer.org/">slicer</a>, <a href="https://github.com/BRAINSia/BRAINSTools">brainsfit</a>, <a href="http://nipy.sourceforge.net/nipype/">nipype</a>, <a href="http://www.itk.org">itk</a> and more …</p></li>
+</ul>
+</section><section id="challenges-computational-and-scientific" class="slide level2">
+<h1>Challenges: Computational and Scientific</h1>
+<ul>
+<li class="fragment">Scalability
+<ul>
+<li class="fragment"><strong>need to fuse feature selection methods with transformation optimization</strong></li>
+<li class="fragment"><strong>need to leverage existing ITK streaming infrastructure in application level tool</strong></li>
+</ul></li>
+<li class="fragment">Domain expertise: Customizable for specific problems but sometimes not specific enough</li>
+<li class="fragment">“Plausible physical modeling …” - this should vary per problem … but doesn’t.
+<ul>
+<li class="fragment">a fabulous project would be to resolve this issue at a large-scale e.g. for reconstructing neurons, measuring white matter elaboration …</li>
+<li class="fragment">our prior FEM work is one potential solution</li>
+</ul></li>
+<li class="fragment">Rapid development: colleagues still need familiarity with compilation for latest ANTs features</li>
+<li class="fragment">Latest theoretical advances in registration not yet wrapped for users</li>
+<li class="fragment">Need more <a href="http://stnava.github.io/ANTs/">Documentation</a> &amp; <a href="http://testing.psychiatry.uiowa.edu/CDash/index.php?project=ANTS">testing</a> …</li>
+</ul>
+</section><section id="tools-you-can-use-for-imaging-science" class="slide level2">
+<h1>Tools you can use for imaging science</h1>
+<ul>
+<li class="fragment"><p>Core developers: <em>B. Avants, N. Tustison, H. J. Johnson, J. T. Duda</em></p></li>
+<li class="fragment"><p>Many contributors, including users …</p></li>
+<li class="fragment"><p>Multi-platform, multi-threaded C++ <a href="stnava.github.io/ANTs" class="uri">stnava.github.io/ANTs</a></p></li>
+<li class="fragment"><p>Developed in conjunction with <a href="http://www.itk.org/"><a href="http://www.itk.org/" class="uri">http://www.itk.org/</a></a></p></li>
+<li class="fragment"><p>R wrapping and extension <a href="stnava.github.io/ANTsR" class="uri">stnava.github.io/ANTsR</a></p></li>
+<li class="fragment"><p>rapid development, regular testing <span class="math">\(+\)</span> many eyes <span class="math">\(\rightarrow\)</span> bugs are shallow</p></li>
+</ul>
+<p><img style="float: right" src="figures/penn.png" /> <img style="float: left" src="figures/picsl.jpg" /></p>
+</section></section>
+<section><section id="analysis-philosophy-and-published-opinions" class="titleslide slide level1"><h1>Analysis philosophy and <br /> published opinions</h1></section><section id="what-is-and-is-not-image-registration" class="slide level2">
+<h1>What is and <em>is not</em><br /> image registration</h1>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/23116330"><em>not</em> registration</a></p>
+</section><section id="voodoo-in-voxel-based-analysis" class="slide level2">
+<h1>Voodoo in voxel-based analysis</h1>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=logical+circularity+tustison">logical circularity VBA</a></p>
+</section><section id="instrumentation-bias-in-the-use-and-evaluation-of-software" class="slide level2">
+<h1>Instrumentation bias in the use and evaluation of software</h1>
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader">Instrumentation bias in the use and evaluation of software</a></p>
+</section></section>
+<section><section id="reffont" class="titleslide slide level1 unnumbered"><h1>References</h1></section></section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-2.6.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-2.6.1/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'fade',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: []});
+    </script>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,520 @@
+---
+title: <span style="color:red;">How to build a house with<br />Advanced Normalization Tools (*ANTs*)</span>
+author: Brian B. Avants (<span style="color:blue;">PENN</span>) and <br />Nicholas J. Tustison (<span style="color:orange;">UVA</span>)
+bibliography: REFERENCES.bib
+logo:    logo.jpg
+output:
+  pdf_document:
+    toc: true
+    highlight: zenburn
+  beamer_presentation:
+    toc: true
+    fig_width: 7
+    fig_height: 6
+  html_document:
+    toc: true
+    theme: readable
+  revealjs_presentation:
+    pandoc_args: [ "--slide-level", "2" ]
+    incremental: true
+    widescreen: true
+    smaller: false
+    theme: night
+    transition: fade
+    highlight: zenburn
+    center: true
+    self_contained: false
+  ioslides_presentation:
+    css: atk.css
+    incremental: false
+    widescreen: true
+    smaller: false
+    fig_width: 5
+---
+
+```{r global options, include=FALSE}
+library(rmarkdown)
+library(knitr)
+figpath<-'figures/'
+opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
+               warning=FALSE, message=FALSE)
+```
+
+
+## 
+
+<div align="center"><img src="./logo.png" frameborder="0"></img></div>
+
+This talk is online at [http://stnava.github.io/ANTs2015/](http://stnava.github.io/ANTs2015/) with colored [links](http://stnava.github.io/ANTs2015/) meant to be clicked for more information.
+
+## ANTs & Neuroscience
+
+We need statistical image analysis <br />at several scales in modern neuroscience
+
+* Macro: *in vivo* structural and functional MRI
+
+* Micro:  high-resolution post-mortem MRI links with in vivo MRI
+
+* Nano: neuron reconstruction ...
+
+* Solutions that are consistent across these scales have the potential
+to build multi-scale feature sets or templates and provide new
+insights into brain structure and function
+
+* E.g. Parcellation constraints based on histology, tractography, function ...
+
+* Statistical definitions of anatomy/pathology?  
+
+* Reinvention of these solutions within each lab ... can we mitigate this?
+
+* Reduce, reuse, recycle ...
+
+
+# *ANTs* optimizes mathematically <br /> well-defined  <br /><span style="color:red;">objective functions</span>  <br />guided by <br /> <span style="color:red;">prior knowledge</span>  ...
+
+# plug *your ideas* <br />into our software: <br /> <span style="color:blue;"> <span style="color:red;">innovation, insight</span> <br />from biomedical data</span> ...
+
+## Diffeomorphisms
+
+<div align="center"><img width="1433" src="./figures/sillyputty.png" frameborder="0"></img></div>
+
+plausible physical modeling of large, invertible deformations
+
+"differentiable map with differentiable inverse"
+
+## ANTs: Beyond Registration
+
+![](./figures/antscapabilities.jpg)
+
+[Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation, [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison), [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants), [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants), [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460), and [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) (powerful expert systems for segmentation)
+
+## Founding developers
+
+<div align="center"><img width="1433" src="./figures/bant2.png" frameborder="0"></img></div>
+
+
+## Long-term collaborators
+
+![](./figures/antscollab.jpg)
+
+
+$+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+## General purpose library for multivariate image registration, segmentation & statistical analysis tools
+
+* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators. 
+
+* Generic mathematical methods that are tunable for 
+application specific domains:  no-free lunch
+
+* Deep testing on multiple platforms ... osx, linux, windows.
+
+* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others ) 
+
+```
+    An algorithm must use prior knowledge about a problem 
+    to do well on that problem 
+```
+
+# <span style="color:red;">Medical Image Registration</span> <br /> Fundamental tool for<br /> morphometry, segmentation,<br /> motion estimation and <br /> <span style="color:blue;">data cleaning</span>
+
+## Definitions
+
+* Registration $=$ estimate an "optimal" geometric mapping between image pairs or image sets (e.g. Affine)
+
+* Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)
+
+* <span style="color:grey;">
+Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)  </span>
+
+* Segmentation $=$ labeling tissue or anatomy in images, usually automated (e.g. K-means)
+
+* <span style="color:grey;"> Multivariate $=$ using many voxels or measurements at once (e.g. PCA, $p >> n$ ridge regression)</span>
+
+* Multiple modality $=$ using many modalities at once (e.g. DTI and T1 and BOLD)
+
+* MALF: multi-atlas label fusion - using anatomical dictionaries to label new data
+
+* Solutions to challenging statistical image processing problems usually need elements from each of the above 
+
+
+## The Technical Framework
+
+![](./figures/designprinciples.png)
+
+... and most of it multivariate.
+
+## [SyN](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2276735/) for optimization symmetry
+![](./figures/fishSyN.png)
+Images deform symmetrically along the shape manifold.  This eliminates bias in the
+measurement of image differences.
+
+##  [SyN (link)](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2276735/) Example
+
+<!-- syn example -->
+
+<div align="center"><iframe width="1220" height="730" src="http://www.youtube.com/embed/3I9RcRtpOvw" frameborder="0" allowfullscreen></iframe></div>
+
+[SyN movie](http://www.youtube.com/embed/3I9RcRtpOvw)
+
+## Concatenated transformation $+$ metric stages are necessary in real data
+
+0.  Initialize the mapping ( more on this later )
+
+1.  Start with a *rigid transformation*:  $I(x) \approx J(R(x))$ s.t. negative $MI$ is minimized
+
+2.  Follow by an *affine transformation*:  $I(x) \approx J(R(A(x)))$ s.t. negative $MI$ is minimized with fixed $R$
+
+3.  Finally, a *diffeomorphism*:  $I(x) \approx J(R(A(\phi(x))))$ s.t. $k$-neighborhood correlation $CC_k$ is minimized with fixed $R, A$
+
+4.  Output the *composite transform* $A \circ R$ as a matrix transformation and $\phi$ and $\phi^{-1}$ as deformation fields.
+
+standard in [recommended](http://stnava.github.io/ANTsDoc/) `antsRegistration` application scripts 
+
+## Registration benefits from<br /> *optimal sampling strategy*
+
+* sampling for *both* the metric and the transformation
+
+* impacts scalability, memory, optimization accuracy, speed, robustness ...
+
+* could be done optimally *with massive improvements in performance*
+    * but needs investment in order to achieve "dream" registration scenario
+
+* important for new schemes that *elect* solutions from **anatomical or transformation** dictionaries
+
+* overall, relatively little translational work on this important problem in biomedical imaging
+
+## Sampling & feature selection: Multi-start
+
+![](./figures/multistart.png)
+
+Theoretical guarantee of global optimum: improves local optimizers.
+
+Default in `antsCorticalThickness` pipeline and `FSL`.
+
+## Sampling & feature selection: Biomedical imagery
+
+![](./figures/slides1.png)
+
+Initial configuration of data
+
+## Sampling & feature selection: Biomedical imagery
+
+![](./figures/slides2.png)
+
+Automatic feature selection
+
+## Sampling & feature selection: Biomedical imagery
+
+![](./figures/slides3.png)
+
+Resampling allows comparison & slide alignment and <br />
+validates the feature selection
+
+Dramatic reduction in computation time / memory requirements
+
+## Sampling & feature selection: Lesioned brains
+
+![](./figures/lesionedbrains.jpg)
+
+## Sampling & feature selection: Summary
+
+* we exploit these strategies to:
+    - accelerate
+    - focus 
+    - validate
+
+# Evaluation results
+
+## 
+![](./figures/evalhistory.png)
+
+## Anatomical dictionaries
+![](./figures/sata2013.png)
+
+we provided the *standard* registration results for $>$ 20,000 image pairs at [SATA 2013](https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events)
+
+## [label fusion (link)](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049832/)
+![](./figures/sata2013.jpg)
+
+
+## Multiple metrics improve performance
+![](./figures/multivariateSATA.jpg)
+
+to our knowledge, ANTs is the only freely available system that can solve this problem in a fully multivariate manner.
+
+Hongzhi Wang won the "walk in the park" award for this work ...
+
+# Differentiable maps with<br /> differentiable inverse <br />$+$ *statistics in these spaces*
+
+## Brain templates as *high-dimensional averages*
+![](./figures/speciestemplates.png)
+
+## SyGN - templates and averages in deformation space
+
+![](figures/normvsnorm.png)
+from [miykael](http://miykael.github.io/nipype-beginner-s-guide/ANTS.html)
+
+[geodesic image averages](http://www.ncbi.nlm.nih.gov/pubmed/15501083)
+
+[optimal templates 2](http://www.ncbi.nlm.nih.gov/pubmed/19818860)
+
+[canine template](http://www.ncbi.nlm.nih.gov/pubmed/23284904)
+
+[chimpanzees](http://www.ncbi.nlm.nih.gov/pubmed/23516289)
+
+
+## Statistics in deformation space
+
+[AIBS movie](http://www.youtube.com/embed/8GgHG-rApiE)
+
+
+## Average Republican and Democratic congressmen
+
+<div align="center"><img src="figures/democrat_left_repub_right.png" frameborder="0"></img></div>
+
+[congress](http://ntustison.github.io/CongressionalFaceTemplates/)
+
+# ANTs versus Freesurfer:<br />  Quantifying *life span* brain health
+
+## ANTs versus Freesurfer:<br />  Quantifying *life span* brain health
+
+* Freesurfer is the historical standard for measuring cortical thickness
+
+* instead of using surfaces to measure cortical thickness, we use the image space *DiReCTly*
+
+* [see this section of a different talk](http://stnava.github.io/ANTsTalk/#/putting-it-all-together-can-we-quantify-life-span-brain-health-in-individuals-and-in-populations) 
+
+* and this "big data" paper: [Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements](http://www.ncbi.nlm.nih.gov/pubmed/24879923)
+
+* comparison of prediction from automated cortical thickness measurement from 4 public datasets
+
+* $>$ 1200 subjects, age 7 to over 90 years old
+
+* *hint*: ANTs thickness measurements have higher prediction accuracy relative to Freesurfer ( implying we extract more information from the data )
+
+* ANTs methods consistently improve statistical power [eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/24687814), [syn](http://www.ncbi.nlm.nih.gov/pubmed/?term=syn+epstein+avants), [itkv4](http://www.ncbi.nlm.nih.gov/pubmed/24817849) ... also, see [Schwarz CG, et al.](http://www.ncbi.nlm.nih.gov/pubmed/24650605) re: TBSS and related work in fMRI [Miller, PNAS](http://www.ncbi.nlm.nih.gov/pubmed/15980148), [Azab, et al in Hippocampus](http://www.ncbi.nlm.nih.gov/pubmed/24167043).
+
+# Registration & statistics:<br /> Frontiers and innovation
+
+## multivariate statistical fields arise from fused modalities
+
+![images at measurement fields](figures/statisticalfields.png)
+
+*Many opportunities for statistical advancements*
+
+## Scientific Data 2014
+![](./figures/ptbp2.png)
+
+## "Network" of predictors for age
+
+...
+
+
+## ITK+ANTs+R = <span style="color:red;">*ANTsR*</span>
+
+## Agnostic statistics
+![](./figures/antsrex.jpg)
+
+[McMillan et al.](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3961542/)
+
+## A Quick <span style="color:grey;">*ANTsR*</span> example
+```{r loadantsr,results='hide',echo=FALSE,message=FALSE}
+library(ANTsR)
+```
+
+This is an executable *ANTsR* code block - *N*-dimensional statistics to go with 
+our *N*-dimensional image processing software!
+```{r loadimages,message=FALSE,warning=FALSE,results='hide'}
+library(ANTsR)
+dim<-2
+filename<-getANTsRData('r16')
+img<-antsImageRead( filename , dim )
+filename<-getANTsRData('r64')
+img2<-antsImageRead( filename , dim )
+mask<-getMask(img,50,max(img),T)
+mask2<-getMask(img,150,max(img),T)
+nvox<-sum( mask == 1 )
+nvox2<-sum( mask2 == 1 )
+```
+The brain has `r nvox` voxels ...
+
+## A Quick <span style="color:grey;">*ANTsR*</span> example
+
+Simulate a population morphometry study - a "VBM" ...
+```{r morph,results='hide'}
+simnum<-10
+imglist<-list()
+imglist2<-list()
+for ( i in 1:simnum ) {
+  img1sim<-antsImageClone(img)
+  img1sim[ mask==1 ]<-rnorm(nvox,mean=0.5)
+  img1sim[ mask2==1 ]<-rnorm(nvox2,mean=2.0)
+  img2sim<-antsImageClone(img2)
+  img2sim[ mask==1 ]<-rnorm(nvox,mean=0.20)
+  imglist<-lappend(imglist,img1sim)
+  imglist2<-lappend(imglist2,img2sim)
+}
+imglist<-lappend( imglist, imglist2 )
+mat<-imageListToMatrix( imglist, mask )
+DX<-factor( c( rep(0,simnum), rep(1,simnum) ) )
+mylmresults<-bigLMStats( lm( mat ~ DX ) )
+qvals<-p.adjust( mylmresults$pval.model ) 
+```
+The minimum q-value is `r min(qvals)` ... 
+
+## Visualize the histograms of effects
+```{r vizmorph,results='hide'}
+whichvox<-qvals < 1.e-2
+voxdf<-data.frame( volume=c( as.numeric( mat[,whichvox] ) ), DX=DX )
+ggplot(voxdf, aes(volume, fill = DX)) + geom_density(alpha = 0.2)
+```
+
+## Visualize the anatomical distribution
+```{r vizmorph2hide,results='hide',echo=FALSE}
+betas<-antsImageClone(mask)
+betavec<-abs(mylmresults$beta.t[1,])
+betas[mask==1]<-betavec
+SmoothImage(dim,betas,1.5,betas)
+thresh<-paste(3.0,'x',max(betavec),sep='')
+ofn<-paste(figpath,'vizmorph2.jpg',sep='')
+```
+
+```{r vizmorph2,results='hide'}
+plotANTsImage(img,functional=list(betas),threshold=thresh,
+  outname=ofn)
+```
+
+![](`r ofn`)
+
+## Network visualization
+see `?plotBasicNetwork`
+```{r networkfn,results='hide',warning=FALSE,echo=FALSE,message=FALSE}
+ofn<-paste(figpath,'network',sep='')
+ofnpng<-paste(ofn,'.png',sep='')
+```
+```{r network,results='hide',warning=FALSE,echo=FALSE,message=FALSE,eval=FALSE}
+       mnit<-getANTsRData("mni")
+       mnit<-antsImageRead(mnit,3)
+       mnia<-getANTsRData("mnia")
+       mnia<-antsImageRead(mnia,3)
+       ThresholdImage(3,mnit,mnit,1,max(mnit))
+       ImageMath(3,mnit,"FillHoles",mnit)
+       cnt<-getCentroids( mnia, clustparam = 50 )
+       aalcnt<-cnt$centroids[1:90,]
+       brain<-renderSurfaceFunction( surfimg =list( mnit ) , alphasurf=0.1 ,smoothsval = 1.5 )
+       testweights<-matrix( rep( 0, 90*90 ) ,nrow=90)
+       testweights[31,37]<-1  # ant cingulate to hipp
+       testweights[31,36]<-2  # ant cingulate to post cingulate
+       testweights[11,65]<-3  # broca to angular 
+       plotBasicNetwork( centroids = aalcnt , brain , weights=testweights )
+       id<-par3d("userMatrix")
+       rid<-rotate3d( id , -pi/2, 1, 0, 0 )
+       rid2<-rotate3d( id , pi/2, 0, 0, 1 )
+       rid3<-rotate3d( id , -pi/2, 0, 0, 1 )
+       par3d(userMatrix = id ) 
+       dd<-make3ViewPNG(  rid, id, rid2,  ofn )
+       par3d(userMatrix = id ) 
+```
+![](`r ofnpng`)
+
+## The power of *ANTs* $+$ *R* $\rightarrow$<br /> <span style="color:red;">**Reproducible imaging science**</span> 
+
+![](./figures/antsgoals.png)
+
+... used in ["Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population"](http://www.ncbi.nlm.nih.gov/pubmed/24096125) and several upcoming ...
+
+## Can we customize these methods for a challenging multivariate segmentation problem with clinical relevance?
+
+## Automated tumor segmentation from multiple MRI
+![](./figures/tumorsegmentation.png)
+
+## General theory tunable to specific domains:  *no-free lunch*
+![](./figures/brats.png)
+
+[BRATS 2013 Challenge](http://hal.inria.fr/docs/00/93/56/40/PDF/brats_preprint.pdf) **won** with [*ANTsR*](https://github.com/stnava/ANTsR)
+
+## Can we address subtle questions in brain and cognition via imaging-specific dimensionality reduction?
+
+##  [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/24852460) & [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=avants+SCCAN)
+
+## ANTs*R* $\rightarrow$ new insight <br />via better analytics
+
+Good software should fade into the background ... however ...
+
+<span style="color:red;">
+ As is common in science, the first big breakthrough in our understanding ...
+ [came from] an improvement in measurement.
+</span>
+
+<span style="color:blue;">
+> Daniel Kahnemann, *Thinking, Fast and Slow* (2011)
+</span>
+
+# Conclusion
+
+## Recap
+
+- Powerful, general-purpose, <span style="color:red;">well-evaluated</span> registration and segmentation.
+
+- Differentiable maps with differentiable inverse <span style="color:red;">$+$ statistics in these spaces</span>
+
+- Evaluated in multiple problem domains</span> via internal studies & open competition
+
+- Borg philosophy: <span style="color:red;">"best of"</span> from I/O, to processing to statistical methods
+
+- Open source, testing, many examples, consistent style, multiple platforms,  active community support ...
+
+- Integration with *R* $+$ novel tools for prediction, decoding, high-to-low dimensional statistics.
+
+- Collaborations with [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+
+## Challenges: Computational and Scientific
+
+- Scalability
+    - **need to fuse feature selection methods with transformation optimization**
+    - **need to leverage existing ITK streaming infrastructure in application level tool**
+- Domain expertise: Customizable for specific problems but sometimes not specific enough
+- "Plausible physical modeling ..." - this should vary per problem ... but doesn't.
+    - a fabulous project would be to resolve this issue at a large-scale e.g. for reconstructing neurons, measuring white matter elaboration ...
+    - our prior FEM work is one potential solution
+- Rapid development: colleagues still need familiarity with compilation for latest ANTs features
+- Latest theoretical advances in registration not yet wrapped for users
+- Need more [Documentation](http://stnava.github.io/ANTs/)  & [testing](http://testing.psychiatry.uiowa.edu/CDash/index.php?project=ANTS) ...
+
+
+## Tools you can use for imaging science
+
+- Core developers:  *B. Avants, N. Tustison, H. J. Johnson, J. T. Duda*
+
+- Many contributors, including users ...
+
+- Multi-platform, multi-threaded C++ [stnava.github.io/ANTs](stnava.github.io/ANTs)
+
+- Developed in conjunction with [http://www.itk.org/](http://www.itk.org/)
+
+- R wrapping and extension [stnava.github.io/ANTsR](stnava.github.io/ANTsR)
+
+- rapid development, regular testing $+$ many eyes $\rightarrow$ bugs are shallow
+
+<img style="float: right" src="figures/penn.png" />
+<img style="float: left" src="figures/picsl.jpg" />
+
+# Analysis philosophy and <br /> published opinions
+
+## What is and *is not*<br /> image registration
+
+[*not* registration](http://www.ncbi.nlm.nih.gov/pubmed/23116330)
+
+## Voodoo in voxel-based analysis
+
+[logical circularity VBA](http://www.ncbi.nlm.nih.gov/pubmed/?term=logical+circularity+tustison)
+
+## Instrumentation bias in the use and evaluation of software
+
+[Instrumentation bias in the use and evaluation of software](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader)
+
+
+# References {#reffont}
+
