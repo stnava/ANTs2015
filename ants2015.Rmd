@@ -514,7 +514,3 @@ Good software should fade into the background ... however ...
 ## Instrumentation bias in the use and evaluation of software
 
 [Instrumentation bias in the use and evaluation of software](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader)
-
-
-# References {#reffont}
-

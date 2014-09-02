@@ -7,5 +7,10 @@ library(shiny)
 library(ggvis)
 library(rmarkdown)
 srcdir<-"./"
-pre='ants2015'
-render( paste(pre,".Rmd",sep=''), clean=TRUE, "revealjs_presentation", output_file='index.html' ) 
+buildrmd='ants2015build.Rmd'
+rawrmds<-c("ants2015.Rmd","lesions/lesions.Rmd","lastslide.Rmd")
+for ( x in 1:length(rawrmds) ) {
+  if ( x == 1 )  cmd<-paste( "cat ",rawrmds[x]," > ",buildrmd ) else cmd<-paste( "cat ",rawrmds[x]," >> ",buildrmd )
+  system(cmd)
+}
+render(buildrmd, clean=TRUE, "revealjs_presentation", output_file='index.html' ) 
