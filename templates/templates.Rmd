@@ -78,6 +78,8 @@
 
 ![](templates/figures/WashUJan2011.076.jpg)
 
+see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.github.io/ANTsDoc)
+
 ## Templates from ANTs Colleagues ( not us )
 
 ![](templates/figures/templates_ants_colleagues.png)

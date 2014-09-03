@@ -117,5 +117,5 @@ documentation is important
 
 ... developers can be blind to doc deficiencies
 
-while users are equally blind to what we provide!
+while users are blind to what we provide!
 
