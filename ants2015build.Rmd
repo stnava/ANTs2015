@@ -157,12 +157,6 @@ application specific domains:  no-free lunch
 
 ## On documentation
 
-![](figures/handsaw.jpg)
-
-simple and nearly self-explanatory
-
-## On documentation
-
 ![](figures/Chainsaw.jpg)
 
 documentation is important
