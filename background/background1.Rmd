@@ -53,6 +53,8 @@ Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly 
 
 ![](./figures/ants_initial_scope.png)
 
+... just do a better registration (tell story) ...
+
 ## ANTs Lineage 
 
 ![](./figures/lineage.jpg)
