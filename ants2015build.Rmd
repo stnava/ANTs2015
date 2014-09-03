@@ -43,7 +43,7 @@ opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
 
 ## 
 
-<div align="center"><img src="./figures/brian_and_edie_sedgwick.jpg frameborder="0"></img></div>
+<div align="center"><img src="./figures/brian_and_edie_sedgwick.jpg" frameborder="0"></img></div>
 
 This talk is online at [http://stnava.github.io/ANTs2015/](http://stnava.github.io/ANTs2015/) with colored [links](http://stnava.github.io/ANTs2015/) meant to be clicked for more information.
 
