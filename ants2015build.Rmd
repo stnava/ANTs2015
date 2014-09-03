@@ -393,6 +393,14 @@ plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/article
 
 ![](longitudinal/figures/longpipeex.png)
 
+## ANTs longitudinal pipeline: TBI
+
+![](longitudinal/figures/long_with_lesions_seg.png)
+
+## ANTs longitudinal pipeline: TBI
+
+![](longitudinal/figures/long_with_lesions_thick.png)
+
 ## ANTs longitudinal pipeline
 
 ![](longitudinal/figures/babystudy.png)
