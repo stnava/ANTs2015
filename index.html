@@ -304,6 +304,109 @@
 <h1>antsCorticalThickness.sh using lesion prior</h1>
 <p><img src="lesions/figures/lesionSegmentation.png" /></p>
 <p>Only change to the command call is an additional ‘-c WM[7]’ which means “combine the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation.”</p>
+</section><section id="questions-driving-ants-refs.1" class="slide level2">
+<h1>Questions driving <em>ANTs</em> (<span class="math">\(+\)</span> Refs.1)</h1>
+<ul>
+<li class="fragment"><p>how should we geometrically transform anatomical coordinates?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/17659998">syn paper</a> - our geometric transformation model of choice</li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24409140">recent B-spline alternative/improvement</a></li>
+</ul></li>
+<li class="fragment"><p>how should we measure pairwise image similarity?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20851191">similarity metric evaluation</a> compares functions for computing rigid or affine transformations between images</li>
+</ul></li>
+<li class="fragment"><p>what if this pair has rgb/vector/tensor voxels?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18041273">dti similarity</a></li>
+</ul></li>
+<li class="fragment"><p>how do we extend from pairs to hundreds or thousands of pairs of images?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=avants+optimal+template">optimal templates</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923">spatial priors</a></li>
+<li class="fragment">species specific templates/priors in <a href="http://www.ncbi.nlm.nih.gov/pubmed/23516289">chimps</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/23284904">canines</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer">ants “big data”</a></li>
+</ul></li>
+<li class="fragment"><p>how do we fuse multiple modality images at the subject and population levels?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+logical+circularity">ants auxiliary modality study</a></li>
+</ul></li>
+</ul>
+</section><section id="questions-driving-ants-refs.2" class="slide level2">
+<h1>Questions driving <em>ANTs</em> (<span class="math">\(+\)</span> Refs.2)</h1>
+<ul>
+<li class="fragment"><p>can diffeomorphisms <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer">improve cortical thickness measurement</a>?</p></li>
+<li class="fragment"><p>how might we efficiently cluster the statistical fields that arise in image analysis?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison">Atropos</a> segmentation and <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison">N4 inhomogeneity correction</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants">Eigenanatomy</a> for sparse imaging-specific PCA</li>
+</ul></li>
+<li class="fragment"><p>how to cluster such fields when we have supervision?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants">sparse canonical correlation analysis for neuroimaging</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24852460">Prior-constrained PCA</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/">atlas-based label fusion</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/21237273">MALF</a> - powerful expert systems for segmentation</li>
+</ul></li>
+<li class="fragment"><p>how do we implement a fully multivariate <em>interpretable</em> brain and behavior study?</p>
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sccan+avants">SCCAN for imaging &amp; cognition</a></li>
+</ul></li>
+<li class="fragment"><p>how do we extend these ideas to functional MRI &amp; decoding?</p>
+<ul>
+<li class="fragment"><a href="http://stnava.github.io/RKRNS/">recent unpublished software</a></li>
+<li class="fragment"><a href="..not%20yet...">recent work with Ben Kandel</a></li>
+</ul></li>
+</ul>
+</section><section id="ants-longitudinal-analysis" class="slide level2">
+<h1><em>ANTs</em> longitudinal analysis</h1>
+<ul>
+<li class="fragment">Longitudinal image processing issues
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20005963">registration induced bias</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23549059">general &amp; TBI-specific issues in longitudinal analysis</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22517961">reproducibility of CBF</a></li>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22306801">structure-specific analysis</a></li>
+</ul></li>
+<li class="fragment">An early study of longitudinal cortical change in ALS
+<ul>
+<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16317254">ALS atrophy rates</a></li>
+</ul></li>
+<li class="fragment">Extension of standard-setting ants cortical thickness pipeline to longitudinal data
+<ul>
+<li class="fragment"><a href="https://github.com/stnava/DynANTs">DynANTs (unpublished)</a></li>
+</ul></li>
+</ul>
+</section><section id="challenges-computational-and-scientific" class="slide level2">
+<h1>Challenges: Computational and Scientific</h1>
+<ul>
+<li class="fragment">Scalability: <strong>need to fuse feature selection methods with transformation optimization</strong></li>
+<li class="fragment">Scalability: <strong>need to leverage existing ITK streaming infrastructure in application level tool</strong></li>
+<li class="fragment">Domain expertise: Customizable for specific problems but sometimes not specific enough</li>
+<li class="fragment">Rapid development: colleagues still need familiarity with compilation for latest ANTs features</li>
+<li class="fragment">Latest theoretical advances in registration not yet wrapped for users</li>
+<li class="fragment">Need more <a href="http://stnava.github.io/ANTs/">Documentation</a> &amp; <a href="http://testing.psychiatry.uiowa.edu/CDash/index.php?project=ANTS">testing</a> …</li>
+</ul>
+</section><section id="recap" class="slide level2">
+<h1>Recap</h1>
+<ul>
+<li class="fragment"><p>Powerful, general-purpose, <span style="color:red;">well-evaluated</span> registration and segmentation.</p></li>
+<li class="fragment"><p>Differentiable maps with differentiable inverse <span style="color:red;"><span class="math">\(+\)</span> statistics in these spaces</span></p></li>
+<li class="fragment"><p>Evaluated in multiple problem domains</span> via internal studies &amp; open competition</p></li>
+<li class="fragment"><p>Borg philosophy: <span style="color:red;">“best of”</span> from I/O, to processing to statistical methods</p></li>
+<li class="fragment"><p>Open source, testing, many examples, consistent style, multiple platforms, active community support …</p></li>
+<li class="fragment"><p>Integration with <em>R</em> <span class="math">\(+\)</span> novel tools for prediction, decoding, high-to-low dimensional statistics.</p></li>
+<li class="fragment"><p>Collaborations with <a href="http://neuro.debian.net/pkgs/ants.html">neurodebian</a>, <a href="http://www.slicer.org/">slicer</a>, <a href="https://github.com/BRAINSia/BRAINSTools">brainsfit</a>, <a href="http://nipy.sourceforge.net/nipype/">nipype</a>, <a href="http://www.itk.org">itk</a> and more …</p></li>
+</ul>
+</section><section id="tools-you-can-use-for-imaging-science" class="slide level2">
+<h1>Tools you can use for imaging science</h1>
+<ul>
+<li class="fragment"><p>Core developers: <em>B. Avants, N. Tustison, H. J. Johnson, J. T. Duda</em></p></li>
+<li class="fragment"><p>Many contributors, including users …</p></li>
+<li class="fragment"><p>Multi-platform, multi-threaded C++ <a href="stnava.github.io/ANTs" class="uri">stnava.github.io/ANTs</a></p></li>
+<li class="fragment"><p>Developed in conjunction with <a href="http://www.itk.org/"><a href="http://www.itk.org/" class="uri">http://www.itk.org/</a></a></p></li>
+<li class="fragment"><p>R wrapping and extension <a href="stnava.github.io/ANTsR" class="uri">stnava.github.io/ANTsR</a></p></li>
+<li class="fragment"><p>rapid development, regular testing <span class="math">\(+\)</span> many eyes <span class="math">\(\rightarrow\)</span> bugs are shallow</p></li>
+</ul>
+<p><img style="float: right" src="figures/penn.png" /> <img style="float: left" src="figures/picsl.jpg" /></p>
 </section></section>
 <section><section id="references" class="titleslide slide level1 unnumbered"><h1>References</h1></section></section>
     </div>

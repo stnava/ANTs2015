@@ -351,6 +351,115 @@ plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/article
 Only change to the command call is an additional '-c WM[7]' which means "combine
 the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation."
 
+## Questions driving *ANTs* ($+$ Refs.1)
+
+* how should we geometrically transform anatomical coordinates?
+
+    - [syn paper](http://www.ncbi.nlm.nih.gov/pubmed/17659998) - our geometric transformation model of choice
+    - [recent B-spline alternative/improvement](http://www.ncbi.nlm.nih.gov/pubmed/24409140)
+
+* how should we measure pairwise image similarity?
+
+    - [similarity metric evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20851191) compares functions for computing rigid or affine transformations between images
+
+* what if this pair has rgb/vector/tensor voxels?
+
+    - [dti similarity](http://www.ncbi.nlm.nih.gov/pubmed/18041273)
+
+* how do we extend from pairs to hundreds or thousands of pairs of images?
+
+    - [optimal templates](http://www.ncbi.nlm.nih.gov/pubmed/?term=avants+optimal+template) and [spatial priors](http://www.ncbi.nlm.nih.gov/pubmed/24879923)
+    - species specific templates/priors in [chimps](http://www.ncbi.nlm.nih.gov/pubmed/23516289) and [canines](http://www.ncbi.nlm.nih.gov/pubmed/23284904)
+    - [ants "big data"](http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer)
+
+* how do we fuse multiple modality images at the subject and population levels?
+
+    - [ants auxiliary modality study](http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+logical+circularity)
+
+## Questions driving *ANTs* ($+$ Refs.2)
+
+* can diffeomorphisms [improve cortical thickness measurement](http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer)?
+
+* how might we efficiently cluster the statistical fields that arise in image analysis?
+
+    - [Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation and [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison)
+    - [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants) for sparse imaging-specific PCA
+
+* how to cluster such fields when we have supervision?
+
+    - [sparse canonical correlation analysis for neuroimaging](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants)
+    - [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460)
+    - [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) - powerful expert systems for segmentation
+
+* how do we implement a fully multivariate *interpretable* brain and behavior study?
+
+    - [SCCAN for imaging & cognition](http://www.ncbi.nlm.nih.gov/pubmed/?term=sccan+avants)
+
+* how do we extend these ideas to functional MRI & decoding?
+
+    - [recent unpublished software](http://stnava.github.io/RKRNS/) 
+    - [recent work with Ben Kandel](..not yet...)
+
+## *ANTs* longitudinal analysis
+
+* Longitudinal image processing issues
+    - [registration induced bias](http://www.ncbi.nlm.nih.gov/pubmed/20005963)
+    - [general & TBI-specific issues in longitudinal analysis](http://www.ncbi.nlm.nih.gov/pubmed/23549059)
+    - [reproducibility of CBF](http://www.ncbi.nlm.nih.gov/pubmed/22517961)
+    - [structure-specific analysis](http://www.ncbi.nlm.nih.gov/pubmed/22306801)
+
+* An early study of longitudinal cortical change in ALS
+    - [ALS atrophy rates](http://www.ncbi.nlm.nih.gov/pubmed/16317254)
+
+* Extension of standard-setting ants cortical thickness pipeline to longitudinal data
+    - [DynANTs (unpublished)](https://github.com/stnava/DynANTs)
+
+## Challenges: Computational and Scientific
+
+- Scalability: **need to fuse feature selection methods with transformation optimization**
+- Scalability: **need to leverage existing ITK streaming infrastructure in application level tool**
+- Domain expertise: Customizable for specific problems but sometimes not specific enough
+- Rapid development: colleagues still need familiarity with compilation for latest ANTs features
+- Latest theoretical advances in registration not yet wrapped for users
+- Need more [Documentation](http://stnava.github.io/ANTs/)  & [testing](http://testing.psychiatry.uiowa.edu/CDash/index.php?project=ANTS) ...
+
+
+
+## Recap
+
+- Powerful, general-purpose, <span style="color:red;">well-evaluated</span> registration and segmentation.
+
+- Differentiable maps with differentiable inverse <span style="color:red;">$+$ statistics in these spaces</span>
+
+- Evaluated in multiple problem domains</span> via internal studies & open competition
+
+- Borg philosophy: <span style="color:red;">"best of"</span> from I/O, to processing to statistical methods
+
+- Open source, testing, many examples, consistent style, multiple platforms,  active community support ...
+
+- Integration with *R* $+$ novel tools for prediction, decoding, high-to-low dimensional statistics.
+
+- Collaborations with [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+
+## Tools you can use for imaging science
+
+- Core developers:  *B. Avants, N. Tustison, H. J. Johnson, J. T. Duda*
+
+- Many contributors, including users ...
+
+- Multi-platform, multi-threaded C++ [stnava.github.io/ANTs](stnava.github.io/ANTs)
+
+- Developed in conjunction with [http://www.itk.org/](http://www.itk.org/)
+
+- R wrapping and extension [stnava.github.io/ANTsR](stnava.github.io/ANTsR)
+
+- rapid development, regular testing $+$ many eyes $\rightarrow$ bugs are shallow
+
+<img style="float: right" src="figures/penn.png" />
+<img style="float: left" src="figures/picsl.jpg" />
+
+
 
 # References
 

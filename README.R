@@ -8,7 +8,7 @@ library(ggvis)
 library(rmarkdown)
 srcdir<-"./"
 buildrmd='ants2015build.Rmd'
-rawrmds<-c("ants2015.Rmd","background/background1.Rmd","impact/impact1.Rmd","templates/templates.Rmd","evaluation/evaluation1.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","lastslide.Rmd")
+rawrmds<-c("ants2015.Rmd","background/background1.Rmd","impact/impact1.Rmd","templates/templates.Rmd","evaluation/evaluation1.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","conclusion/conclusion.Rmd","lastslide.Rmd")
 for ( x in 1:length(rawrmds) ) {
   if ( x == 1 )  cmd<-paste( "cat ",rawrmds[x]," > ",buildrmd ) else cmd<-paste( "cat ",rawrmds[x]," >> ",buildrmd )
   system(cmd)
