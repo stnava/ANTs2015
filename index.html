@@ -228,8 +228,23 @@ code > span.er { color: #c3bf9f; }
 </section><section id="ants-saving-society" class="slide level2">
 <h1>ANTs: Saving society $$$</h1>
 <p>starting with neuroscience …</p>
-</section></section>
-<section><section id="optimal-templates" class="titleslide slide level1"><h1>Optimal Templates</h1></section><section id="optimal-templates-1" class="slide level2">
+</section><section id="reproducibility" class="slide level2">
+<h1>Reproducibility</h1>
+<ul>
+<li class="fragment"><p>Consider the recent paper <a href="http://ac.els-cdn.com/S2213158214001260/1-s2.0-S2213158214001260-main.pdf?_tid=8e6f5248-335d-11e4-ba4f-00000aab0f02&amp;acdnat=1409743944_6615d59eb5709e6bcb1aca76450f7d93">freesurfer, laplacian, DiReCT thickness in longitudinal stroke</a></p></li>
+<li class="fragment"><p>We “pre-wrote” a comment: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader">Instrumentation bias in the use and evaluation of scientific software</a></p></li>
+<li class="fragment"><p>With these guys:</p></li>
+<li class="fragment"><p><img src="figures/luis.jpg" alt="Luis Ibanez" /></p></li>
+<li class="fragment"><p><img src="figures/torsten.jpg" alt="Torsten Rohlfing" /></p></li>
+</ul>
+</section><section id="hired-by-google" class="slide level2">
+<h1>Hired by Google</h1>
+<ul>
+<li class="fragment"><p><img src="figures/luis.jpg" alt="Luis Ibanez" /></p></li>
+<li class="fragment"><p><img src="figures/torsten.jpg" alt="Torsten Rohlfing" /></p></li>
+<li class="fragment"><p><img src="figures/gang.jpg" alt="Gang Song" /> # Optimal Templates</p></li>
+</ul>
+</section><section id="optimal-templates" class="slide level2">
 <h1>“Optimal” templates (?)</h1>
 <ul>
 <li class="fragment"><p>unbiased wrt measurement space</p></li>
@@ -405,7 +420,7 @@ mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
 DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
 mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
 qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
-<p>The minimum q-value is 3.68 × 10<sup>-4</sup> …</p>
+<p>The minimum q-value is 6.2225 × 10<sup>-5</sup> …</p>
 </section><section id="visualize-the-histograms-of-effects" class="slide level2">
 <h1>Visualize the histograms of effects</h1>
 <pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>

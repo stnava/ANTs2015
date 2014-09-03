@@ -218,6 +218,25 @@ insights into brain structure and function
 starting with neuroscience ...
 
 
+## Reproducibility 
+
+* Consider the recent paper [freesurfer, laplacian, DiReCT thickness in longitudinal stroke](http://ac.els-cdn.com/S2213158214001260/1-s2.0-S2213158214001260-main.pdf?_tid=8e6f5248-335d-11e4-ba4f-00000aab0f02&acdnat=1409743944_6615d59eb5709e6bcb1aca76450f7d93)
+
+* We "pre-wrote" a comment: [Instrumentation bias in the use and evaluation of scientific software](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader)
+
+* With these guys:
+
+* ![Luis Ibanez](figures/luis.jpg)
+
+* ![Torsten Rohlfing](figures/torsten.jpg)
+
+## Hired by Google
+
+* ![Luis Ibanez](figures/luis.jpg)
+
+* ![Torsten Rohlfing](figures/torsten.jpg)
+
+* ![Gang Song](figures/gang.jpg)
 # Optimal Templates
 
 ## "Optimal" templates (?)
