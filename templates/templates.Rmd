@@ -1,0 +1,83 @@
+# Optimal Templates
+
+## "Optimal" templates (?)
+
+* unbiased wrt measurement space 
+
+* space is non-linear: reference matters
+
+* encodes prior information: still just averages (usually)
+
+* concept extends across modalities, anatomy, temporality, etc
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.060.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.061.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.062.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.063.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.064.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.065.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.066.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.067.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.068.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.069.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.070.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.071.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.072.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.073.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.074.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.075.jpg)
+
+## Faces, brains, whatever ... 
+
+![](templates/figures/WashUJan2011.076.jpg)
+
+## Templates from ANTs Colleagues ( not us )
+
+![](templates/figures/templates_ants_colleagues.png)

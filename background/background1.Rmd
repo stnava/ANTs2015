@@ -1,0 +1,141 @@
+# Background
+
+## Founding developers
+
+<div align="center"><img width="1800" src="./figures/bant2.png" frameborder="0"></img></div>
+
+## Long-term collaborators
+
+![](./figures/antscollab.jpg)
+
+
+$+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+
+## Definitions
+
+* Registration $=$ estimate an "optimal" geometric mapping between image pairs or image sets (e.g. Affine)
+
+* Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)
+
+* <span style="color:grey;">
+Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)  </span>
+
+* Segmentation $=$ labeling tissue or anatomy in images, usually automated (e.g. K-means)
+
+* <span style="color:grey;"> Multivariate $=$ using many voxels or measurements at once (e.g. PCA, $p >> n$ ridge regression)</span>
+
+* Multiple modality $=$ using many modalities at once (e.g. DTI and T1 and BOLD)
+
+* MALF: multi-atlas label fusion - using anatomical dictionaries to label new data
+
+* Solutions to challenging statistical image processing problems usually need elements from each of the above 
+
+
+## Image mapping & perception: 1878
+
+![](./figures/galton.png)
+
+* Francis Galton: Can we see criminality in the face?
+
+* (maybe he should have used ANTs?)
+
+
+## Initial scope
+
+![](./figures/ants_initial_scope.png)
+
+## ANTs Lineage 
+
+![](./figures/lineage.jpg)
+
+References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
+
+## Diffeomorphisms
+
+<div align="center"><img width="1433" src="./figures/sillyputty.png" frameborder="0"></img></div>
+
+plausible physical modeling of large, invertible deformations
+
+"differentiable map with differentiable inverse"
+
+## Fine-grained and flexible maps
+![](./figures/highresdiffeos.jpg)
+
+## ANTs: Beyond Registration
+
+![](./figures/antscapabilities.jpg)
+
+[Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation, [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison), [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants), [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants), [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460), and [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) (powerful expert systems for segmentation)
+
+
+## ANTs & Neuroscience
+
+We need statistical image analysis <br />at several scales in modern neuroscience
+
+* Macro: *in vivo* structural and functional MRI
+
+* Micro:  high-resolution post-mortem MRI links with in vivo MRI
+
+* Nano: neuron reconstruction ...
+
+* Solutions that are consistent across these scales have the potential
+to build multi-scale feature sets or templates and provide new
+insights into brain structure and function
+
+* E.g. Parcellation constraints based on histology, tractography, function ...
+
+* Statistical definitions of anatomy/pathology?  
+
+* Reinvention of these solutions within each lab ... can we mitigate this?
+
+* Reduce, reuse, recycle ...
+
+## Financial impact
+
+* The **high error rate** in software makes testing for quality assurance critically important. 
+
+* Bugs exist **Everywhere**: so don't freak out if we admit we have bugs:  we're just being honest ( and not all devs are )
+
+* Virtually every business in the United States now depends on software for development, production, distribution, and after-sales support of products and services.
+
+* A 2002 NIST study estimated the direct costs to the software supply chain due to failure to identify (**successfully test for**) "bugs" 
+
+* We are better at this than most ... **not perfect**
+
+* The estimate of direct costs compiled from industry survey data for the U.S. economy was **\$60 billion per year**
+
+* ... this estimate did not include costs to end users such as lost business (for example, the cost of shutting down the New York Mercantile Exchange in 1998 due to a software failure).
+
+## ANTs: Saving society \$\$\$
+
+starting with neuroscience ...
+
+## General purpose library for multivariate image registration, segmentation & statistical analysis tools
+
+* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators. 
+
+* Generic mathematical methods that are tunable for 
+application specific domains:  no-free lunch
+
+* Deep testing on multiple platforms ... osx, linux, windows.
+
+* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others ) 
+
+```
+    An algorithm must use prior knowledge about a problem 
+    to do well on that problem 
+```
+
+## Words of warning
+
+![](figures/handsaw.jpg)
+
+simple and nearly self-explanatory
+
+## Words of warning
+
+![](figures/Chainsaw.jpg)
+
+documentation is important
+
