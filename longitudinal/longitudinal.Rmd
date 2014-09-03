@@ -7,9 +7,11 @@
 What mathematical encoding of language reflects both brain activity and 
 "our" understanding of semantics?
 
-## RIPMMARC: Imputation, strutural networks, etc.
+## RIPMARC: Imputation, strutural networks, etc.
 
 ![](figures/ripmmarc_inter.png)
+
+MICCAI 2014, Neuroimage 2015
 
 ## Big image registration
 
