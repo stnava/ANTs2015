@@ -75,20 +75,19 @@ a pride: common way of doing things
 
 * Registration $=$ estimate an "optimal" geometric mapping between image pairs or image sets (e.g. Affine)
 
-* Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)
+* <span style="color:grey;"> Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)</span>
 
-* <span style="color:grey;">
-Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)  </span>
+* Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)  
 
-* Segmentation $=$ labeling tissue or anatomy in images, usually automated (e.g. K-means)
+* <span style="color:grey;">Segmentation $=$ labeling tissue or anatomy in images, usually automated (e.g. K-means)</span>
 
-* <span style="color:grey;"> Multivariate $=$ using many voxels or measurements at once (e.g. PCA, $p >> n$ ridge regression)</span>
+* Multivariate $=$ using many voxels or measurements at once (e.g. PCA, $p >> n$ ridge regression)</span>
 
-* Multiple modality $=$ using many modalities at once (e.g. DTI and T1 and BOLD)
+* <span style="color:grey;">Multiple modality $=$ using many modalities at once (e.g. DTI and T1 and BOLD)</span>
 
 * MALF: multi-atlas label fusion - using anatomical dictionaries to label new data
 
-* Solutions to challenging statistical image processing problems usually need elements from each of the above 
+* <span style="color:grey;">Solutions to challenging statistical image processing problems usually need elements from each of the above</span> 
 
 
 ## Image mapping & perception: 1878
