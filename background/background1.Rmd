@@ -1,10 +1,5 @@
 # Background
 
-## 
-
-![](./figures/lion.png)
-
-
 ## Founding developers
 
 <div align="center"><img width="1800" src="./figures/bant2.png" frameborder="0"></img></div>
@@ -17,6 +12,12 @@ BBA & NT
 
 
 $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+
+## 
+
+![](./figures/lion.png)
+
 
 
 ## Definitions
