@@ -49,6 +49,11 @@ This talk is online at [http://stnava.github.io/ANTs2015/](http://stnava.github.
 
 # Background
 
+## 
+
+![](./figures/lion.png)
+
+
 ## Founding developers
 
 <div align="center"><img width="1800" src="./figures/bant2.png" frameborder="0"></img></div>
