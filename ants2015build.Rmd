@@ -482,7 +482,7 @@ see `?plotBasicNetwork`
 ofn<-paste(figpath,'network',sep='')
 ofnpng<-paste(ofn,'.png',sep='')
 ```
-```{r network,results='hide',warning=FALSE,echo=FALSE,message=FALSE,eval=T}
+```{r network,results='hide',warning=FALSE,echo=FALSE,message=FALSE,eval=F}
        mnit<-getANTsRData("mni")
        mnit<-antsImageRead(mnit,3)
        mnia<-getANTsRData("mnia")
