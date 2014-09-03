@@ -115,7 +115,7 @@ documentation is important
 
 ![](figures/blindmen.jpg)
 
-... developers can be equally blind to deficiencies
+... developers can be blind to doc deficiencies
 
 while users are equally blind to what we provide!
 
