@@ -83,3 +83,4 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 ## Templates from ANTs Colleagues ( not us )
 
 ![](templates/figures/templates_ants_colleagues.png)
+
