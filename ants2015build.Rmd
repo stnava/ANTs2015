@@ -304,7 +304,9 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 
 ![](templates/figures/templates_ants_colleagues.png)
 
+## Templates unlock modalities
 
+![](figure/ptbp2.png)
 # Evaluation
 
 ## 
