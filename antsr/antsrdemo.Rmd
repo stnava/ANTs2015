@@ -1,0 +1,122 @@
+
+# Registration & statistics:<br /> Frontiers and innovation
+
+## multivariate statistical fields arise from fused modalities
+
+![images at measurement fields](figures/statisticalfields.png)
+
+*Many opportunities for statistical advancements*
+
+## ITK+ANTs+R = <span style="color:red;">*ANTsR*</span>
+
+## Agnostic statistics
+![](./figures/antsrex.jpg)
+
+[McMillan et al.](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3961542/)
+
+## A Quick <span style="color:grey;">*ANTsR*</span> example
+```{r loadantsr,results='hide',echo=FALSE,message=FALSE}
+library(ANTsR)
+```
+
+This is an executable *ANTsR* code block - *N*-dimensional statistics to go with 
+our *N*-dimensional image processing software!
+```{r loadimages,message=FALSE,warning=FALSE,results='hide'}
+library(ANTsR)
+dim<-2
+filename<-getANTsRData('r16')
+img<-antsImageRead( filename , dim )
+filename<-getANTsRData('r64')
+img2<-antsImageRead( filename , dim )
+mask<-getMask(img,50,max(img),T)
+mask2<-getMask(img,150,max(img),T)
+nvox<-sum( mask == 1 )
+nvox2<-sum( mask2 == 1 )
+```
+The brain has `r nvox` voxels ...
+
+## A Quick <span style="color:grey;">*ANTsR*</span> example
+
+Simulate a population morphometry study - a "VBM" ...
+```{r morph,results='hide'}
+simnum<-10
+imglist<-list()
+imglist2<-list()
+for ( i in 1:simnum ) {
+  img1sim<-antsImageClone(img)
+  img1sim[ mask==1 ]<-rnorm(nvox,mean=0.5)
+  img1sim[ mask2==1 ]<-rnorm(nvox2,mean=2.0)
+  img2sim<-antsImageClone(img2)
+  img2sim[ mask==1 ]<-rnorm(nvox,mean=0.20)
+  imglist<-lappend(imglist,img1sim)
+  imglist2<-lappend(imglist2,img2sim)
+}
+imglist<-lappend( imglist, imglist2 )
+mat<-imageListToMatrix( imglist, mask )
+DX<-factor( c( rep(0,simnum), rep(1,simnum) ) )
+mylmresults<-bigLMStats( lm( mat ~ DX ) )
+qvals<-p.adjust( mylmresults$pval.model ) 
+```
+The minimum q-value is `r min(qvals)` ... 
+
+## Visualize the histograms of effects
+```{r vizmorph,results='hide'}
+whichvox<-qvals < 1.e-2
+voxdf<-data.frame( volume=c( as.numeric( mat[,whichvox] ) ), DX=DX )
+ggplot(voxdf, aes(volume, fill = DX)) + geom_density(alpha = 0.2)
+```
+
+## Visualize the anatomical distribution
+```{r vizmorph2hide,results='hide',echo=FALSE}
+betas<-antsImageClone(mask)
+betavec<-abs(mylmresults$beta.t[1,])
+betas[mask==1]<-betavec
+SmoothImage(dim,betas,1.5,betas)
+thresh<-paste(3.0,'x',max(betavec),sep='')
+ofn<-paste(figpath,'vizmorph2.jpg',sep='')
+```
+
+```{r vizmorph2,results='hide'}
+plotANTsImage(img,functional=list(betas),threshold=thresh,
+  outname=ofn)
+```
+
+![](`r ofn`)
+
+## Network visualization
+see `?plotBasicNetwork`
+```{r networkfn,results='hide',warning=FALSE,echo=FALSE,message=FALSE}
+ofn<-paste(figpath,'network',sep='')
+ofnpng<-paste(ofn,'.png',sep='')
+```
+```{r network,results='hide',warning=FALSE,echo=FALSE,message=FALSE,eval=T}
+       mnit<-getANTsRData("mni")
+       mnit<-antsImageRead(mnit,3)
+       mnia<-getANTsRData("mnia")
+       mnia<-antsImageRead(mnia,3)
+       ThresholdImage(3,mnit,mnit,1,max(mnit))
+       ImageMath(3,mnit,"FillHoles",mnit)
+       cnt<-getCentroids( mnia, clustparam = 50 )
+       aalcnt<-cnt$centroids[1:90,]
+       brain<-renderSurfaceFunction( surfimg =list( mnit ) , alphasurf=0.1 ,smoothsval = 1.5 )
+       testweights<-matrix( rep( 0, 90*90 ) ,nrow=90)
+       testweights[31,37]<-1  # ant cingulate to hipp
+       testweights[31,36]<-2  # ant cingulate to post cingulate
+       testweights[11,65]<-3  # broca to angular 
+       plotBasicNetwork( centroids = aalcnt , brain , weights=testweights )
+       id<-par3d("userMatrix")
+       rid<-rotate3d( id , -pi/2, 1, 0, 0 )
+       rid2<-rotate3d( id , pi/2, 0, 0, 1 )
+       rid3<-rotate3d( id , -pi/2, 0, 0, 1 )
+       par3d(userMatrix = id ) 
+       dd<-make3ViewPNG(  rid, id, rid2,  ofn )
+       par3d(userMatrix = id ) 
+```
+![](`r ofnpng`)
+
+## The power of *ANTs* $+$ *R* $\rightarrow$<br /> <span style="color:red;">**Reproducible imaging science**</span> 
+
+![](./figures/antsgoals.png)
+
+... used in ["Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population"](http://www.ncbi.nlm.nih.gov/pubmed/24096125) and several upcoming ...
+
