@@ -164,8 +164,9 @@ documentation is important
 
 ![](figures/blindmen.jpg)
 
+... developers can be equally blind to deficiencies
 
-# Optimal Templates
+while users are equally blind to what we provide!# Optimal Templates
 
 ## "Optimal" templates (?)
 
