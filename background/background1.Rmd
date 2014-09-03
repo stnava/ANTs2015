@@ -18,7 +18,7 @@ $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.s
 
 ![](./figures/lion.png)
 
-common instict
+a pride: common way of doing things
 
 ## Definitions
 
