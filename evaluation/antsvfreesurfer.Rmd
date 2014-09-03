@@ -26,61 +26,6 @@ TOT, NKI, IXI, Oasis, ADNI ... several thousand images
 
 * ANTs methods consistently improve statistical power [eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/24687814), [syn](http://www.ncbi.nlm.nih.gov/pubmed/?term=syn+epstein+avants), [itkv4](http://www.ncbi.nlm.nih.gov/pubmed/24817849) ... also, see [Schwarz CG, et al.](http://www.ncbi.nlm.nih.gov/pubmed/24650605) re: TBSS and related work in fMRI [Miller, PNAS](http://www.ncbi.nlm.nih.gov/pubmed/15980148), [Azab, et al in Hippocampus](http://www.ncbi.nlm.nih.gov/pubmed/24167043).
 
-## ANTS vs Freesurfer
-
-<div align="center"><img height="350" src="./figures/evaluation.png" frameborder="0"></img></div>
-
-## *ANTs* vs Freesurfer 2
-![](./figures/antsvfreesurfer2.png)
-
-## *ANTs* MALF Labeling
-![](./figures/antsatroposn4malf.png)
-
-## The *ANTs* structural brain mapping pipeline
-
-![](./figures/pipeline.png)
-
-[*Large-scale evaluation of *ANTs* and FreeSurfer cortical thickness measurements*, NeuroImage 2014.*](http://www.ncbi.nlm.nih.gov/pubmed/24879923)
-
-All software components are open source and part of the Advanced Normalization Tools (ANTs) repository.
-
-## Basic components of the pipeline
-
-<div align="center"><img height="350" src="./figures/components.png" frameborder="0"></img></div>
-
-1. template building (offline)
-2. brain extraction
-3. cortical thickness estimation
-4. cortical parcellation
-
-## Template building
-
-*Tailor data to your specific cohort*
-
-<div align="center"><img height="350" src="./figures/templates.png" frameborder="0"></img></div>
-
-* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
-* Acquisition and anonymization (e.g. defacing) protocols are often different.
-
-## Template building (cont.)
-
-<div align="center"><img height="350" src="./figures/templatePriors.png" frameborder="0"></img></div>
-
-Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
-to produce auxiliary images which are used for brain extraction and brain segmentation.
-
-## Brain extraction
-
-<div align="center"><img height="380" src="./figures/brainExtraction.png" frameborder="0"></img></div>
-
-Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
-the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
-
-## Brain segmentation
-
-<div align="center"><img height="350" src="./figures/brainSegmentation.png" frameborder="0"></img></div>
-
-Randomly selected healthy individuals.  Atropos gets good performance across ages.
 
 ## Cortical thickness estimation
 

@@ -315,6 +315,43 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 
 <div align="center"><img width="3500" src="evaluation/figures/evalhistory.png" frameborder="0"></img></div>
 
+
+
+# ANTs versus Freesurfer:<br />  Quantifying *life span* brain health
+
+## "Big data" problem from public resources
+![](./figures/lifebrains.jpg)
+
+TOT, NKI, IXI, Oasis, ADNI ... several thousand images
+
+
+## ANTs versus Freesurfer:<br />  Quantifying *life span* brain health
+
+* Freesurfer is the historical standard for measuring cortical thickness
+
+* instead of using surfaces to measure cortical thickness, we use the image space *DiReCTly*
+
+* [see this section of a different talk](http://stnava.github.io/ANTsTalk/#/putting-it-all-together-can-we-quantify-life-span-brain-health-in-individuals-and-in-populations) 
+
+* and this "big data" paper: [Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements](http://www.ncbi.nlm.nih.gov/pubmed/24879923)
+
+* comparison of prediction from automated cortical thickness measurement from 4 public datasets
+
+* $>$ 1200 subjects, age 7 to over 90 years old
+
+* *hint*: ANTs thickness measurements have higher prediction accuracy relative to Freesurfer ( implying we extract more information from the data )
+
+* ANTs methods consistently improve statistical power [eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/24687814), [syn](http://www.ncbi.nlm.nih.gov/pubmed/?term=syn+epstein+avants), [itkv4](http://www.ncbi.nlm.nih.gov/pubmed/24817849) ... also, see [Schwarz CG, et al.](http://www.ncbi.nlm.nih.gov/pubmed/24650605) re: TBSS and related work in fMRI [Miller, PNAS](http://www.ncbi.nlm.nih.gov/pubmed/15980148), [Azab, et al in Hippocampus](http://www.ncbi.nlm.nih.gov/pubmed/24167043).
+
+
+## Cortical thickness estimation
+
+<div align="center"><img height="250" src="./figures/corticalThicknessEstimation.png" frameborder="0"></img></div>
+
+In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, *ANTs* diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.
+
+# New work
+
 # Longitudinal processing with ANTs
 
 ## ANTs longitudinal pipeline
