@@ -102,6 +102,7 @@ a pride: common way of doing things
 
 ![](./figures/dthompson.png)
 
+D'Arcy Thompson
 
 ## Initial scope
 
