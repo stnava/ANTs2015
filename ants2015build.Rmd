@@ -67,7 +67,7 @@ $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.s
 
 ![](./figures/lion.png)
 
-killer instict
+common instict
 
 ## Definitions
 
