@@ -342,7 +342,7 @@ mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
 DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
 mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
 qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
-<p>The minimum q-value is 0.0011 …</p>
+<p>The minimum q-value is 5.8769 × 10<sup>-6</sup> …</p>
 </section><section id="visualize-the-histograms-of-effects" class="slide level2">
 <h1>Visualize the histograms of effects</h1>
 <pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>
@@ -430,7 +430,85 @@ voxdf&lt;-<span class="kw">data.frame</span>( <span class="dt">volume=</span><sp
 <p><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=logical+circularity+tustison">logical circularity VBA</a></p>
 </section><section id="instrumentation-bias-in-the-use-and-evaluation-of-software" class="slide level2">
 <h1>Instrumentation bias in the use and evaluation of software</h1>
-<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader">Instrumentation bias in the use and evaluation of software</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766821/?report=reader">Instrumentation bias in the use and evaluation of software</a> # Background</p>
+</section><section id="image-mapping-perception-1878" class="slide level2">
+<h1>Image mapping &amp; perception: 1878</h1>
+<p><img src="./figures/galton.png" /></p>
+<ul>
+<li class="fragment"><p>Francis Galton: Can we see criminality in the face?</p></li>
+<li class="fragment"><p>(maybe he should have used ANTs?)</p></li>
+</ul>
+</section><section id="founding-developers-1" class="slide level2">
+<h1>Founding developers</h1>
+<div align="center">
+<img width="1800" src="./figures/bant2.png" frameborder="0"></img>
+</div>
+</section><section id="long-term-collaborators-1" class="slide level2">
+<h1>Long-term collaborators</h1>
+<p><img src="./figures/antscollab.jpg" /></p>
+<p><span class="math">\(+\)</span> <a href="http://neuro.debian.net/pkgs/ants.html">neurodebian</a>, <a href="http://www.slicer.org/">slicer</a>, <a href="https://github.com/BRAINSia/BRAINSTools">brainsfit</a>, <a href="http://nipy.sourceforge.net/nipype/">nipype</a>, <a href="http://www.itk.org">itk</a> and more …</p>
+</section><section id="initial-scope" class="slide level2">
+<h1>Initial scope</h1>
+<p><img src="figures/ants_initial_scope.png" /></p>
+</section><section id="general-purpose-library-for-multivariate-image-registration-segmentation-statistical-analysis-tools-1" class="slide level2">
+<h1>General purpose library for multivariate image registration, segmentation &amp; statistical analysis tools</h1>
+<ul>
+<li class="fragment"><p>170,000+ lines of C++, 6<span class="math">\(+\)</span> years of work, 15+ collaborators.</p></li>
+<li class="fragment"><p>Generic mathematical methods that are tunable for application specific domains: no-free lunch</p></li>
+<li class="fragment"><p>Deep testing on multiple platforms … osx, linux, windows.</p></li>
+<li class="fragment"><p>Several “wins” in public knock-abouts ( <a href="http://www.ncbi.nlm.nih.gov/pubmed/19195496">Klein 2009</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21632295">Murphy 2011</a>, <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/">SATA 2012 and 2013</a>, <a href="http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf">BRATS 2013</a>, others )</p></li>
+</ul>
+<pre><code>    An algorithm must use prior knowledge about a problem 
+    to do well on that problem </code></pre>
+</section></section>
+<section><section id="ants-optimizes-mathematically-well-defined-objective-functions-guided-by-prior-knowledge-1" class="titleslide slide level1"><h1><em>ANTs</em> optimizes mathematically well-defined <span style="color:red;">objective functions</span> guided by <span style="color:red;">prior knowledge</span> …</h1></section></section>
+<section><section id="including-that-of-developers-domain-experts-and-other-colleagues" class="titleslide slide level1"><h1>… including that of developers, domain experts and other colleagues …</h1></section></section>
+<section><section id="plug-your-ideas-into-our-software-to-gain-insight-into-biomedical-data" class="titleslide slide level1"><h1>plug <em>your ideas</em> into our software to gain insight into biomedical data …</h1></section></section>
+<section><section id="our-strong-mathematical-and-software-engineering-foundation-leads-to-near-limitless-opportunities-for-innovation-in-a-variety-of-application-domains" class="titleslide slide level1"><h1>our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains</h1></section><section id="ants-is-open-to-different-image-types-multiple-modalities-anatomical-regions-segmentation-priors-etc." class="slide level2">
+<h1>ANTs is <em>open</em> to different image types, multiple modalities, anatomical regions, segmentation priors, etc.</h1>
+</section><section id="ants-neuroscience-1" class="slide level2">
+<h1>ANTs &amp; Neuroscience</h1>
+<p>We need statistical image analysis <br />at several scales in modern neuroscience</p>
+<ul>
+<li class="fragment"><p>Macro: <em>in vivo</em> structural and functional MRI</p></li>
+<li class="fragment"><p>Micro: high-resolution post-mortem MRI links with in vivo MRI</p></li>
+<li class="fragment"><p>Nano: neuron reconstruction …</p></li>
+<li class="fragment"><p>Solutions that are consistent across these scales have the potential to build multi-scale feature sets or templates and provide new insights into brain structure and function</p></li>
+<li class="fragment"><p>E.g. Parcellation constraints based on histology, tractography, function …</p></li>
+<li class="fragment"><p>Statistical definitions of anatomy/pathology?</p></li>
+<li class="fragment"><p>Reinvention of these solutions within each lab … can we mitigate this?</p></li>
+<li class="fragment"><p>Reduce, reuse, recycle …</p></li>
+</ul>
+</section><section id="ants-lineage" class="slide level2">
+<h1>ANTs Lineage</h1>
+<p><img src="./figures/lineage.jpg" /></p>
+<p>References: <span class="citation" data-cites="Horn1981">Horn and Schunck (1981)</span>, <span class="citation" data-cites="Gee1993">Gee, Reivich, and Bajcsy (1993)</span>, <span class="citation" data-cites="Grenander1993">Grenander (1993)</span>, <span class="citation" data-cites="Thompson2001">Thompson et al. (2001)</span>, <span class="citation" data-cites="Miller2002">Miller, Trouve, and Younes (2002)</span>, <span class="citation" data-cites="Shen2002">Shen and Davatzikos (2002)</span>, <span class="citation" data-cites="Arnold2014">Arnold (2014)</span>, <span class="citation" data-cites="Thirion1998">Thirion (1998)</span>, <span class="citation" data-cites="Rueckert1999">Rueckert et al. (1999)</span>, <span class="citation" data-cites="Fischl2012">Fischl (2012)</span>, <span class="citation" data-cites="Ashburner2012">Ashburner (2012)</span></p>
+</section><section id="diffeomorphisms-1" class="slide level2">
+<h1>Diffeomorphisms</h1>
+<div align="center">
+<img width="1433" src="./figures/sillyputty.png" frameborder="0"></img>
+</div>
+<p>plausible physical modeling of large, invertible deformations</p>
+<p>“differentiable map with differentiable inverse”</p>
+</section><section id="fine-grained-and-flexible-maps" class="slide level2">
+<h1>Fine-grained and flexible maps</h1>
+<p><img src="./figures/highresdiffeos.jpg" /></p>
+</section><section id="ants-beyond-registration-1" class="slide level2">
+<h1>ANTs: Beyond Registration</h1>
+<p><img src="./figures/antscapabilities.jpg" /></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison">Atropos</a> segmentation, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison">N4 inhomogeneity correction</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants">Eigenanatomy</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants">SCCAN</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24852460">Prior-constrained PCA</a>, and <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/">atlas-based label fusion</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/21237273">MALF</a> (powerful expert systems for segmentation)</p>
+</section><section id="definitions-1" class="slide level2">
+<h1>Definitions</h1>
+<ul>
+<li class="fragment"><p>Registration <span class="math">\(=\)</span> estimate an “optimal” geometric mapping between image pairs or image sets (e.g. Affine)</p></li>
+<li class="fragment"><p>Similarity <span class="math">\(=\)</span> a function relating one image to another, given a transformation (e.g. mutual information)</p></li>
+<li class="fragment"><p><span style="color:grey;"> Diffeomorphisms <span class="math">\(=\)</span> differentiable map with differentiable inverse (e.g. “silly putty”, viscous fluid) </span></p></li>
+<li class="fragment"><p>Segmentation <span class="math">\(=\)</span> labeling tissue or anatomy in images, usually automated (e.g. K-means)</p></li>
+<li class="fragment"><p><span style="color:grey;"> Multivariate <span class="math">\(=\)</span> using many voxels or measurements at once (e.g. PCA, <span class="math">\(p &gt;&gt; n\)</span> ridge regression)</span></p></li>
+<li class="fragment"><p>Multiple modality <span class="math">\(=\)</span> using many modalities at once (e.g. DTI and T1 and BOLD)</p></li>
+<li class="fragment"><p>MALF: multi-atlas label fusion - using anatomical dictionaries to label new data</p></li>
+<li class="fragment"><p>Solutions to challenging statistical image processing problems usually need elements from each of the above</p></li>
+</ul>
 </section><section id="longitudinal" class="slide level2">
 <h1>longitudinal</h1>
 <p>work</p>
