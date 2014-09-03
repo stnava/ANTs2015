@@ -325,7 +325,10 @@ code > span.er { color: #c3bf9f; }
 </div>
 <p>In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, <em>ANTs</em> diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.</p>
 </section></section>
-<section><section id="new-work" class="titleslide slide level1"><h1>New work</h1></section></section>
+<section><section id="new-work" class="titleslide slide level1"><h1>New work</h1></section><section id="ripmmarc-imputation-strutural-networks-etc." class="slide level2">
+<h1>RIPMMARC: Imputation, strutural networks, etc.</h1>
+<p><img src="figures/ripmmarc_inter.png" /></p>
+</section></section>
 <section><section id="longitudinal-processing-with-ants" class="titleslide slide level1"><h1>Longitudinal processing with ANTs</h1></section><section id="ants-longitudinal-pipeline" class="slide level2">
 <h1>ANTs longitudinal pipeline</h1>
 <p><img src="longitudinal/figures/longpipe.png" /></p>
@@ -396,7 +399,7 @@ mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
 DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
 mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
 qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
-<p>The minimum q-value is 7.7792 × 10<sup>-5</sup> …</p>
+<p>The minimum q-value is 2.8129 × 10<sup>-5</sup> …</p>
 </section><section id="visualize-the-histograms-of-effects" class="slide level2">
 <h1>Visualize the histograms of effects</h1>
 <pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>
