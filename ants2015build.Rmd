@@ -98,6 +98,10 @@ a pride: common way of doing things
 
 * (maybe he should have used ANTs?)
 
+## Image mapping & biology: 1917
+
+![](./figures/dthompson.png)
+
 
 ## Initial scope
 
@@ -124,6 +128,9 @@ plausible physical modeling of large, invertible deformations
 
 ... to correct a misconception about diffeomorphisms ...
 
+## Diffeomorphisms: image parameterization in a metric space
+
+![](./figures/shape_appearance.png)
 
 ## General purpose library for multivariate image registration, segmentation & statistical analysis tools
 
