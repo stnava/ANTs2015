@@ -70,6 +70,8 @@ plausible physical modeling of large, invertible deformations
 ## Fine-grained and flexible maps
 ![](./figures/highresdiffeos.jpg)
 
+... to correct a misconception about diffeomorphisms ...
+
 ## ANTs: Beyond Registration
 
 ![](./figures/antscapabilities.jpg)
