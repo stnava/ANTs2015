@@ -154,7 +154,6 @@ application specific domains:  no-free lunch
 
 [Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation, [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison), [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants), [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants), [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460), and [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) (powerful expert systems for segmentation)
 
-```
 
 ## On documentation
 
