@@ -309,7 +309,7 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 
 ## 
 
-<div align="center"><img width="2000" src="evaluation/figures/evalhistory.png" frameborder="0"></img></div>
+<div align="center"><img width="2500" src="evaluation/figures/evalhistory.png" frameborder="0"></img></div>
 
 # Longitudinal processing with ANTs
 
