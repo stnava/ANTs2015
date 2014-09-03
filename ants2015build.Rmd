@@ -350,6 +350,7 @@ plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/article
 
 Only change to the command call is an additional '-c WM[7]' which means "combine
 the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation."
+# Wrap-up & Conclusions
 
 ## Questions driving *ANTs* ($+$ Refs.1)
 
