@@ -255,9 +255,20 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 ![](templates/figures/templates_ants_colleagues.png)
 
 
-## longitudinal
+## ANTs longitudinal pipeline
 
-work
+![](figures/longpipe.png)
+
+see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40) 
+
+and [unbiased analysis paper](http://www.ncbi.nlm.nih.gov/pubmed/20005963)
+
+plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3581852/)
+
+## ANTs longitudinal pipeline
+
+![](figures/longpipeex.png)
+
 
 # Cortical thickness with lesions
 
