@@ -138,7 +138,7 @@ application specific domains:  no-free lunch
 ```
     An algorithm must use prior knowledge about a problem 
     to do well on that problem 
-
+```
 
 ## ANTs: Beyond Registration
 
