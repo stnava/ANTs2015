@@ -11,6 +11,8 @@ What mathematical encoding of language reflects both brain activity and
 
 ![](figures/ripmmarc_inter.png)
 
+## Big image registration
+
 # Longitudinal processing with ANTs
 
 ## ANTs longitudinal pipeline
