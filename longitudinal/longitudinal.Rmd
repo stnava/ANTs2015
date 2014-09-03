@@ -2,7 +2,7 @@
 
 ## ANTs longitudinal pipeline
 
-![](figures/longpipe.png)
+![](longitudinal/figures/longpipe.png)
 
 see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40) 
 
@@ -12,5 +12,5 @@ plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/article
 
 ## ANTs longitudinal pipeline
 
-![](figures/longpipeex.png)
+![](longitudinal/figures/longpipeex.png)
 
