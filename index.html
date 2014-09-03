@@ -55,6 +55,26 @@
     <style type="text/css">code{white-space: pre;}</style>
 
 
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+</style>
 
 <link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/theme/night.css" id="theme">
 
@@ -331,6 +351,71 @@
 <h1>antsCorticalThickness.sh using lesion prior</h1>
 <p><img src="lesions/figures/lesionSegmentation.png" /></p>
 <p>Only change to the command call is an additional ‘-c WM[7]’ which means “combine the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation.”</p>
+</section></section>
+<section><section id="registration-statistics-frontiers-and-innovation" class="titleslide slide level1"><h1>Registration &amp; statistics:<br /> Frontiers and innovation</h1></section><section id="multivariate-statistical-fields-arise-from-fused-modalities" class="slide level2">
+<h1>multivariate statistical fields arise from fused modalities</h1>
+<p><img src="figures/statisticalfields.png" alt="images at measurement fields" /></p>
+<p><em>Many opportunities for statistical advancements</em></p>
+</section><section id="itkantsr-antsr" class="slide level2">
+<h1>ITK+ANTs+R = <span style="color:red;"><em>ANTsR</em></span></h1>
+</section><section id="agnostic-statistics" class="slide level2">
+<h1>Agnostic statistics</h1>
+<p><img src="figures/antsrex.jpg" /></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3961542/">McMillan et al.</a></p>
+</section><section id="a-quick-antsr-example" class="slide level2">
+<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
+<p>This is an executable <em>ANTsR</em> code block - <em>N</em>-dimensional statistics to go with our <em>N</em>-dimensional image processing software!</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ANTsR)
+dim&lt;-<span class="dv">2</span>
+filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r16&#39;</span>)
+img&lt;-<span class="kw">antsImageRead</span>( filename , dim )
+filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r64&#39;</span>)
+img2&lt;-<span class="kw">antsImageRead</span>( filename , dim )
+mask&lt;-<span class="kw">getMask</span>(img,<span class="dv">50</span>,<span class="kw">max</span>(img),T)
+mask2&lt;-<span class="kw">getMask</span>(img,<span class="dv">150</span>,<span class="kw">max</span>(img),T)
+nvox&lt;-<span class="kw">sum</span>( mask ==<span class="st"> </span><span class="dv">1</span> )
+nvox2&lt;-<span class="kw">sum</span>( mask2 ==<span class="st"> </span><span class="dv">1</span> )</code></pre>
+<p>The brain has 17395 voxels …</p>
+</section><section id="a-quick-antsr-example-1" class="slide level2">
+<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
+<p>Simulate a population morphometry study - a “VBM” …</p>
+<pre class="sourceCode r"><code class="sourceCode r">simnum&lt;-<span class="dv">10</span>
+imglist&lt;-<span class="kw">list</span>()
+imglist2&lt;-<span class="kw">list</span>()
+for ( i in <span class="dv">1</span>:simnum ) {
+  img1sim&lt;-<span class="kw">antsImageClone</span>(img)
+  img1sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.5</span>)
+  img1sim[ mask2==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox2,<span class="dt">mean=</span><span class="fl">2.0</span>)
+  img2sim&lt;-<span class="kw">antsImageClone</span>(img2)
+  img2sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.20</span>)
+  imglist&lt;-<span class="kw">lappend</span>(imglist,img1sim)
+  imglist2&lt;-<span class="kw">lappend</span>(imglist2,img2sim)
+}
+imglist&lt;-<span class="kw">lappend</span>( imglist, imglist2 )
+mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
+DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
+mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
+qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
+<p>The minimum q-value is 2.1307 × 10<sup>-4</sup> …</p>
+</section><section id="visualize-the-histograms-of-effects" class="slide level2">
+<h1>Visualize the histograms of effects</h1>
+<pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>
+voxdf&lt;-<span class="kw">data.frame</span>( <span class="dt">volume=</span><span class="kw">c</span>( <span class="kw">as.numeric</span>( mat[,whichvox] ) ), <span class="dt">DX=</span>DX )
+<span class="kw">ggplot</span>(voxdf, <span class="kw">aes</span>(volume, <span class="dt">fill =</span> DX)) +<span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.2</span>)</code></pre>
+<p><img src="figures/vizmorph.png" title="plot of chunk vizmorph" alt="plot of chunk vizmorph" width="864" /></p>
+</section><section id="visualize-the-anatomical-distribution" class="slide level2">
+<h1>Visualize the anatomical distribution</h1>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotANTsImage</span>(img,<span class="dt">functional=</span><span class="kw">list</span>(betas),<span class="dt">threshold=</span>thresh,
+  <span class="dt">outname=</span>ofn)</code></pre>
+<p><img src="figures/vizmorph2.jpg" /></p>
+</section><section id="network-visualization" class="slide level2">
+<h1>Network visualization</h1>
+<p>see <code>?plotBasicNetwork</code></p>
+<p><img src="figures/network.png" /></p>
+</section><section id="the-power-of-ants-r-rightarrow-reproducible-imaging-science" class="slide level2">
+<h1>The power of <em>ANTs</em> <span class="math">\(+\)</span> <em>R</em> <span class="math">\(\rightarrow\)</span><br /> <span style="color:red;"><strong>Reproducible imaging science</strong></span></h1>
+<p><img src="figures/antsgoals.png" /></p>
+<p>… used in <a href="http://www.ncbi.nlm.nih.gov/pubmed/24096125">“Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population”</a> and several upcoming …</p>
 </section></section>
 <section><section id="wrap-up-conclusions" class="titleslide slide level1"><h1>Wrap-up &amp; Conclusions</h1></section><section id="questions-driving-ants-refs.1" class="slide level2">
 <h1>Questions driving <em>ANTs</em> (<span class="math">\(+\)</span> Refs.1)</h1>
