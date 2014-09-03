@@ -254,6 +254,7 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 
 ![](templates/figures/templates_ants_colleagues.png)
 
+# Longitudinal processing with ANTs
 
 ## ANTs longitudinal pipeline
 
