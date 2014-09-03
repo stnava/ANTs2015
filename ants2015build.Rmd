@@ -311,7 +311,6 @@ see [ANTs site](stnava.github.io/ANTs) and [ANTs Documentation page](stnava.gith
 
 ![](evaluation/figures/evalhistory.png)
 
-
 # Longitudinal processing with ANTs
 
 ## ANTs longitudinal pipeline
