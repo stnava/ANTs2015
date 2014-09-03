@@ -72,54 +72,6 @@ plausible physical modeling of large, invertible deformations
 
 ... to correct a misconception about diffeomorphisms ...
 
-## ANTs: Beyond Registration
-
-![](./figures/antscapabilities.jpg)
-
-[Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation, [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison), [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants), [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants), [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460), and [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) (powerful expert systems for segmentation)
-
-
-## ANTs & Neuroscience
-
-We need statistical image analysis <br />at several scales in modern neuroscience
-
-* Macro: *in vivo* structural and functional MRI
-
-* Micro:  high-resolution post-mortem MRI links with in vivo MRI
-
-* Nano: neuron reconstruction ...
-
-* Solutions that are consistent across these scales have the potential
-to build multi-scale feature sets or templates and provide new
-insights into brain structure and function
-
-* E.g. Parcellation constraints based on histology, tractography, function ...
-
-* Statistical definitions of anatomy/pathology?  
-
-* Reinvention of these solutions within each lab ... can we mitigate this?
-
-* Reduce, reuse, recycle ...
-
-## Financial impact
-
-* The **high error rate** in software makes testing for quality assurance critically important. 
-
-* Bugs exist **Everywhere**: so don't freak out if we admit we have bugs:  we're just being honest ( and not all devs are )
-
-* Virtually every business in the United States now depends on software for development, production, distribution, and after-sales support of products and services.
-
-* A 2002 NIST study estimated the direct costs to the software supply chain due to failure to identify (**successfully test for**) "bugs" 
-
-* We are better at this than most ... **not perfect**
-
-* The estimate of direct costs compiled from industry survey data for the U.S. economy was **\$60 billion per year**
-
-* ... this estimate did not include costs to end users such as lost business (for example, the cost of shutting down the New York Mercantile Exchange in 1998 due to a software failure).
-
-## ANTs: Saving society \$\$\$
-
-starting with neuroscience ...
 
 ## General purpose library for multivariate image registration, segmentation & statistical analysis tools
 
@@ -135,6 +87,14 @@ application specific domains:  no-free lunch
 ```
     An algorithm must use prior knowledge about a problem 
     to do well on that problem 
+
+
+## ANTs: Beyond Registration
+
+![](./figures/antscapabilities.jpg)
+
+[Atropos](http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison) segmentation, [N4 inhomogeneity correction](http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison), [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants), [SCCAN](http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants), [Prior-constrained PCA](http://www.ncbi.nlm.nih.gov/pubmed/24852460), and [atlas-based label fusion](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/) and [MALF](http://www.ncbi.nlm.nih.gov/pubmed/21237273) (powerful expert systems for segmentation)
+
 ```
 
 ## On documentation
@@ -152,3 +112,5 @@ documentation is important
 ## On documentation
 
 ![](figures/blindmen.jpg)
+
+
