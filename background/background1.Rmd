@@ -137,15 +137,18 @@ application specific domains:  no-free lunch
     to do well on that problem 
 ```
 
-## Words of warning
+## On documentation
 
 ![](figures/handsaw.jpg)
 
 simple and nearly self-explanatory
 
-## Words of warning
+## On documentation
 
 ![](figures/Chainsaw.jpg)
 
 documentation is important
 
+## On documentation
+
+![](figures/blindmen.jpg)
