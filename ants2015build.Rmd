@@ -1,5 +1,5 @@
 ---
-title: <span style="color:red;">How to build a house with<br />Advanced Normalization Tools (*ANTs*)</span>
+title: <span style="color:red;">Build a house with<br />Advanced Normalization Tools (*ANTs*)</span>
 author: Brian B. Avants (<span style="color:blue;">PENN</span>) and <br />Nicholas J. Tustison (<span style="color:orange;">UVA</span>)
 bibliography: REFERENCES.bib
 logo:    logo.jpg
