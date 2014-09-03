@@ -34,3 +34,4 @@ plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/article
 ## ANTs longitudinal pipeline
 
 ![](longitudinal/figures/babystudy.png)
+
