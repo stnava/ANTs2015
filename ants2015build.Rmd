@@ -86,7 +86,7 @@ In contrast to FreeSurfer which warps coupled surface meshes to segment the gray
 
 ## RKRNS
 
-[link](stnava.github.io/RKRNS)
+[link](http://stnava.github.io/RKRNS/)
 
 What mathematical encoding of language reflects both brain activity and 
 "our" understanding of semantics?
