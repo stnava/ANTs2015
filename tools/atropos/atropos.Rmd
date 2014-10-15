@@ -1,0 +1,73 @@
+
+
+# Atropos
+
+## "20+ years of development.  <br>_Show me the code!_"
+
+<p align = "right"><small>Brian Avants, MICCAI workshop</small></p>
+
+##
+
+![](./tools/atropos/figures/atropos.png)
+
+<!-- regular html comment
+
+<div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
+
+-->
+
+## Algorithmic workflow<br>(Atropos + N4)
+
+![](./tools/atropos/figures/atroposFlow.png)
+
+
+## Sample results from public data
+
+![](./tools/atropos/figures/sampleAtroposVisualResults.png)
+
+## Command line help
+
+<font size="5", color="lightgrey">
+```
+$ Atropos -h
+
+COMMAND:
+     Atropos
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+     -a, --intensity-image [intensityImage,<adaptiveSmoothingWeight>]
+     -b, --bspline [<numberOfLevels=6>,<initialMeshResolution=1x1x...>,<splineOrder=3>]
+     -i, --initialization Random[numberOfClasses]
+                          Otsu[numberOfTissueClasses]
+                          KMeans[numberOfTissueClasses,<clusterCenters(in ascending order and for first intensity image only)>]
+                          PriorProbabilityImages[numberOfTissueClasses,fileSeriesFormat(index=1 to numberOfClasses) or vectorImage,priorWeighting,<priorProbabilityThreshold>]
+                          PriorLabelImage[numberOfTissueClasses,labelImage,priorWeighting]
+     -s, --partial-volume-label-set label1xlabel2xlabel3
+     --use-partial-volume-likelihoods 1/(0)
+                                      true/(false)
+     -p, --posterior-formulation Socrates[<useMixtureModelProportions=1>,<initialAnnealingTemperature=1>,<annealingRate=1>,<minimumTemperature=0.1>]
+                                 Plato[<useMixtureModelProportions=1>,<initialAnnealingTemperature=1>,<annealingRate=1>,<minimumTemperature=0.1>]
+                                 Aristotle[<useMixtureModelProportions=1>,<initialAnnealingTemperature=1>,<annealingRate=1>,<minimumTemperature=0.1>]
+                                 Sigmoid[<useMixtureModelProportions=1>,<initialAnnealingTemperature=1>,<annealingRate=1>,<minimumTemperature=0.1>]]
+     -x, --mask-image maskImageFilename
+     -c, --convergence [<numberOfIterations=5>,<convergenceThreshold=0.001>]
+     -k, --likelihood-model Gaussian
+                            HistogramParzenWindows[<sigma=1.0>,<numberOfBins=32>]
+                            ManifoldParzenWindows[<pointSetSigma=1.0>,<evaluationKNeighborhood=50>,<CovarianceKNeighborhood=0>,<kernelSigma=0>]
+                            JointShapeAndOrientationProbability[<shapeSigma=1.0>,<numberOfShapeBins=64>, <orientationSigma=1.0>, <numberOfOrientationBins=32>]
+                            LogEuclideanGaussian
+     -m, --mrf [<smoothingFactor=0.3>,<radius=1x1x...>]
+               [<mrfCoefficientImage>,<radius=1x1x...>]
+     -g, --icm [<useAsynchronousUpdate=1>,<maximumNumberOfICMIterations=1>,<icmCodeImage=''>]
+     -r, --use-random-seed 0/(1)
+     -o, --output [classifiedImage,<posteriorProbabilityImageFileNameFormat>]
+     -u, --minimize-memory-usage (0)/1
+     -w, --winsorize-outliers BoxPlot[<lowerPercentile=0.25>,<upperPercentile=0.75>,<whiskerLength=1.5>]
+                              GrubbsRosner[<significanceLevel=0.05>,<winsorizingLevel=0.10>]
+     -e, --use-euclidean-distance (0)/1
+     -l, --label-propagation whichLabel[lambda=0.0,<boundaryProbability=1.0>]
+     -h
+     --help
+```
+</font>

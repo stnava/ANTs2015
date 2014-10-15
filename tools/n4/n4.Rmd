@@ -1,0 +1,78 @@
+
+# N4
+
+## Nonparametric nonuniform intensity normalization (N3)
+
+* Developed at the Montreal Neurological Institute (John Sled, 1998)
+
+* Part of the standard preprocessing protocol in large scale projects such as ADNI
+
+* The traditional de facto standard in MRI bias correction
+    + good performance
+    + *public availability*
+
+* Public availability --- set of perl scripts coordinating various C++ programs
+
+* "*Let's incorporate N3 into ANTs!*"
+
+## N3 adoption issues
+
+![](./tools/n4/figures/whyN4.png)
+
+<!-- regular html comment
+
+<div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
+
+-->
+
+"*So let's re-implement N3 in ITK for ANTs users.*"
+
+## N3 -> N4<sup>*</sup>
+
+<p align = "middle"><small><sup>*</sup><u>N</u>ick's N3</small></p>
+
+* comparative [evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20378467)
+
+* smaller spline distances (useful for higher magnet strengths)
+
+* multiresolution
+
+* weighted regional mask (used in [`antsAtroposN4.sh`](https://github.com/stnava/ANTs/blob/master/Scripts/antsAtroposN4.sh))
+
+* faster execution times
+
+* less susceptible to noise
+
+* _publicly available_
+
+
+## N4 example
+
+![](./tools/n4/figures/KKI2009_MPRAGE_slice150.png)
+
+## Command line help
+
+<font size="5", color="lightgrey">
+```
+$ N4BiasFieldCorrection -h
+
+COMMAND:
+     N4BiasFieldCorrection
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+     -i, --input-image inputImageFilename
+     -x, --mask-image maskImageFilename
+     -r, --rescale-intensities 0/(1)
+     -w, --weight-image weightImageFilename
+     -s, --shrink-factor 1/2/3/4/...
+     -c, --convergence [<numberOfIterations=50x50x50x50>,<convergenceThreshold=0.0>]
+     -b, --bspline-fitting [splineDistance,<splineOrder=3>]
+                           [initialMeshResolution,<splineOrder=3>]
+     -t, --histogram-sharpening [<FWHM=0.15>,<wienerNoise=0.01>,<numberOfHistogramBins=200>]
+     -o, --output correctedImage
+                  [correctedImage,<biasField>]
+     -h
+     --help
+```
+</font>
