@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Brian B. Avants (PENN) and Nicholas J. Tustison (UVA)" />
-  <title>Building a house withAdvanced Normalization Tools (ANTs)</title>
+  <meta name="author" content="" />
+  <title>Neuroimaging withANTs</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -55,26 +55,6 @@
     <style type="text/css">code{white-space: pre;}</style>
 
 
-<style type="text/css">
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
-td.sourceCode { padding-left: 5px; }
-pre, code { color: #cccccc; background-color: #303030; }
-code > span.kw { color: #f0dfaf; }
-code > span.dt { color: #dfdfbf; }
-code > span.dv { color: #dcdccc; }
-code > span.bn { color: #dca3a3; }
-code > span.fl { color: #c0bed1; }
-code > span.ch { color: #dca3a3; }
-code > span.st { color: #cc9393; }
-code > span.co { color: #7f9f7f; }
-code > span.ot { color: #efef8f; }
-code > span.al { color: #ffcfaf; }
-code > span.fu { color: #efef8f; }
-code > span.er { color: #c3bf9f; }
-</style>
 
 <link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/theme/night.css" id="theme">
 
@@ -84,19 +64,8 @@ code > span.er { color: #c3bf9f; }
 }
 </style>
 
-    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-    <script>
-      if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'index_files/reveal.js-2.6.1/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-      }
-    </script>
-    <!--[if lt IE 9]>
-    <script src="index_files/reveal.js-2.6.1/lib/js/html5shiv.js"></script>
-    <![endif]-->
+<link rel="stylesheet" media="print" href="index_files/reveal.js-2.6.1/css/print/pdf.css" />
+
 
 </head>
 <body>
@@ -104,71 +73,197 @@ code > span.er { color: #c3bf9f; }
     <div class="slides">
 
 <section>
-    <h1 class="title"><span style="color:red;">Building a house with<br />Advanced Normalization Tools (<em>ANTs</em>)</span></h1>
-    <h2 class="author">Brian B. Avants (<span style="color:blue;">PENN</span>) and <br />Nicholas J. Tustison (<span style="color:orange;">UVA</span>)</h2>
+    <h1 class="title"><span style="color:red;">Neuroimaging with<br>ANTs</span></h1>
     <h3 class="date"></h3>
 </section>
 
-<section id="section" class="slide level2">
+<section><section id="background" class="titleslide slide level1"><h1>Background</h1></section><section id="section" class="slide level2">
 <h1></h1>
-<div align="center">
-<img src="figures/brian_and_edie_sedgwick.jpg" frameborder="0"></img>
-</div>
-<p>This talk is online at <a href="http://stnava.github.io/ANTs2015/"><a href="http://stnava.github.io/ANTs2015/" class="uri">http://stnava.github.io/ANTs2015/</a></a> with colored <a href="http://stnava.github.io/ANTs2015/">links</a> meant to be clicked for more information.</p>
-</section>
-<section><section id="ants-versus-freesurfer-quantifying-life-span-brain-health" class="titleslide slide level1"><h1>ANTs versus Freesurfer:<br /> Quantifying <em>life span</em> brain health</h1></section><section id="big-data-problem-from-public-resources" class="slide level2">
-<h1>“Big data” problem from public resources</h1>
-<p><img src="figures/lifebrains.jpg" /></p>
-<p>TOT, NKI, IXI, Oasis, ADNI … several thousand images</p>
-</section><section id="ants-versus-freesurfer-quantifying-life-span-brain-health-1" class="slide level2">
-<h1>ANTs versus Freesurfer:<br /> Quantifying <em>life span</em> brain health</h1>
+<p><img src="figures/brian_and_nick.png" /></p>
+</section><section id="ants-development-philosophyassimilate-the-optimal-components-of-other-approaches" class="slide level2">
+<h1>ANTs development philosophy:<br><small>Assimilate the optimal components of other approaches</small></h1>
+<p><img src="figures/BorgFirstContact.jpg" /></p>
+<p><em>“We are the Borg. Your biological and technological distinctiveness will be added to our own. Resistance is futile.”</em></p>
+</section></section>
+<section><section id="competitions" class="titleslide slide level1"><h1>Competitions</h1></section><section id="section-1" class="slide level2">
+<h1></h1>
+<p><img src="evaluation/figures/evalhistory.png" /></p>
+</section><section id="brats-2013-brain-tumor-segmentation" class="slide level2">
+<h1><span style="color:green;">BRATS 2013</span> <small>brain tumor segmentation</small></h1>
+<p><img src="competitions/figures/brats2013results.png" /></p>
+<p><em>“Optimal symmetric multimodal templates and concatenated random forests for supervised brain tumor segmentation (simplified) with ANTsR”</em></p>
+</section><section id="stacom-2014-cardiac-motion-estimation" class="slide level2">
+<h1><span style="color:green;">STACOM 2014</span> <small>cardiac motion estimation</small></h1>
+<p><img src="competitions/figures/cardiacBSplineSyN.png" /></p>
+<p>A great opportunity to showcase a <a href="http://www.ncbi.nlm.nih.gov/pubmed/24409140">new SyN variant</a></p>
+</section></section>
+<section><section id="ants-brain-morphologylarge-scale-evaluation-of-ants-and-freesurfer-cortical-thickness-measurements" class="titleslide slide level1"><h1>ANTs brain morphology<br><br><a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923"><small>“<em>Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements</em>”</small></a></h1></section><section id="cortical-thickness-studies" class="slide level2">
+<h1>Cortical thickness studies:</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column1</th>
+<th style="text-align: left;">Column2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Huntington’s disease</td>
+<td style="text-align: left;">obsessive-compulsive disorder</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">schizophrenia</td>
+<td style="text-align: left;">ADHD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bipolar disorder</td>
+<td style="text-align: left;">obesity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alzheimer’s disease</td>
+<td style="text-align: left;">heritable depression</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">frontotemporal dementia</td>
+<td style="text-align: left;">elderly depression</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parkinson’s disease</td>
+<td style="text-align: left;">age</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Williams syndrome</td>
+<td style="text-align: left;">gender</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">multiple sclerosis</td>
+<td style="text-align: left;">untreated male-to-female transsexuality</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">autism</td>
+<td style="text-align: left;">handedness</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">migraines</td>
+<td style="text-align: left;">intelligence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chronic smoking</td>
+<td style="text-align: left;">athletic ability</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">alcoholism</td>
+<td style="text-align: left;">meditative practices</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cocaine addiction</td>
+<td style="text-align: left;">musical ability</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tourette syndrome in children</td>
+<td style="text-align: left;">tendency toward criminality</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">scoliosis in female adolescents</td>
+<td style="text-align: left;">childhood sexual abuse in female adolescents</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">early-onset blindness</td>
+<td style="text-align: left;">Tetris-playing ability in female adolescents</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chronic pancreatitis</td>
+<td style="text-align: left;">traumatic brain injury</td>
+</tr>
+</tbody>
+</table>
+</section><section id="ants-related-background" class="slide level2">
+<h1>ANTs-related background</h1>
 <ul>
-<li class="fragment"><p>Freesurfer is the historical standard for measuring cortical thickness</p></li>
-<li class="fragment"><p>instead of using surfaces to measure cortical thickness, we use the image space <em>DiReCTly</em></p></li>
-<li class="fragment"><p><a href="http://stnava.github.io/ANTsTalk/#/putting-it-all-together-can-we-quantify-life-span-brain-health-in-individuals-and-in-populations">see this section of a different talk</a></p></li>
-<li class="fragment"><p>and this “big data” paper: <a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923">Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements</a></p></li>
-<li class="fragment"><p>comparison of prediction from automated cortical thickness measurement from 4 public datasets</p></li>
-<li class="fragment"><p><span class="math">\(&gt;\)</span> 1200 subjects, age 7 to over 90 years old</p></li>
-<li class="fragment"><p><em>hint</em>: ANTs thickness measurements have higher prediction accuracy relative to Freesurfer ( implying we extract more information from the data )</p></li>
-<li class="fragment"><p>ANTs methods consistently improve statistical power <a href="http://www.ncbi.nlm.nih.gov/pubmed/24687814">eigenanatomy</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=syn+epstein+avants">syn</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24817849">itkv4</a> … also, see <a href="http://www.ncbi.nlm.nih.gov/pubmed/24650605">Schwarz CG, et al.</a> re: TBSS and related work in fMRI <a href="http://www.ncbi.nlm.nih.gov/pubmed/15980148">Miller, PNAS</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/24167043">Azab, et al in Hippocampus</a>.</p></li>
+<li class="fragment">Sandy, Brian, and <span style="color:red;">DiReCT</span></li>
+<li class="fragment">used other tools such as FMRIB’s Automated Segmentation Tool (FAST)</li>
+<li class="fragment"><code>KellySlater.cxx</code></li>
+<li class="fragment">scripts “adequate for Penn data”</li>
+<li class="fragment"><code>KellyKapowski.cxx</code> and <code>antsCorticalThickness.sh</code></li>
+<li class="fragment"><em>“Let’s evaluate on open data.”</em></li>
+<li class="fragment">and, eventually, <em>“Let’s compare with FreeSurfer.”</em></li>
 </ul>
+</section><section id="the-ants-structural-brain-mapping-workflow" class="slide level2">
+<h1>The ANTs structural brain mapping workflow</h1>
+<p><img src="evaluation/figures/pipeline.png" /></p>
+</section><section id="basic-components-of-the-pipeline" class="slide level2">
+<h1>Basic components of the pipeline</h1>
+<div align="center">
+<img height="350" src="./evaluation/figures/components.png" frameborder="0"></img>
+</div>
+<ol type="1">
+<li class="fragment">template building (offline)</li>
+<li class="fragment">brain extraction</li>
+<li class="fragment">cortical thickness estimation</li>
+<li class="fragment">cortical parcellation</li>
+</ol>
+</section><section id="template-building" class="slide level2">
+<h1>Template building</h1>
+<p><em>Tailor data to your specific cohort</em></p>
+<div align="center">
+<img height="350" src="./evaluation/figures/templates.png" frameborder="0"></img>
+</div>
+<ul>
+<li class="fragment">Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.</li>
+<li class="fragment">Acquisition and anonymization (e.g. defacing) protocols are often different.</li>
+</ul>
+</section><section id="template-building-cont." class="slide level2">
+<h1>Template building (cont.)</h1>
+<div align="center">
+<img height="350" src="./evaluation/figures/templatePriors.png" frameborder="0"></img>
+</div>
+<p>Each template is <a href="https://github.com/ntustison/antsCookTemplatePriorsExample">processed</a> to produce auxiliary images which are used for brain extraction and brain segmentation.</p>
+</section><section id="brain-extraction-comparisonants-vs.freesurfer" class="slide level2">
+<h1>Brain extraction comparison<br>ANTs vs. FreeSurfer</h1>
+<div align="center">
+<img height="380" src="./evaluation/figures/brainExtraction.png" frameborder="0"></img>
+</div>
+<p>Comparison with de facto standard FreeSurfer package. Note the difference in separation of the gray matter from the surrounding CSF. (0 failures out of 1205 scans)</p>
+</section><section id="brain-segmentation" class="slide level2">
+<h1>Brain segmentation</h1>
+<div align="center">
+<img height="350" src="./evaluation/figures/brainSegmentation.png" frameborder="0"></img>
+</div>
+<p>Randomly selected healthy individuals. Atropos gets good performance across ages.</p>
 </section><section id="cortical-thickness-estimation" class="slide level2">
 <h1>Cortical thickness estimation</h1>
 <div align="center">
-<img height="250" src="./figures/corticalThicknessEstimation.png" frameborder="0"></img>
+<img height="250" src="./evaluation/figures/corticalThicknessEstimation.png" frameborder="0"></img>
 </div>
-<p>In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, <em>ANTs</em> diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.</p>
+<p>In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, ANTs diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.</p>
+</section><section id="but-without-ground-truth-how-does-one-evaluate-the-pipeline" class="slide level2">
+<h1><em>But without ground truth, how does one evaluate the pipeline?</em></h1>
+<ul>
+<li class="fragment">Use age and gender (demographic information) in training/prediction paradigm</li>
+<li class="fragment">Public data sets (IXI, NKI, Oasis, MMRR)</li>
+<li class="fragment"><span class="math">\(&gt;\)</span> 1200 subjects, age 7 to over 90 years old</li>
+</ul>
+</section><section id="prediction-from-cortical-thickness-datagender-and-age" class="slide level2">
+<h1>Prediction from cortical thickness data:<br>gender and age</h1>
+<div align="center">
+<img height="350" src="./evaluation/figures/evaluation.png" frameborder="0"></img>
+</div>
+</section><section id="regional-importance-comparison" class="slide level2">
+<h1>Regional importance comparison</h1>
+<p><span class="math">\(AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)\)</span></p>
+<div align="center">
+<img height="500" src="./evaluation/figures/antsvfreesurfer_importance.png" frameborder="0"></img>
+</div>
+<p>ANTs (left) vs. FreeSurfer (right)</p>
+</section><section id="regional-importance-comparison-cont." class="slide level2">
+<h1>Regional importance comparison (cont.)</h1>
+<div align="center">
+<img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img>
+</div>
+</section><section id="all-software-components-are-open-source-and-part-of-the-ants-repository." class="slide level2">
+<h1>All software components are open source and part of the ANTs repository.</h1>
 </section></section>
-<section><section id="new-work" class="titleslide slide level1"><h1>New work</h1></section><section id="rkrns" class="slide level2">
-<h1>RKRNS</h1>
-<p><a href="http://stnava.github.io/RKRNS/">link</a></p>
-<p>What mathematical encoding of language reflects both brain activity and “our” understanding of semantics?</p>
-</section><section id="ripmarc-imputation-strutural-networks-etc." class="slide level2">
-<h1>RIPMARC: Imputation, strutural networks, etc.</h1>
-<p><img src="figures/ripmmarc_inter.png" /></p>
-<p>MICCAI 2014, Neuroimage 2015</p>
-</section><section id="big-image-registration" class="slide level2">
-<h1>Big image registration</h1>
-</section></section>
-<section><section id="longitudinal-processing-with-ants" class="titleslide slide level1"><h1>Longitudinal processing with ANTs</h1></section><section id="ants-longitudinal-pipeline" class="slide level2">
-<h1>ANTs longitudinal pipeline</h1>
-<p><img src="longitudinal/figures/longpipe.png" /></p>
-<p>see <a href="http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40">link to paper</a></p>
-<p>and <a href="http://www.ncbi.nlm.nih.gov/pubmed/20005963">unbiased analysis paper</a></p>
-<p>plus <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3581852/">longitudinal recommendation paper</a></p>
-</section><section id="ants-longitudinal-pipeline-1" class="slide level2">
-<h1>ANTs longitudinal pipeline</h1>
-<p><img src="longitudinal/figures/longpipeex.png" /></p>
-</section><section id="ants-longitudinal-pipeline-tbi" class="slide level2">
-<h1>ANTs longitudinal pipeline: TBI</h1>
-<p><img src="longitudinal/figures/long_with_lesions_seg.png" /></p>
-</section><section id="ants-longitudinal-pipeline-tbi-1" class="slide level2">
-<h1>ANTs longitudinal pipeline: TBI</h1>
-<p><img src="longitudinal/figures/long_with_lesions_thick.png" /></p>
-</section><section id="ants-longitudinal-pipeline-2" class="slide level2">
-<h1>ANTs longitudinal pipeline</h1>
-<p><img src="longitudinal/figures/babystudy.png" /></p>
-</section></section>
+<section><section id="cortical-thickness-extensions" class="titleslide slide level1"><h1>Cortical thickness extensions</h1></section></section>
 <section><section id="cortical-thickness-with-lesions" class="titleslide slide level1"><h1>Cortical thickness with lesions</h1></section><section id="antscorticalthickness.sh-is-adaptable" class="slide level2">
 <h1>antsCorticalThickness.sh is adaptable!</h1>
 <ol type="1">
@@ -184,177 +279,58 @@ code > span.er { color: #c3bf9f; }
 <h1>antsCorticalThickness.sh using lesion prior</h1>
 <p><img src="lesions/figures/lesionSegmentation.png" /></p>
 <p>Only change to the command call is an additional ‘-c WM[7]’ which means “combine the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation.”</p>
+<!--
+# New work
+
+## RKRNS
+
+[link](http://stnava.github.io/RKRNS/)
+
+What mathematical encoding of language reflects both brain activity and
+"our" understanding of semantics?
+
+## RIPMARC: Imputation, strutural networks, etc.
+
+![](figures/ripmmarc_inter.png)
+
+MICCAI 2014, Neuroimage 2015
+
+## Big image registration
+-->
+
 </section></section>
-<section><section id="registration-statistics-frontiers-and-innovation" class="titleslide slide level1"><h1>Registration &amp; statistics:<br /> Frontiers and innovation</h1></section><section id="multivariate-statistical-fields-arise-from-fused-modalities" class="slide level2">
-<h1>multivariate statistical fields arise from fused modalities</h1>
-<p><img src="figures/statisticalfields.png" alt="images at measurement fields" /></p>
-<p><em>Many opportunities for statistical advancements</em></p>
-</section><section id="itkantsr-antsr" class="slide level2">
-<h1>ITK+ANTs+R = <span style="color:red;"><em>ANTsR</em></span></h1>
-</section><section id="agnostic-statistics" class="slide level2">
-<h1>Agnostic statistics</h1>
-<p><img src="figures/antsrex.jpg" /></p>
-<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3961542/">McMillan et al.</a></p>
-</section><section id="a-quick-antsr-example" class="slide level2">
-<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
-<p>This is an executable <em>ANTsR</em> code block - <em>N</em>-dimensional statistics to go with our <em>N</em>-dimensional image processing software!</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ANTsR)
-dim&lt;-<span class="dv">2</span>
-filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r16&#39;</span>)
-img&lt;-<span class="kw">antsImageRead</span>( filename , dim )
-filename&lt;-<span class="kw">getANTsRData</span>(<span class="st">&#39;r64&#39;</span>)
-img2&lt;-<span class="kw">antsImageRead</span>( filename , dim )
-mask&lt;-<span class="kw">getMask</span>(img,<span class="dv">50</span>,<span class="kw">max</span>(img),T)
-mask2&lt;-<span class="kw">getMask</span>(img,<span class="dv">150</span>,<span class="kw">max</span>(img),T)
-nvox&lt;-<span class="kw">sum</span>( mask ==<span class="st"> </span><span class="dv">1</span> )
-nvox2&lt;-<span class="kw">sum</span>( mask2 ==<span class="st"> </span><span class="dv">1</span> )</code></pre>
-<p>The brain has 17395 voxels …</p>
-</section><section id="a-quick-antsr-example-1" class="slide level2">
-<h1>A Quick <span style="color:grey;"><em>ANTsR</em></span> example</h1>
-<p>Simulate a population morphometry study - a “VBM” …</p>
-<pre class="sourceCode r"><code class="sourceCode r">simnum&lt;-<span class="dv">10</span>
-imglist&lt;-<span class="kw">list</span>()
-imglist2&lt;-<span class="kw">list</span>()
-for ( i in <span class="dv">1</span>:simnum ) {
-  img1sim&lt;-<span class="kw">antsImageClone</span>(img)
-  img1sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.5</span>)
-  img1sim[ mask2==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox2,<span class="dt">mean=</span><span class="fl">2.0</span>)
-  img2sim&lt;-<span class="kw">antsImageClone</span>(img2)
-  img2sim[ mask==<span class="dv">1</span> ]&lt;-<span class="kw">rnorm</span>(nvox,<span class="dt">mean=</span><span class="fl">0.20</span>)
-  imglist&lt;-<span class="kw">lappend</span>(imglist,img1sim)
-  imglist2&lt;-<span class="kw">lappend</span>(imglist2,img2sim)
-}
-imglist&lt;-<span class="kw">lappend</span>( imglist, imglist2 )
-mat&lt;-<span class="kw">imageListToMatrix</span>( imglist, mask )
-DX&lt;-<span class="kw">factor</span>( <span class="kw">c</span>( <span class="kw">rep</span>(<span class="dv">0</span>,simnum), <span class="kw">rep</span>(<span class="dv">1</span>,simnum) ) )
-mylmresults&lt;-<span class="kw">bigLMStats</span>( <span class="kw">lm</span>( mat ~<span class="st"> </span>DX ) )
-qvals&lt;-<span class="kw">p.adjust</span>( mylmresults$pval.model ) </code></pre>
-<p>The minimum q-value is 8.0644 × 10<sup>-6</sup> …</p>
-</section><section id="visualize-the-histograms-of-effects" class="slide level2">
-<h1>Visualize the histograms of effects</h1>
-<pre class="sourceCode r"><code class="sourceCode r">whichvox&lt;-qvals &lt;<span class="st"> </span><span class="fl">1.e-2</span>
-voxdf&lt;-<span class="kw">data.frame</span>( <span class="dt">volume=</span><span class="kw">c</span>( <span class="kw">as.numeric</span>( mat[,whichvox] ) ), <span class="dt">DX=</span>DX )
-<span class="kw">ggplot</span>(voxdf, <span class="kw">aes</span>(volume, <span class="dt">fill =</span> DX)) +<span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.2</span>)</code></pre>
-<p><img src="figures/vizmorph.png" title="plot of chunk vizmorph" alt="plot of chunk vizmorph" width="864" /></p>
-</section><section id="visualize-the-anatomical-distribution" class="slide level2">
-<h1>Visualize the anatomical distribution</h1>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotANTsImage</span>(img,<span class="dt">functional=</span><span class="kw">list</span>(betas),<span class="dt">threshold=</span>thresh,
-  <span class="dt">outname=</span>ofn)</code></pre>
-<p><img src="figures/vizmorph2.jpg" /></p>
-</section><section id="network-visualization" class="slide level2">
-<h1>Network visualization</h1>
-<p>see <code>?plotBasicNetwork</code></p>
-<p><img src="figures/network.png" /></p>
-</section><section id="the-power-of-ants-r-rightarrow-reproducible-imaging-science" class="slide level2">
-<h1>The power of <em>ANTs</em> <span class="math">\(+\)</span> <em>R</em> <span class="math">\(\rightarrow\)</span><br /> <span style="color:red;"><strong>Reproducible imaging science</strong></span></h1>
-<p><img src="figures/antsgoals.png" /></p>
-<p>… used in <a href="http://www.ncbi.nlm.nih.gov/pubmed/24096125">“Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population”</a> and several upcoming …</p>
+<section><section id="longitudinal-processing" class="titleslide slide level1"><h1>Longitudinal processing <!--with ANTs>
+
+<!--
+## ANTs longitudinal pipeline
+
+![](longitudinal/figures/longpipe.png)
+
+see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40)
+
+and [unbiased analysis paper](http://www.ncbi.nlm.nih.gov/pubmed/20005963)
+
+plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3581852/)
+--></h1></section><section id="antslongitudinalcorticalthickness.sh" class="slide level2">
+<h1><code>antsLongitudinalCorticalThickness.sh</code></h1>
+<p><img src="longitudinal/figures/longpipeex.png" /></p>
+</section><section id="longitudinal-tbi-with-lesions-segmentation" class="slide level2">
+<h1>Longitudinal TBI with lesions (segmentation)</h1>
+<p><img src="longitudinal/figures/long_with_lesions_seg.png" /></p>
+</section><section id="longitudinal-tbi-with-lesions-cortical-thickness" class="slide level2">
+<h1>Longitudinal TBI with lesions (cortical thickness)</h1>
+<p><img src="longitudinal/figures/long_with_lesions_thick.png" /></p>
+<!--
+## ANTs longitudinal pipeline
+
+![](longitudinal/figures/babystudy.png)
+-->
+
+
+<div class="references">
+
+</div>
 </section></section>
-<section><section id="wrap-up-conclusions" class="titleslide slide level1"><h1>Wrap-up &amp; Conclusions</h1></section><section id="questions-driving-ants-refs.1" class="slide level2">
-<h1>Questions driving <em>ANTs</em> (<span class="math">\(+\)</span> Refs.1)</h1>
-<ul>
-<li class="fragment"><p>how should we geometrically transform anatomical coordinates?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/17659998">syn paper</a> - our geometric transformation model of choice</li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24409140">recent B-spline alternative/improvement</a></li>
-</ul></li>
-<li class="fragment"><p>how should we measure pairwise image similarity?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20851191">similarity metric evaluation</a> compares functions for computing rigid or affine transformations between images</li>
-</ul></li>
-<li class="fragment"><p>what if this pair has rgb/vector/tensor voxels?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18041273">dti similarity</a></li>
-</ul></li>
-<li class="fragment"><p>how do we extend from pairs to hundreds or thousands of pairs of images?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=avants+optimal+template">optimal templates</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923">spatial priors</a></li>
-<li class="fragment">species specific templates/priors in <a href="http://www.ncbi.nlm.nih.gov/pubmed/23516289">chimps</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/23284904">canines</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer">ants “big data”</a></li>
-</ul></li>
-<li class="fragment"><p>how do we fuse multiple modality images at the subject and population levels?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+logical+circularity">ants auxiliary modality study</a></li>
-</ul></li>
-</ul>
-</section><section id="questions-driving-ants-refs.2" class="slide level2">
-<h1>Questions driving <em>ANTs</em> (<span class="math">\(+\)</span> Refs.2)</h1>
-<ul>
-<li class="fragment"><p>can diffeomorphisms <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=tustison+freesurfer">improve cortical thickness measurement</a>?</p></li>
-<li class="fragment"><p>how might we efficiently cluster the statistical fields that arise in image analysis?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=atropos+tustison">Atropos</a> segmentation and <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=N4+tustison">N4 inhomogeneity correction</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=eigenanatomy+avants">Eigenanatomy</a> for sparse imaging-specific PCA</li>
-</ul></li>
-<li class="fragment"><p>how to cluster such fields when we have supervision?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sparse+canonical+avants">sparse canonical correlation analysis for neuroimaging</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24852460">Prior-constrained PCA</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009425/">atlas-based label fusion</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/21237273">MALF</a> - powerful expert systems for segmentation</li>
-</ul></li>
-<li class="fragment"><p>how do we implement a fully multivariate <em>interpretable</em> brain and behavior study?</p>
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=sccan+avants">SCCAN for imaging &amp; cognition</a></li>
-</ul></li>
-<li class="fragment"><p>how do we extend these ideas to functional MRI &amp; decoding?</p>
-<ul>
-<li class="fragment"><a href="http://stnava.github.io/RKRNS/">recent unpublished software</a></li>
-<li class="fragment"><a href="..not%20yet...">recent work with Ben Kandel</a></li>
-</ul></li>
-</ul>
-</section><section id="ants-longitudinal-analysis" class="slide level2">
-<h1><em>ANTs</em> longitudinal analysis</h1>
-<ul>
-<li class="fragment">Longitudinal image processing issues
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20005963">registration induced bias</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23549059">general &amp; TBI-specific issues in longitudinal analysis</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22517961">reproducibility of CBF</a></li>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22306801">structure-specific analysis</a></li>
-</ul></li>
-<li class="fragment">An early study of longitudinal cortical change in ALS
-<ul>
-<li class="fragment"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16317254">ALS atrophy rates</a></li>
-</ul></li>
-<li class="fragment">Extension of standard-setting ants cortical thickness pipeline to longitudinal data
-<ul>
-<li class="fragment"><a href="https://github.com/stnava/DynANTs">DynANTs (unpublished)</a></li>
-</ul></li>
-</ul>
-</section><section id="challenges-computational-and-scientific" class="slide level2">
-<h1>Challenges: Computational and Scientific</h1>
-<ul>
-<li class="fragment">Scalability: <strong>need to fuse feature selection methods with transformation optimization</strong></li>
-<li class="fragment">Scalability: <strong>need to leverage existing ITK streaming infrastructure in application level tool</strong></li>
-<li class="fragment">Domain expertise: Customizable for specific problems but sometimes not specific enough</li>
-<li class="fragment">Rapid development: colleagues still need familiarity with compilation for latest ANTs features</li>
-<li class="fragment">Latest theoretical advances in registration not yet wrapped for users</li>
-<li class="fragment">Need more <a href="http://stnava.github.io/ANTs/">Documentation</a> &amp; <a href="http://testing.psychiatry.uiowa.edu/CDash/index.php?project=ANTS">testing</a> …</li>
-</ul>
-</section><section id="recap" class="slide level2">
-<h1>Recap</h1>
-<ul>
-<li class="fragment"><p>Powerful, general-purpose, <span style="color:red;">well-evaluated</span> registration and segmentation.</p></li>
-<li class="fragment"><p>Differentiable maps with differentiable inverse <span style="color:red;"><span class="math">\(+\)</span> statistics in these spaces</span></p></li>
-<li class="fragment"><p>Evaluated in multiple problem domains</span> via internal studies &amp; open competition</p></li>
-<li class="fragment"><p>Borg philosophy: <span style="color:red;">“best of”</span> from I/O, to processing to statistical methods</p></li>
-<li class="fragment"><p>Open source, testing, many examples, consistent style, multiple platforms, active community support …</p></li>
-<li class="fragment"><p>Integration with <em>R</em> <span class="math">\(+\)</span> novel tools for prediction, decoding, high-to-low dimensional statistics.</p></li>
-<li class="fragment"><p>Collaborations with <a href="http://neuro.debian.net/pkgs/ants.html">neurodebian</a>, <a href="http://www.slicer.org/">slicer</a>, <a href="https://github.com/BRAINSia/BRAINSTools">brainsfit</a>, <a href="http://nipy.sourceforge.net/nipype/">nipype</a>, <a href="http://www.itk.org">itk</a> and more …</p></li>
-</ul>
-</section><section id="tools-you-can-use-for-imaging-science" class="slide level2">
-<h1>Tools you can use for imaging science</h1>
-<ul>
-<li class="fragment"><p>Core developers: <em>B. Avants, N. Tustison, H. J. Johnson, J. T. Duda</em></p></li>
-<li class="fragment"><p>Many contributors, including users …</p></li>
-<li class="fragment"><p>Multi-platform, multi-threaded C++ <a href="stnava.github.io/ANTs" class="uri">stnava.github.io/ANTs</a></p></li>
-<li class="fragment"><p>Developed in conjunction with <a href="http://www.itk.org/"><a href="http://www.itk.org/" class="uri">http://www.itk.org/</a></a></p></li>
-<li class="fragment"><p>R wrapping and extension <a href="stnava.github.io/ANTsR" class="uri">stnava.github.io/ANTsR</a></p></li>
-<li class="fragment"><p>rapid development, regular testing <span class="math">\(+\)</span> many eyes <span class="math">\(\rightarrow\)</span> bugs are shallow</p></li>
-</ul>
-<p><img style="float: right" src="figures/penn.png" /> <img style="float: left" src="figures/picsl.jpg" /></p>
-</section></section>
-<section><section id="references" class="titleslide slide level1 unnumbered"><h1>References</h1></section></section>
     </div>
   </div>
 

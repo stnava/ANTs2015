@@ -1,10 +1,12 @@
+
+<!--
 # New work
 
 ## RKRNS
 
 [link](http://stnava.github.io/RKRNS/)
 
-What mathematical encoding of language reflects both brain activity and 
+What mathematical encoding of language reflects both brain activity and
 "our" understanding of semantics?
 
 ## RIPMARC: Imputation, strutural networks, etc.
@@ -14,32 +16,36 @@ What mathematical encoding of language reflects both brain activity and
 MICCAI 2014, Neuroimage 2015
 
 ## Big image registration
+-->
 
-# Longitudinal processing with ANTs
+# Longitudinal processing <!--with ANTs>
 
+<!--
 ## ANTs longitudinal pipeline
 
 ![](longitudinal/figures/longpipe.png)
 
-see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40) 
+see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40)
 
 and [unbiased analysis paper](http://www.ncbi.nlm.nih.gov/pubmed/20005963)
 
 plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3581852/)
+-->
 
-## ANTs longitudinal pipeline
+## `antsLongitudinalCorticalThickness.sh`
 
 ![](longitudinal/figures/longpipeex.png)
 
-## ANTs longitudinal pipeline: TBI
+## Longitudinal TBI with lesions (segmentation)
 
 ![](longitudinal/figures/long_with_lesions_seg.png)
 
-## ANTs longitudinal pipeline: TBI
+## Longitudinal TBI with lesions (cortical thickness)
 
 ![](longitudinal/figures/long_with_lesions_thick.png)
 
+<!--
 ## ANTs longitudinal pipeline
 
 ![](longitudinal/figures/babystudy.png)
-
+-->
