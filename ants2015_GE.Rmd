@@ -1,5 +1,5 @@
 ---
-title: <span style="color:red;">Neuroimaging with<br>ANTs</span>
+title: <span style="color:red;">ANTs</span><br> <small>_power tools for neuroimaging_</small>
 author:
 bibliography: REFERENCES.bib
 logo:    logo.jpg
@@ -47,8 +47,41 @@ opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
 ![](./figures/brian_and_nick.png)
 
 
+## Built on ITK
+
+* image registration framework
+
+* many other classes such as:
+    + `itkScalarImageToRGBImageFilter`
+    + `itkLabelOverlapMeauresImageFilter`
+    + `itkBSplineScatteredDataPointSetToImageFilter`
+    + `itkStochasticFractalDimensionImageFilter`
+
 ## ANTs development philosophy:<br><small>Assimilate the optimal components of other approaches</small>
 
 ![](./figures/BorgFirstContact.jpg)
 
 _"We are the Borg. Your biological and technological distinctiveness will be added to our own. Resistance is futile."_
+
+
+## *The Big 5*
+
+* <span style="color:red">image registration</span> (`antsRegistration.cxx`)
+
+* <span style="color:red">bias correction</span> (`N4BiasFieldCorrection.cxx`)
+
+* multivariate template construction (`antsMultivariateTemplateConstruction.sh`)
+
+* multivariate segmentation (`Atropos.cxx`)
+
+* cortical thickness (`KellyKaposki.cxx` and `antsCorticalThickness.sh`)
+
+## *ANTsR*<br>for statistics and visualization
+
+# *ANTs* optimizes mathematically well-defined <span style="color:red;">objective functions</span> guided by <span style="color:red;">prior knowledge</span>  ...
+
+# ... including that of developers, domain experts and other colleagues ...
+
+# plug *your ideas* into our software to gain insight into biomedical data ...
+
+# our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains

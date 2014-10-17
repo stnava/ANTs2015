@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="" />
-  <title>Neuroimaging withANTs</title>
+  <title>ANTs power tools for neuroimaging</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -73,18 +73,45 @@
     <div class="slides">
 
 <section>
-    <h1 class="title"><span style="color:red;">Neuroimaging with<br>ANTs</span></h1>
+    <h1 class="title"><span style="color:red;">ANTs</span><br> <small><em>power tools for neuroimaging</em></small></h1>
     <h3 class="date"></h3>
 </section>
 
 <section><section id="background" class="titleslide slide level1"><h1>Background</h1></section><section id="section" class="slide level2">
 <h1></h1>
 <p><img src="figures/brian_and_nick.png" /></p>
+</section><section id="built-on-itk" class="slide level2">
+<h1>Built on ITK</h1>
+<ul>
+<li class="fragment"><p>image registration framework</p></li>
+<li class="fragment">many other classes such as:
+<ul>
+<li class="fragment"><code>itkScalarImageToRGBImageFilter</code></li>
+<li class="fragment"><code>itkLabelOverlapMeauresImageFilter</code></li>
+<li class="fragment"><code>itkBSplineScatteredDataPointSetToImageFilter</code></li>
+<li class="fragment"><code>itkStochasticFractalDimensionImageFilter</code></li>
+</ul></li>
+</ul>
 </section><section id="ants-development-philosophyassimilate-the-optimal-components-of-other-approaches" class="slide level2">
 <h1>ANTs development philosophy:<br><small>Assimilate the optimal components of other approaches</small></h1>
 <p><img src="figures/BorgFirstContact.jpg" /></p>
 <p><em>“We are the Borg. Your biological and technological distinctiveness will be added to our own. Resistance is futile.”</em></p>
+</section><section id="the-big-5" class="slide level2">
+<h1><em>The Big 5</em></h1>
+<ul>
+<li class="fragment"><p><span style="color:red">image registration</span> (<code>antsRegistration.cxx</code>)</p></li>
+<li class="fragment"><p><span style="color:red">bias correction</span> (<code>N4BiasFieldCorrection.cxx</code>)</p></li>
+<li class="fragment"><p>multivariate template construction (<code>antsMultivariateTemplateConstruction.sh</code>)</p></li>
+<li class="fragment"><p>multivariate segmentation (<code>Atropos.cxx</code>)</p></li>
+<li class="fragment"><p>cortical thickness (<code>KellyKaposki.cxx</code> and <code>antsCorticalThickness.sh</code>)</p></li>
+</ul>
+</section><section id="antsrfor-statistics-and-visualization" class="slide level2">
+<h1><em>ANTsR</em><br>for statistics and visualization</h1>
 </section></section>
+<section><section id="ants-optimizes-mathematically-well-defined-objective-functions-guided-by-prior-knowledge" class="titleslide slide level1"><h1><em>ANTs</em> optimizes mathematically well-defined <span style="color:red;">objective functions</span> guided by <span style="color:red;">prior knowledge</span> …</h1></section></section>
+<section><section id="including-that-of-developers-domain-experts-and-other-colleagues" class="titleslide slide level1"><h1>… including that of developers, domain experts and other colleagues …</h1></section></section>
+<section><section id="plug-your-ideas-into-our-software-to-gain-insight-into-biomedical-data" class="titleslide slide level1"><h1>plug <em>your ideas</em> into our software to gain insight into biomedical data …</h1></section></section>
+<section><section id="our-strong-mathematical-and-software-engineering-foundation-leads-to-near-limitless-opportunities-for-innovation-in-a-variety-of-application-domains" class="titleslide slide level1"><h1>our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains</h1></section></section>
 <section><section id="competitions" class="titleslide slide level1"><h1>Competitions</h1></section><section id="section-1" class="slide level2">
 <h1></h1>
 <p><img src="evaluation/figures/evalhistory.png" /></p>
@@ -260,8 +287,6 @@
 <div align="center">
 <img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img>
 </div>
-</section><section id="all-software-components-are-open-source-and-part-of-the-ants-repository." class="slide level2">
-<h1>All software components are open source and part of the ANTs repository.</h1>
 </section></section>
 <section><section id="cortical-thickness-extensions" class="titleslide slide level1"><h1>Cortical thickness extensions</h1></section></section>
 <section><section id="cortical-thickness-with-lesions" class="titleslide slide level1"><h1>Cortical thickness with lesions</h1></section><section id="antscorticalthickness.sh-is-adaptable" class="slide level2">

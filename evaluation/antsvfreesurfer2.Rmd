@@ -102,6 +102,4 @@ ANTs (left) vs. FreeSurfer (right)
 
 <div align="center"><img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img></div>
 
-## All software components are open source and part of the ANTs repository.
-
 # Cortical thickness extensions
