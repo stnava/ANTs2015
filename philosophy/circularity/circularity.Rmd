@@ -43,4 +43,6 @@
 
 ##
 
-![](./philosophy/circularity/figures/booksteinReview.png)
+![](./philosophy/circularity/figures/BooksteinReview1.png)
+![](./philosophy/circularity/figures/BooksteinReview2.png)
+![](./philosophy/circularity/figures/BooksteinReview3.png)
