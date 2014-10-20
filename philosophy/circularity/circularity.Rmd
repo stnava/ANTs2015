@@ -40,3 +40,7 @@
 ##
 
 ![](./philosophy/circularity/figures/sleeping7.png)
+
+##
+
+![](./philosophy/circularity/figures/booksteinReview.png)

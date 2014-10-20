@@ -127,3 +127,7 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 ##
 
 ![](./philosophy/circularity/figures/sleeping7.png)
+
+##
+
+![](./philosophy/circularity/figures/booksteinReview.png)
