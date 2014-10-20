@@ -1,5 +1,5 @@
 ---
-title: <span style="color:red;">ANTs</span><br> <small>_power tools for neuroimaging_</small>
+title: <span style="color:red;">*ANTs*</span><br> <small>_power tools for neuroimaging_</small>
 author:
 bibliography: REFERENCES.bib
 logo:    logo.jpg

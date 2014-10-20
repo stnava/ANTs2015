@@ -20,7 +20,7 @@ conditionsDF <- data.frame( Column1 = conditions[1:floor( 0.5*length(conditions)
 knitr::kable( conditionsDF )
 ```
 
-## ANTs-related background
+## *ANTs*-related background
 
 * Sandy, Brian, and <span style="color:red;">DiReCT</span>
   + used other tools such as FMRIB's Automated Segmentation Tool (FAST)
@@ -30,7 +30,7 @@ knitr::kable( conditionsDF )
 * _"Let's evaluate on open data."_
 * and, eventually, _"Let's compare with FreeSurfer."_
 
-## The ANTs structural brain mapping workflow
+## The *ANTs* structural brain mapping workflow
 
 ![](./evaluation/figures/pipeline.png)
 
@@ -59,7 +59,7 @@ knitr::kable( conditionsDF )
 Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
 to produce auxiliary images which are used for brain extraction and brain segmentation.
 
-## Brain extraction comparison<br>ANTs vs. FreeSurfer
+## Brain extraction comparison<br>*ANTs* vs. FreeSurfer
 
 <div align="center"><img height="380" src="./evaluation/figures/brainExtraction.png" frameborder="0"></img></div>
 
@@ -76,7 +76,7 @@ Randomly selected healthy individuals.  Atropos gets good performance across age
 
 <div align="center"><img height="250" src="./evaluation/figures/corticalThicknessEstimation.png" frameborder="0"></img></div>
 
-In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, ANTs diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.
+In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, *ANTs* diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.
 
 
 ## _But without ground truth, how does one evaluate the pipeline?_
@@ -96,7 +96,7 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
 <div align="center"><img height="500" src="./evaluation/figures/antsvfreesurfer_importance.png" frameborder="0"></img></div>
 
-ANTs (left) vs. FreeSurfer (right)
+*ANTs* (left) vs. FreeSurfer (right)
 
 ## Regional importance comparison (cont.)
 

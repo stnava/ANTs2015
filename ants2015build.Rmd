@@ -1,5 +1,5 @@
 ---
-title: <span style="color:red;">Neuroimaging with<br>ANTs</span>
+title: <span style="color:red;">*ANTs*</span><br> <small>_power tools for neuroimaging_</small>
 author:
 bibliography: REFERENCES.bib
 logo:    logo.jpg
@@ -47,208 +47,83 @@ opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
 ![](./figures/brian_and_nick.png)
 
 
+## Built on ITK
+
+* image registration framework
+
+* many other classes such as:
+    + `itkScalarImageToRGBImageFilter`
+    + `itkLabelOverlapMeauresImageFilter`
+    + `itkBSplineScatteredDataPointSetToImageFilter`
+    + `itkStochasticFractalDimensionImageFilter`
+
 ## ANTs development philosophy:<br><small>Assimilate the optimal components of other approaches</small>
 
 ![](./figures/BorgFirstContact.jpg)
 
 _"We are the Borg. Your biological and technological distinctiveness will be added to our own. Resistance is futile."_
 
-# Competitions
+
+## *The Big 5*
+
+* <span style="color:red">image registration</span> (`antsRegistration.cxx`)
+
+* <span style="color:red">bias correction</span> (`N4BiasFieldCorrection.cxx`)
+
+* multivariate template construction (`antsMultivariateTemplateConstruction.sh`)
+
+* multivariate segmentation (`Atropos.cxx`)
+
+* cortical thickness (`KellyKaposki.cxx` and `antsCorticalThickness.sh`)
+
+## *ANTsR*<br>for statistics and visualization
+
+# *ANTs* optimizes mathematically well-defined <span style="color:red;">objective functions</span> guided by <span style="color:red;">prior knowledge</span>  ...
+
+# ... including that of developers, domain experts and other colleagues ...
+
+# plug *your ideas* into our software to gain insight into biomedical data ...
+
+# our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains
+
+# *ANTs* and the perils of circularity
 
 ##
 
-![](./evaluation/figures/evalhistory.png)
+![](./philosophy/circularity/figures/escherANTs.png)
 
-## <span style="color:green;">BRATS 2013</span> <small>brain tumor segmentation</small>
+##
 
-![](./competitions/figures/brats2013results.png)
+![](./philosophy/circularity/figures/brianEmail.png)
 
-_"Optimal symmetric multimodal templates and concatenated random forests for
-supervised brain tumor segmentation (simplified) with ANTsR"_
+##
 
-## <span style="color:green;">STACOM 2014</span> <small>cardiac motion estimation</small>
+![](./philosophy/circularity/figures/sleeping0.png)
 
-![](./competitions/figures/cardiacBSplineSyN.png)
+##
 
-A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140)
+![](./philosophy/circularity/figures/sleeping1.png)
 
+##
 
-# ANTs brain morphology<br><br>[<small>"*Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements*"</small>](http://www.ncbi.nlm.nih.gov/pubmed/24879923)
+![](./philosophy/circularity/figures/sleeping2.png)
 
+##
 
-## Cortical thickness studies:
-```{r, results='asis', echo = FALSE}
-conditions <- c( "Huntington’s disease", "schizophrenia", "bipolar disorder",
-                 "Alzheimer’s disease", "frontotemporal dementia", "Parkinson’s disease",
-                 "Williams syndrome", "multiple sclerosis", "autism", "migraines",
-                 "chronic smoking", "alcoholism", "cocaine addiction", "Tourette syndrome in children",
-                 "scoliosis in female adolescents", "early-onset blindness", "chronic pancreatitis",
-                 "obsessive-compulsive disorder", "ADHD", "obesity", "heritable depression",
-                 "elderly depression", "age", "gender", "untreated male-to-female transsexuality",
-                 "handedness", "intelligence", "athletic ability", "meditative practices", "musical ability",
-                 "tendency toward criminality", "childhood sexual abuse in female adolescents",
-                 "Tetris-playing ability in female adolescents", "traumatic brain injury" )
+![](./philosophy/circularity/figures/sleeping0.png)
 
-conditionsDF <- data.frame( Column1 = conditions[1:floor( 0.5*length(conditions) )], Column2 = conditions[( 1+floor( 0.5*length(conditions) ) ):length(conditions)] )
-knitr::kable( conditionsDF )
-```
+##
 
-## ANTs-related background
+![](./philosophy/circularity/figures/sleeping4.png)
 
-* Sandy, Brian, and <span style="color:red;">DiReCT</span>
-  + used other tools such as FMRIB's Automated Segmentation Tool (FAST)
-  + `KellySlater.cxx`
-  * scripts "adequate for Penn data"
-* `KellyKapowski.cxx` and `antsCorticalThickness.sh`
-* _"Let's evaluate on open data."_
-* and, eventually, _"Let's compare with FreeSurfer."_
+##
 
-## The ANTs structural brain mapping workflow
+![](./philosophy/circularity/figures/sleeping5.png)
 
-![](./evaluation/figures/pipeline.png)
+##
 
-## Basic components of the pipeline
+![](./philosophy/circularity/figures/sleeping6.png)
 
-<div align="center"><img height="350" src="./evaluation/figures/components.png" frameborder="0"></img></div>
+##
 
-1. template building (offline)
-2. brain extraction
-3. cortical thickness estimation
-4. cortical parcellation
-
-## Template building
-
-*Tailor data to your specific cohort*
-
-<div align="center"><img height="350" src="./evaluation/figures/templates.png" frameborder="0"></img></div>
-
-* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
-* Acquisition and anonymization (e.g. defacing) protocols are often different.
-
-## Template building (cont.)
-
-<div align="center"><img height="350" src="./evaluation/figures/templatePriors.png" frameborder="0"></img></div>
-
-Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
-to produce auxiliary images which are used for brain extraction and brain segmentation.
-
-## Brain extraction comparison<br>ANTs vs. FreeSurfer
-
-<div align="center"><img height="380" src="./evaluation/figures/brainExtraction.png" frameborder="0"></img></div>
-
-Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
-the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
-
-## Brain segmentation
-
-<div align="center"><img height="350" src="./evaluation/figures/brainSegmentation.png" frameborder="0"></img></div>
-
-Randomly selected healthy individuals.  Atropos gets good performance across ages.
-
-## Cortical thickness estimation
-
-<div align="center"><img height="250" src="./evaluation/figures/corticalThicknessEstimation.png" frameborder="0"></img></div>
-
-In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, ANTs diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.
-
-
-## _But without ground truth, how does one evaluate the pipeline?_
-
-* Use age and gender (demographic information) in training/prediction paradigm
-* Public data sets (IXI, NKI, Oasis, MMRR)
-* $>$ 1200 subjects, age 7 to over 90 years old
-
-## Prediction from cortical thickness data:<br>gender and age
-
-<div align="center"><img height="350" src="./evaluation/figures/evaluation.png" frameborder="0"></img></div>
-
-
-## Regional importance comparison
-
-$AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
-
-<div align="center"><img height="500" src="./evaluation/figures/antsvfreesurfer_importance.png" frameborder="0"></img></div>
-
-ANTs (left) vs. FreeSurfer (right)
-
-## Regional importance comparison (cont.)
-
-<div align="center"><img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img></div>
-
-## All software components are open source and part of the ANTs repository.
-
-# Cortical thickness extensions
-
-# Cortical thickness with lesions
-
-## antsCorticalThickness.sh is adaptable!
-
-1. Register subject (or single subject template) to normal template.
-
-2. Transform lesion mask to normal template.
-
-3. Create additional "lesion" prior, i.e. ```SmoothImage 3 ${lesionMask} 1 ${lesionPrior} 1```.
-
-4.  Subtract out lesion prior from all other priors and keep values $\in [0,1]$.
-
-## Modified template spatial priors
-
-![](lesions/figures/lesionPrior.png)
-
-## antsCorticalThickness.sh using lesion prior
-
-![](lesions/figures/lesionSegmentation.png)
-
-Only change to the command call is an additional '-c WM[7]' which means "combine
-the 7<sup>th</sup> prior, i.e. lesion, to the white matter for cortical thickness calculation."
-
-<!--
-# New work
-
-## RKRNS
-
-[link](http://stnava.github.io/RKRNS/)
-
-What mathematical encoding of language reflects both brain activity and
-"our" understanding of semantics?
-
-## RIPMARC: Imputation, strutural networks, etc.
-
-![](figures/ripmmarc_inter.png)
-
-MICCAI 2014, Neuroimage 2015
-
-## Big image registration
--->
-
-# Longitudinal processing <!--with ANTs>
-
-<!--
-## ANTs longitudinal pipeline
-
-![](longitudinal/figures/longpipe.png)
-
-see [link to paper](http://link.springer.com/chapter/10.1007/978-3-642-15705-9_40)
-
-and [unbiased analysis paper](http://www.ncbi.nlm.nih.gov/pubmed/20005963)
-
-plus [longitudinal recommendation paper](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3581852/)
--->
-
-## `antsLongitudinalCorticalThickness.sh`
-
-![](longitudinal/figures/longpipeex.png)
-
-## Longitudinal TBI with lesions (segmentation)
-
-![](longitudinal/figures/long_with_lesions_seg.png)
-
-## Longitudinal TBI with lesions (cortical thickness)
-
-![](longitudinal/figures/long_with_lesions_thick.png)
-
-<!--
-## ANTs longitudinal pipeline
-
-![](longitudinal/figures/babystudy.png)
--->
+![](./philosophy/circularity/figures/sleeping7.png)

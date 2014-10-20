@@ -14,7 +14,7 @@ BBA & NT
 $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
 
 
-## 
+##
 
 ![](./figures/lion.png)
 
@@ -38,7 +38,7 @@ a pride: common way of doing things
 
 * MALF: multi-atlas label fusion - using anatomical dictionaries to label new data
 
-* <span style="color:grey;">Solutions to challenging statistical image processing problems usually need elements from each of the above</span> 
+* <span style="color:grey;">Solutions to challenging statistical image processing problems usually need elements from each of the above</span>
 
 
 ## Image mapping & perception: 1878
@@ -47,7 +47,7 @@ a pride: common way of doing things
 
 * Francis Galton: Can we see criminality in the face?
 
-* (maybe he should have used ANTs?)
+* (maybe he should have used *ANTs*?)
 
 ## Image mapping & biology: 1917
 
@@ -61,7 +61,7 @@ D'Arcy Thompson
 
 ... just do a better registration (tell story) ...
 
-## ANTs Lineage 
+## *ANTs* Lineage
 
 ![](./figures/lineage.jpg)
 
@@ -86,21 +86,21 @@ plausible physical modeling of large, invertible deformations
 
 ## General purpose library for multivariate image registration, segmentation & statistical analysis tools
 
-* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators. 
+* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators.
 
-* Generic mathematical methods that are tunable for 
+* Generic mathematical methods that are tunable for
 application specific domains:  no-free lunch
 
 * Deep testing on multiple platforms ... osx, linux, windows.
 
-* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others ) 
+* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others )
 
 ```
-    An algorithm must use prior knowledge about a problem 
-    to do well on that problem 
+    An algorithm must use prior knowledge about a problem
+    to do well on that problem
 ```
 
-## ANTs: Beyond Registration
+## *ANTs*: Beyond Registration
 
 ![](./figures/antscapabilities.jpg)
 
@@ -120,4 +120,3 @@ documentation is important
 ... developers can be blind to doc deficiencies
 
 while users are blind to what we provide!
-
