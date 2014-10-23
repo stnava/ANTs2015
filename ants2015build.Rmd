@@ -88,17 +88,45 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 
 # *ANTs* and the perils of circularity
 
-##
+## *ANTs* and the perils of circularity
 
 ![](./philosophy/circularity/figures/escherANTs.png)
 
 ##
 
-![](./philosophy/circularity/figures/brianEmail.png)
+![](./philosophy/circularity/figures/voodoo.png)
 
 ##
 
-![](./philosophy/circularity/figures/sleeping0.png)
+![](./philosophy/circularity/figures/fastForward.png)
+
+##
+
+![](./philosophy/circularity/figures/tbss.png)
+
+##
+
+![](./philosophy/circularity/figures/antsFlavoredTbss1.png)
+
+##
+
+![](./philosophy/circularity/figures/antsFlavoredTbss2.png)
+
+##
+
+![](./philosophy/circularity/figures/antsFlavoredTbss3.png)
+
+##
+
+![](./philosophy/circularity/figures/antsFlavoredTbss4.png)
+
+##
+
+![](./philosophy/circularity/figures/antsFlavoredTbss5.png)
+
+##
+
+![](./philosophy/circularity/figures/brianEmail.png)
 
 ##
 
@@ -127,6 +155,53 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 ##
 
 ![](./philosophy/circularity/figures/sleeping7.png)
+
+##
+
+![](./philosophy/circularity/figures/benefitsOfOpenScience.png)
+
+## Command line help
+
+<font size="5", color="lightgrey">
+```
+$ CreateDTICohort -h
+
+COMMAND:
+     CreateDTICohort
+
+OPTIONS:
+     -d, --image-dimensionality 2/3
+     -a, --dti-atlas inputDTIAtlasFileName
+     -x, --label-mask-image maskImageFileName
+                            lowerThresholdFunction
+     -n, --noise-sigma <noiseSigma=18>
+     -p, --pathology label[<percentageChangeEig1=-0.05>,<percentageChangeAvgEig2andEig3=0.05>,<numberOfVoxels=all or percentageOfvoxels>]
+     -w, --dwi-parameters [B0Image,directionFile,bvalue]
+                          [B0Image,schemeFile]
+     -r, --registered-population textFileWithFileNames.txt
+     -o, --output [outputDirectory,fileNameSeriesRootName,<numberOfControls=10>,<numberOfExperimentals=10>]
+     -h
+     --help
+```
+</font>
+
+
+## Which one is not warped?
+
+![](./philosophy/circularity/figures/whichOneIsRegistered.png)
+
+
+## _Answer_
+
+![](./philosophy/circularity/figures/whichOneIsRegistered2.png)
+
+##
+
+![](./philosophy/circularity/figures/blobs1.png)
+
+##
+
+![](./philosophy/circularity/figures/blobs2.png)
 
 ##
 
