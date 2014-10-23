@@ -102,4 +102,4 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
 <div align="center"><img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img></div>
 
-# Cortical thickness extensions
+## Cortical thickness extensions

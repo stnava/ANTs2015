@@ -46,6 +46,7 @@ opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
 
 ![](./figures/brian_and_nick.png)
 
+<!--
 
 ## Built on ITK
 
@@ -85,3 +86,4 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 # plug *your ideas* into our software to gain insight into biomedical data ...
 
 # our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains
+-->
