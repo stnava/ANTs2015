@@ -193,7 +193,7 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
 ## Cortical thickness extensions
 
-# *ANTs* and the perils of circularity
+# *ANTs* and the perils of circularity<br><br>[<small>"*Logical circularity in voxel-based analysis: normalization strategy may induce statistical bias*"</small>](http://www.ncbi.nlm.nih.gov/pubmed/23151955)
 
 ## *ANTs* and the perils of circularity
 
