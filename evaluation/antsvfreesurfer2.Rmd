@@ -90,11 +90,11 @@ In contrast to FreeSurfer which warps coupled surface meshes to segment the gray
 <div align="center"><img height="350" src="./evaluation/figures/evaluation.png" frameborder="0"></img></div>
 
 
-## Regional importance comparison
+## Regional importance <br>comparison
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
-<div align="center"><img height="500" src="./evaluation/figures/antsvfreesurfer_importance.png" frameborder="0"></img></div>
+<div align="center"><img height="500" src="./evaluation/figures/antsvfreesurfer_Importance.png" frameborder="0"></img></div>
 
 *ANTs* (left) vs. FreeSurfer (right)
 
