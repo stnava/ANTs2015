@@ -77,9 +77,24 @@
     <h3 class="date"></h3>
 </section>
 
-<section><section id="background" class="titleslide slide level1"><h1>Background</h1></section><section id="section" class="slide level2">
-<h1></h1>
-<p><img src="figures/brian_and_nick.png" /></p>
+<section><section id="background" class="titleslide slide level1"><h1>Background</h1></section><section id="founding-developers" class="slide level2">
+<h1>Founding developers</h1>
+<div align="center">
+<img width="1800" src="./figures/brian_and_nick.png" frameborder="0"></img>
+</div>
+</section><section id="long-term-collaborators" class="slide level2">
+<h1>Long term collaborators</h1>
+<p><img src="figures/antscollab.jpg" /></p>
+</section><section id="ants-general-purpose-library-for-multivariate-image-registration-segmentation-statistical-analysis-tools" class="slide level2">
+<h1><em>ANTs</em>: General purpose library for multivariate image registration, segmentation &amp; statistical analysis tools</h1>
+<ul>
+<li class="fragment"><p>170,000+ lines of C++, 6<span class="math">\(+\)</span> years of work, 15+ collaborators.</p></li>
+<li class="fragment"><p>Generic mathematical methods that are tunable for application specific domains: no-free lunch</p></li>
+<li class="fragment"><p>Deep testing on multiple platforms … osx, linux, windows.</p></li>
+<li class="fragment"><p>Several “wins” in public knock-abouts ( <a href="http://www.ncbi.nlm.nih.gov/pubmed/19195496">Klein 2009</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21632295">Murphy 2011</a>, <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/">SATA 2012 and 2013</a>, <a href="http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf">BRATS 2013</a>, others )</p></li>
+</ul>
+<pre><code>    An algorithm must use prior knowledge about a problem
+    to do well on that problem</code></pre>
 <!--
 
 ## Built on ITK
@@ -122,7 +137,98 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 # our strong <span style="color:red;">mathematical and software engineering</span> foundation leads to near limitless opportunities for innovation in a variety of application domains
 -->
 
+</section></section>
+<section><section id="ants-and-the-perils-of-circularitylogical-circularity-in-voxel-based-analysis-normalization-strategy-may-induce-statistical-bias" class="titleslide slide level1"><h1><em>ANTs</em> and the perils of circularity<br><br><a href="http://www.ncbi.nlm.nih.gov/pubmed/23151955"><small>“<em>Logical circularity in voxel-based analysis: normalization strategy may induce statistical bias</em>”</small></a></h1></section><section id="ants-and-the-perils-of-circularity" class="slide level2">
+<h1><em>ANTs</em> and the perils of circularity</h1>
+<p><img src="philosophy/circularity/figures/escherANTs.png" /></p>
+</section><section id="section" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/voodoo.png" /></p>
+</section><section id="section-1" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/fastForward.png" /></p>
+</section><section id="section-2" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/tbss.png" /></p>
+</section><section id="section-3" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/antsFlavoredTbss1.png" /></p>
+</section><section id="section-4" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/antsFlavoredTbss2.png" /></p>
+</section><section id="section-5" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/antsFlavoredTbss3.png" /></p>
+</section><section id="section-6" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/antsFlavoredTbss4.png" /></p>
+</section><section id="section-7" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/antsFlavoredTbss5.png" /></p>
+</section><section id="section-8" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/brianEmail.png" /></p>
+</section><section id="section-9" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping1.png" /></p>
+</section><section id="section-10" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping2.png" /></p>
+</section><section id="section-11" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping0.png" /></p>
+</section><section id="section-12" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping4.png" /></p>
+</section><section id="section-13" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping5.png" /></p>
+</section><section id="section-14" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping6.png" /></p>
+</section><section id="section-15" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/sleeping7.png" /></p>
+</section><section id="section-16" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/benefitsOfOpenScience.png" /></p>
+</section><section id="command-line-help" class="slide level2">
+<h1>Command line help</h1>
+<p><font size="5", color="lightgrey"></p>
+<pre><code>$ CreateDTICohort -h
 
+COMMAND:
+     CreateDTICohort
+
+OPTIONS:
+     -d, --image-dimensionality 2/3
+     -a, --dti-atlas inputDTIAtlasFileName
+     -x, --label-mask-image maskImageFileName
+                            lowerThresholdFunction
+     -n, --noise-sigma &lt;noiseSigma=18&gt;
+     -p, --pathology label[&lt;percentageChangeEig1=-0.05&gt;,&lt;percentageChangeAvgEig2andEig3=0.05&gt;,&lt;numberOfVoxels=all or percentageOfvoxels&gt;]
+     -w, --dwi-parameters [B0Image,directionFile,bvalue]
+                          [B0Image,schemeFile]
+     -r, --registered-population textFileWithFileNames.txt
+     -o, --output [outputDirectory,fileNameSeriesRootName,&lt;numberOfControls=10&gt;,&lt;numberOfExperimentals=10&gt;]
+     -h
+     --help</code></pre>
+<p></font></p>
+</section><section id="which-one-is-not-warped" class="slide level2">
+<h1>Which one is not warped?</h1>
+<p><img src="philosophy/circularity/figures/whichOneIsRegistered.png" /></p>
+</section><section id="answer" class="slide level2">
+<h1><em>Answer</em></h1>
+<p><img src="philosophy/circularity/figures/whichOneIsRegistered2.png" /></p>
+</section><section id="section-17" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/blobs1.png" /></p>
+</section><section id="section-18" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/blobs2.png" /></p>
+</section><section id="section-19" class="slide level2">
+<h1></h1>
+<p><img src="philosophy/circularity/figures/BooksteinReview1.png" /> <img src="philosophy/circularity/figures/BooksteinReview2.png" /> <img src="philosophy/circularity/figures/BooksteinReview3.png" /></p>
 </section></section>
 <section><section id="ants-brain-morphologylarge-scale-evaluation-of-ants-and-freesurfer-cortical-thickness-measurements" class="titleslide slide level1"><h1>ANTs brain morphology<br><br><a href="http://www.ncbi.nlm.nih.gov/pubmed/24879923"><small>“<em>Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements</em>”</small></a></h1></section><section id="cortical-thickness-studies" class="slide level2">
 <h1>Cortical thickness studies:</h1>
@@ -287,100 +393,8 @@ _"We are the Borg. Your biological and technological distinctiveness will be add
 <div align="center">
 <img height="550" src="./evaluation/figures/antsvfreesurfer_regionalPlots.png" frameborder="0"></img>
 </div>
-</section><section id="cortical-thickness-extensions" class="slide level2">
+</section><section id="cortical-thickness-extensions" class="slide level2 unnumbered">
 <h1>Cortical thickness extensions</h1>
-</section></section>
-<section><section id="ants-and-the-perils-of-circularitylogical-circularity-in-voxel-based-analysis-normalization-strategy-may-induce-statistical-bias" class="titleslide slide level1"><h1><em>ANTs</em> and the perils of circularity<br><br><a href="http://www.ncbi.nlm.nih.gov/pubmed/23151955"><small>“<em>Logical circularity in voxel-based analysis: normalization strategy may induce statistical bias</em>”</small></a></h1></section><section id="ants-and-the-perils-of-circularity" class="slide level2">
-<h1><em>ANTs</em> and the perils of circularity</h1>
-<p><img src="philosophy/circularity/figures/escherANTs.png" /></p>
-</section><section id="section-1" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/voodoo.png" /></p>
-</section><section id="section-2" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/fastForward.png" /></p>
-</section><section id="section-3" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/tbss.png" /></p>
-</section><section id="section-4" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/antsFlavoredTbss1.png" /></p>
-</section><section id="section-5" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/antsFlavoredTbss2.png" /></p>
-</section><section id="section-6" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/antsFlavoredTbss3.png" /></p>
-</section><section id="section-7" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/antsFlavoredTbss4.png" /></p>
-</section><section id="section-8" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/antsFlavoredTbss5.png" /></p>
-</section><section id="section-9" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/brianEmail.png" /></p>
-</section><section id="section-10" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping1.png" /></p>
-</section><section id="section-11" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping2.png" /></p>
-</section><section id="section-12" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping0.png" /></p>
-</section><section id="section-13" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping4.png" /></p>
-</section><section id="section-14" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping5.png" /></p>
-</section><section id="section-15" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping6.png" /></p>
-</section><section id="section-16" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/sleeping7.png" /></p>
-</section><section id="section-17" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/benefitsOfOpenScience.png" /></p>
-</section><section id="command-line-help" class="slide level2">
-<h1>Command line help</h1>
-<p><font size="5", color="lightgrey"></p>
-<pre><code>$ CreateDTICohort -h
-
-COMMAND:
-     CreateDTICohort
-
-OPTIONS:
-     -d, --image-dimensionality 2/3
-     -a, --dti-atlas inputDTIAtlasFileName
-     -x, --label-mask-image maskImageFileName
-                            lowerThresholdFunction
-     -n, --noise-sigma &lt;noiseSigma=18&gt;
-     -p, --pathology label[&lt;percentageChangeEig1=-0.05&gt;,&lt;percentageChangeAvgEig2andEig3=0.05&gt;,&lt;numberOfVoxels=all or percentageOfvoxels&gt;]
-     -w, --dwi-parameters [B0Image,directionFile,bvalue]
-                          [B0Image,schemeFile]
-     -r, --registered-population textFileWithFileNames.txt
-     -o, --output [outputDirectory,fileNameSeriesRootName,&lt;numberOfControls=10&gt;,&lt;numberOfExperimentals=10&gt;]
-     -h
-     --help</code></pre>
-<p></font></p>
-</section><section id="which-one-is-not-warped" class="slide level2">
-<h1>Which one is not warped?</h1>
-<p><img src="philosophy/circularity/figures/whichOneIsRegistered.png" /></p>
-</section><section id="answer" class="slide level2">
-<h1><em>Answer</em></h1>
-<p><img src="philosophy/circularity/figures/whichOneIsRegistered2.png" /></p>
-</section><section id="section-18" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/blobs1.png" /></p>
-</section><section id="section-19" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/blobs2.png" /></p>
-</section><section id="section-20" class="slide level2">
-<h1></h1>
-<p><img src="philosophy/circularity/figures/BooksteinReview1.png" /> <img src="philosophy/circularity/figures/BooksteinReview2.png" /> <img src="philosophy/circularity/figures/BooksteinReview3.png" /></p>
 <div class="references">
 
 </div>
