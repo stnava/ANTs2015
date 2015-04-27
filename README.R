@@ -6,7 +6,7 @@ library(ggplot2)
 library(shiny)
 library(ggvis)
 library(rmarkdown)
-library(revealjs)
+# library(revealjs)
 srcdir<-"./"
 buildrmd='ants2015build.Rmd'
 rawrmds<-c("ants2015.Rmd","background/background1.Rmd","impact/impact1.Rmd","templates/templates.Rmd","evaluation/evaluation1.Rmd","evaluation/antsvfreesurfer2.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","antsr/antsrdemo.Rmd","conclusion/conclusion.Rmd","lastslide.Rmd")
