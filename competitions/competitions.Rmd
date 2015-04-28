@@ -1,16 +1,49 @@
 
 # Competitions
 
-##
+## <span style="color:green;">Competitions</span>
 
-![](./evaluation/figures/evalhistory.png)
+* [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496)
+* [EMPIRE 2010](http://empire10.isi.uu.nl)
+* [Multi-Atlas Label Challenge 2012](https://masi.vuse.vanderbilt.edu/workshop2012/index.php/Main_Page)
+* [SATA Challenge 2013](https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events)
+* [BRATS 2013](http://martinos.org/qtim/miccai2013/)
+* [STACOM 2014 MoCo Challenge](http://www.cardiacatlas.org/web/stacom2014/moco-introduction)
+
+<!--- ![](./evaluation/figures/evalhistory.png) -->
+
+## <span style="color:green;">Klein 2009</span> <small>brain image registration</small>
+
+![](./competitions/figures/nihms-130679-f0001.jpg)
+
+* 14 algorithms
+* publicly available data
+* unbiased evaluation
+
+## <span style="color:green;">Klein 2009</span> <small>results</small>
+
+![](./competitions/figures/KleinResults2009.png)
+
+_"One of the most significant findings of this study is that the relative performances of
+the registration methods under comparison appear to be little affected by the choice of
+subject population, labeling protocol, and type of overlap measure....  ART, SyN, IRTK, and
+SPM's DARTEL Toolbox gave the best results according to overlap and distance measures,
+with ART and SyN delivering the most consistently high accuracy across subjects and label sets."_
+
+## <span style="color:green;">EMPIRE 2010</span> <small>lung image registration</small>
+
+
+
+## <span style="color:green;">Multi-Atlas Label Challenge 2012</span> <small>atlas label fusion</small>
+
+## <span style="color:green;">SATA Challenge 2012</span> <small>multi-modal/multi application label fusion</small>
 
 ## <span style="color:green;">BRATS 2013</span> <small>brain tumor segmentation</small>
 
 ![](./competitions/figures/brats2013results.png)
 
-_"Optimal symmetric multimodal templates and concatenated random forests for
-supervised brain tumor segmentation (simplified) with ANTsR"_
+_Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with ANTsR_
 
 ## <span style="color:green;">STACOM 2014</span> <small>cardiac motion estimation</small>
 

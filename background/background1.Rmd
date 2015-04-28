@@ -2,9 +2,9 @@
 
 ## Founding developers
 
-<div align="center"><img width="1800" src="./figures/bant2.png" frameborder="0"></img></div>
+<div align="center"><img width="1800" src="./figures/brian_and_nick.png" frameborder="0"></img></div>
 
-BBA & NT
+BBA & NJT
 
 ## Long-term collaborators
 
@@ -28,7 +28,7 @@ a pride: common way of doing things
 
 * <span style="color:grey;"> Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)</span>
 
-* Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)  
+* Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)
 
 * <span style="color:grey;">Segmentation $=$ labeling tissue or anatomy in images, usually automated (e.g. K-means)</span>
 
