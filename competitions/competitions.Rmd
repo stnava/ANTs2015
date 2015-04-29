@@ -12,15 +12,16 @@
 
 <!--- ![](./evaluation/figures/evalhistory.png) -->
 
-## <span style="color:green;">Klein 2009</span> <small>brain image registration</small>
+## <span style="color:green;">Klein 2009</span>
 
 ![](./competitions/figures/nihms-130679-f0001.jpg)
 
 * 14 algorithms
 * publicly available data
-* unbiased evaluation
+* different labeling protocols
+* developers tune their own algorithms
 
-## <span style="color:green;">Klein 2009</span> <small>results</small>
+## <span style="color:green;">Results</span>
 
 ![](./competitions/figures/KleinResults2009.png)
 
@@ -30,22 +31,39 @@ subject population, labeling protocol, and type of overlap measure....  ART, SyN
 SPM's DARTEL Toolbox gave the best results according to overlap and distance measures,
 with ART and SyN delivering the most consistently high accuracy across subjects and label sets."_
 
-## <span style="color:green;">EMPIRE 2010</span> <small>lung image registration</small>
+## <span style="color:green;">EMPIRE 2010</span>
+
+![](./competitions/figures/EMPIRE10criteria.png)
+
+* Alignment of lung boundaries,
+* major fissures,
+* annotated landmark pairs, and
+* topology of displacement field.
 
 
+## <span style="color:green;"> Results</span>
 
-## <span style="color:green;">Multi-Atlas Label Challenge 2012</span> <small>atlas label fusion</small>
+![](./competitions/figures/EMPIRE10Results.png)
 
-## <span style="color:green;">SATA Challenge 2012</span> <small>multi-modal/multi application label fusion</small>
+## <span style="color:green;">Multi-Atlas 2012</span>
 
-## <span style="color:green;">BRATS 2013</span> <small>brain tumor segmentation</small>
+![](./competitions/figures/NKI30_MALF.png)
+
+## <span style="color:green;">Results</span>
+
+![](./competitions/figures/MALF2012.png)
+
+
+## <span style="color:green;">SATA 2013</span>
+
+## <span style="color:green;">BRATS 2013</span>
 
 ![](./competitions/figures/brats2013results.png)
 
 _Optimal symmetric multimodal templates and concatenated random forests for
 supervised brain tumor segmentation (simplified) with ANTsR_
 
-## <span style="color:green;">STACOM 2014</span> <small>cardiac motion estimation</small>
+## <span style="color:green;">STACOM 2014</span>
 
 ![](./competitions/figures/cardiacBSplineSyN.png)
 

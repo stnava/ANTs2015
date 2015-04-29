@@ -9,7 +9,8 @@ library(rmarkdown)
 # library(revealjs)
 srcdir<-"./"
 buildrmd='ants2015build.Rmd'
-rawrmds<-c("ants2015.Rmd","background/background1.Rmd","impact/impact1.Rmd","templates/templates.Rmd","evaluation/evaluation1.Rmd","evaluation/antsvfreesurfer2.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","antsr/antsrdemo.Rmd","conclusion/conclusion.Rmd","lastslide.Rmd")
+# rawrmds<-c("ants2015.Rmd","background/background1.Rmd","impact/impact1.Rmd","templates/templates.Rmd","evaluation/evaluation1.Rmd","evaluation/antsvfreesurfer2.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","antsr/antsrdemo.Rmd","conclusion/conclusion.Rmd","lastslide.Rmd")
+rawrmds<-c("ants2015.Rmd","competitions/competitions.Rmd")
 # rawrmds<-c("ants2015.Rmd","evaluation/antsvfreesurfer.Rmd","longitudinal/longitudinal.Rmd","lesions/lesions.Rmd","antsr/antsrdemo.Rmd","conclusion/conclusion.Rmd","lastslide.Rmd")
 # rawrmds<-c("ants2015_GE.Rmd", "evaluation/antsvfreesurfer2.Rmd", "lesions/lesions.Rmd", "longitudinal/longitudinal.Rmd" )
 #rawrmds<-c( "ants2015_GE.Rmd", "philosophy/circularity/circularity.Rmd", "evaluation/antsvfreesurfer2.Rmd" )
