@@ -56,15 +56,21 @@ with ART and SyN delivering the most consistently high accuracy across subjects 
 
 ## <span style="color:green;">SATA 2013</span>
 
+![](./competitions/figures/SATA_data.png)
+
 ## <span style="color:green;">BRATS 2013</span>
 
-![](./competitions/figures/brats2013results.png)
+![](./competitions/figures/brats2013results1.png)
 
-_Optimal symmetric multimodal templates and concatenated random forests for
-supervised brain tumor segmentation (simplified) with ANTsR_
+## <span style="color:green;">Results</span>
+
+![](./competitions/figures/brats2013results2.png)
+
+Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with ANTsR, _Neuroinformatics_.
 
 ## <span style="color:green;">STACOM 2014</span>
 
-![](./competitions/figures/cardiacBSplineSyN.png)
+![](./competitions/figures/image_gallery.gif)
 
-A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140)
+<!--- A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140) -->
