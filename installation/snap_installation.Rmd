@@ -1,0 +1,37 @@
+
+# ITK-SNAP installation
+
+##
+
+![](./installation/figures/snaplogo3.png)
+
+## MacOS
+
+1. [Download](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3)
+
+2. Drag the ```ITK-SNAP.app``` icon to the Applications folder
+
+3. Drag the ```itksnap``` icon to the ```usr_local_bin``` folder
+
+## Linux
+
+1. [Download](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3)
+
+2. Open terminal.
+
+3. Uncompress the downloaded file and copy the archive directory to ```/usr/local/```.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+$ tar -zxvf itksnap-3.2.0-rc2-20140919-Linux_x86_64.tar.gz
+$ sudo cp itksnap-3.2.0-rc2-20140919-Linux_x86_64/ /usr/local/
+$ itksnap
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+## Thanks Paul!
+
+and [others](http://www.itksnap.org/pmwiki/pmwiki.php?n=Main.Credits)
+
+
+
+
