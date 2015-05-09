@@ -26,7 +26,7 @@ a pride: common way of doing things
 
 * Registration $=$ estimate an "optimal" geometric mapping between image pairs or image sets (e.g. Affine)
 
-* <span style="color:grey;"> Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)</span>
+*  Similarity $=$ a function relating one image to another, given a transformation (e.g. mutual information)</span>
 
 * Diffeomorphisms $=$ differentiable map with differentiable inverse (e.g. "silly putty", viscous fluid)
 

@@ -37,6 +37,9 @@ Type 'q()' to quit R.
 
 > antsrDependencies <- c( "Rcpp", "tools", "methods", "magrittr" )
 > install.packages( pkgs = antsrDependencies, dependencies = TRUE )
+> moreAntsrDependencies <- c( "igraph", "randomForest", "misc3d", "rgl", "mFilter", "fastICA", "fpc", "knitr", "rmarkdown", "pixmap", "png", "signal", "visreg" )
+> install.packages( moreAntsrDependencies )
+
 ~~~~~~~~~~~~~~~~~~
 
 ## Command line install

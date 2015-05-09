@@ -1,0 +1,78 @@
+# But, wait, there's more!
+
+##
+
+[__Data availability__](https://github.com/ntustison/KapowskiChronicles)
+
+*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"  <span style="color:blue;">Sure, why not?</span>
+
+*  "_I was wondering if you would make available the CT in each ROI for each subject..._" <span style="color:blue;">Sure, why not?  Would you also like the surface areas and volumes?</span>
+
+*  "_Can I have one or more of the templates that you used for your study?_"  <span style="color:blue;">Would you like the priors as well?</span>
+
+*  "_Hey Nick, can we hire you to do an [EZ-MAP]-type study?_" <span style="color:blue;">What about something better?</span>
+
+##  What about using both the T1 & T2?
+
+##
+
+__ANTs tools are multivariate__
+
+<div align="center"><img height="450" src="./evaluation/figures/rfRmse0.5ANTsT1T2.png" frameborder="0"></img></div>
+
+##
+
+__Arno-thick-in-the-head (ATITH)__
+
+<br><br>
+<span style="color:blue;">_What if we made a crude estimate of the cortical thickness?_</span>
+<br><br>
+
+$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$
+
+##
+
+<span style="color:blue;">Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!</span>
+
+![](./evaluation/figures/LabelThickness.png)
+
+
+## So how does ATITH compare with ANTs, FS?
+
+##
+
+__Prediction from cortical thickness data:<br>gender and age__
+
+<div align="center"><img height="350" src="./evaluation/figures/atith.png" frameborder="0"></img></div>
+
+
+##
+
+![](./evaluation/figures/brainConstellationMaps.png)
+
+# But the best part is ...
+
+## it is absolutely free!
+
+~~~~~~~~~~~~~~~~~~~~~~~
+${ANTSPATH}/antsCorticalThickness.sh \
+  -a IXI/T1/IXI002-Guys-0828-T1.nii.gz \
+  -e IXI/template/T_template0.nii.gz \
+  -m IXI/template/T_template0ProbabilityMask.nii.gz \
+  -f IXI/template/T_template0ExtractionMask.nii.gz \
+  -p IXI/template/Priors/priors%d.nii.gz \
+  -o IXI/ANTsResults/IXI002-Guys-0828-
+~~~~~~~~~~~~~~~~~~~~~~~
+
+_(as in speech, not beer)_
+
+## Don't worry,
+
+we'll run a 2-D example this afternoon.
+<BR><BR>
+
+https://github.com/ntustison/antsCorticalThicknessExample
+
+# Extensions
+
+
