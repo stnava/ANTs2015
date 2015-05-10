@@ -1,0 +1,73 @@
+---
+title: "ANTs in science"
+author: "Brian B. Avants et al."
+date: "May 9, 2015"
+output: pdf_document
+---
+
+# Introduction
+
+Advanced Normalization Tools (ANTs, originating at [sourceforge.net](sourceforge.net) on 2008-06-26 and now residing at [http://stnava.github.io/ANTs/](http://stnava.github.io/ANTs/) is a systematic framework for quantitative biological image analysis based on the Insight ToolKit [www.itk.org](www.itk.org).  ANTs was first created to rapidly disseminate our latest research to the community of scientists who depend on imaging analytics and to allow them to study different organ systems, species or modalities with the same sound foundation.  While originally focused on diffeomorphic image registration, ANTs now incorporates novel and cutting-edge methods for segmentation, feature extraction and, more recently, complete statistical pipelines via ANTsR [http://stnava.github.io/ANTsR/](http://stnava.github.io/ANTsR/).  In 2014, there were nearly 2,000 citations to ANTs and the software is cloned, downloaded or otherwise accessed over 100-200 times per week, on average.  Though ANTsR is relatively new, this software is cloned (via github) on average 50 times per week---a substantial number that suggests the value of the software. 
+
+# Novelty 
+
+ANTs and ANTsR support imaging analysis in two, three and four dimensions.  The framework is also designed explicitly for multivariate analyses.  Nearly every tool within ANTs/R that can be multivariate is multivariate.  For example, the ANTs registration tool is capable of combining several metrics each with its own weight function.  Complementary metrics might measure a different imaging modality (e.g. T1 and T2) or might include a different feature (landmarks) or type of similarity (mutual information and correlation) in addition to the core metric.  ANTs registration is also optimized for fast computation of high-dimensional diffeomorphic transformations with regularization over space or over space and time simultaneously, the latter being appropriate for longitudinal studies or studies of cardiac dynamics.  The Atropos segmentation tool also incorporates multiple modalities via parametric models (Mahalanobis distance) or non-parametric models (products of joint probabilities).  More recently, we implemented, in ANTsR, the challenge-winning MRVNRFS algorithm which won the BRATS2013 tumor segmentation challenge.
+
+# Technical solutions 
+
+* Accurate high-dimensional and flexible digital diffeomorphisms with multivariate similarity
+
+* Multiple modality template building in the digital diffeomorphic space
+
+* Prior-based multivariate / multiple modality segmentation in the public domain 
+
+* Volumetric sub-voxel accurate thickness, evaluated against Freesurfer
+
+* Joint intensity and joint label fusion 
+
+* Broad distribution channels: ITK, Slicer, Neurodebian, BrainsFit, etc 
+
+* Eigenanatomy and a parameter-free version
+
+* SCCAN 
+
+* Automated template construction with priors based on SyGN, JIF and Atropos ... with probability modifiers.
+
+* RIPMMARC
+
+* A highly-customizable adaptive processing pipeline for cerebral blood flow calculation
+
+* Joint intensity and landmark-based registration
+
+* Broad testing across organ systems and species, deep testing of registration and segmentation and detection power capabilities
+
+* Multi-start optimization
+
+* Standardization of registration architecture and transformations through our work on ITK version 4+.
+
+* MRV-NRF ...
+
+# Clinical and neuroscience solutions
+
+* mouse
+
+* chimp, rhesus 
+
+* lung
+
+* heart 
+
+# Future
+
+* Sparse transformations
+
+* Sparse registration
+
+* ICDM - framework for sparse image and pointset/curve/surface matching
+
+* More fully reproducible studies based on ANTsR ...
+
+.....
+
+system to analyze a multiple modality neuroimaging dataset derived from the freely available Pediatric Template of Brain Perfusion (http://www.nature.com/articles/sdata20153).
+
