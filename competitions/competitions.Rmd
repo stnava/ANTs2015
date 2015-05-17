@@ -1,7 +1,9 @@
 
 # Competitions
 
-## <span style="color:green;">Competitions</span>
+##
+
+<span style="color:green;">__Competitions__</span>
 
 * [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496)
 * [EMPIRE 2010](http://empire10.isi.uu.nl)
@@ -12,7 +14,9 @@
 
 <!--- ![](./evaluation/figures/evalhistory.png) -->
 
-## <span style="color:green;">Klein 2009</span>
+##
+
+<span style="color:green;">__Klein 2009__</span>
 
 ![](./competitions/figures/nihms-130679-f0001.jpg)
 
@@ -41,35 +45,49 @@ with ART and SyN delivering the most consistently high accuracy across subjects 
 * topology of displacement field.
 
 
-## <span style="color:green;"> Results</span>
+##
+
+<span style="color:green;">__Results__</span>
 
 ![](./competitions/figures/EMPIRE10Results.png)
 
-## <span style="color:green;">Multi-Atlas 2012</span>
+##
+
+<span style="color:green;">__Multi-Atlas 2012__</span>
 
 ![](./competitions/figures/NKI30_MALF.png)
 
-## <span style="color:green;">Results</span>
+##
+
+<span style="color:green;">__Results__</span>
 
 ![](./competitions/figures/MALF2012.png)
 
 
-## <span style="color:green;">SATA 2013</span>
+##
+
+<span style="color:green;">SATA 2013</span>
 
 ![](./competitions/figures/SATA_data.png)
 
-## <span style="color:green;">BRATS 2013</span>
+##
+
+<span style="color:green;">__BRATS 2013__</span>
 
 ![](./competitions/figures/brats2013results1.png)
 
-## <span style="color:green;">Results</span>
+##
+
+<span style="color:green;">__Results__</span>
 
 ![](./competitions/figures/brats2013results2.png)
 
 Optimal symmetric multimodal templates and concatenated random forests for
 supervised brain tumor segmentation (simplified) with ANTsR, _Neuroinformatics_.
 
-## <span style="color:green;">STACOM 2014</span>
+##
+
+<span style="color:green;">__STACOM 2014__</span>
 
 ![](./competitions/figures/image_gallery.gif)
 

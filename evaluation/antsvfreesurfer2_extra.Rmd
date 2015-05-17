@@ -50,6 +50,62 @@ __Prediction from cortical thickness data:<br>gender and age__
 
 ![](./evaluation/figures/brainConstellationMaps.png)
 
+## And currently brewing on the UVa cluster...
+
+_Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+
+##
+
+* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.h``
+
+* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.hxx``
+
+~~~~~~~~~~~~~~~~~~~~~~
+$ DenoiseImage
+
+COMMAND:
+     DenoiseImage
+          Denoise an image using a spatially adaptive filter originally described in J. V.
+          Manjon, P. Coupe, Luis Marti-Bonmati, D. L. Collins, and M. Robles. Adaptive
+          Non-Local Means Denoising of MR Images With Spatially Varying Noise Levels,
+          Journal of Magnetic Resonance Imaging, 31:192-203, June 2010.
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+          This option forces the image to be treated as a specified-dimensional image. If
+          not specified, the program tries to infer the dimensionality from the input
+          image.
+
+     -i, --input-image inputImageFilename
+          A scalar image is expected as input for noise correction.
+
+     -n, --noise-model (Rician)/Gaussian
+          Employ a Rician or Gaussian noise model.
+
+     -s, --shrink-factor (1)/2/3/...
+          Running noise correction on large images can be time consuming. To lessen
+          computation time, the input image can be resampled. The shrink factor, specified
+          as a single integer, describes this resampling. Shrink factor = 1 is the
+          default.
+
+     -o, --output correctedImage
+                  [correctedImage,<noiseImage>]
+          The output consists of the noise corrected version of the input image.
+          Optionally, one can also output the estimated noise image.
+
+     --version
+          Get Version Information.
+
+     -v, --verbose (0)/1
+          Verbose output.
+
+     -h
+          Print the help menu (short version).
+
+     --help
+          Print the help menu.
+~~~~~~~~~~~~~~~~~~~~~~
+
 # But the best part is ...
 
 ## it is absolutely free!

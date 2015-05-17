@@ -1,0 +1,55 @@
+# Founding developers
+
+##
+
+![](./figures/brian_and_edie_sedgwick.jpg)
+
+<!--
+Notes:
+* Where is this from?
+* Brain--visionary,brilliant.
+* New college in Florida --- degree in Physics and Literature(?)
+* Went to Siemens and got kicked out, fortunately, by ???  "You need to get a doctorate."
+* Jim Gee first graduate student
+* Jim wanted to work on FEM registration
+  - side tangent:  Jim''s notebooks of FEM registration code
+-->
+
+##
+
+![](./background/figures/brucelee.png)
+
+<!--
+NOtes:
+* Not much to say
+  - did graduate work at the University of Virginia (hyper. gas lungs)
+  - Washington University in St. Louis (cardiac)
+  - actually bombed interview with Siemens
+  - 2004: Jim offered a job without an interview (long term collaboration)
+  - wrote graph cuts for ITK in a month
+-->
+
+##
+<BR><BR>
+
+<div align="center"><img width="1800" src="./figures/brian_and_nick.png" frameborder="0"></img></div>
+
+<!--
+NOtes:
+* Worked together for almost 10 years
+* have learned tons
+* have written quite a bit of code together
+-->
+
+##
+
+![](./figures/antscollab.jpg)
+
+$+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+<!--
+NOtes:
+* However, it is not just us
+* Other people have done quite a bit
+* and others who are not shown such as Arman
+-->

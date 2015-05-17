@@ -1,17 +1,15 @@
 
-# *ANTs* and the perils of circularity<br><br>[<small>"*Logical circularity in voxel-based analysis: normalization strategy may induce statistical bias*"</small>](http://www.ncbi.nlm.nih.gov/pubmed/23151955)
-
-## *ANTs* and the perils of circularity
-
-![](./philosophy/circularity/figures/escherANTs.png)
-
-##
-
-![](./philosophy/circularity/figures/voodoo.png)
+# ANTs and the perils of circularity
 
 ##
 
 ![](./philosophy/circularity/figures/fastForward.png)
+
+##
+
+<BR><BR>
+
+![](./philosophy/circularity/figures/escherANTs.png)
 
 ##
 
@@ -73,10 +71,11 @@
 
 ![](./philosophy/circularity/figures/benefitsOfOpenScience.png)
 
-## Command line help
+##
 
-<font size="5", color="lightgrey">
-```
+<BR><BR>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ CreateDTICohort -h
 
 COMMAND:
@@ -95,16 +94,19 @@ OPTIONS:
      -o, --output [outputDirectory,fileNameSeriesRootName,<numberOfControls=10>,<numberOfExperimentals=10>]
      -h
      --help
-```
-</font>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-## Which one is not warped?
+##
+
+_Which one is not warped?_
 
 ![](./philosophy/circularity/figures/whichOneIsRegistered.png)
 
 
-## _Answer_
+##
+
+_Answer_
 
 ![](./philosophy/circularity/figures/whichOneIsRegistered2.png)
 

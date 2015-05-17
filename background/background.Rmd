@@ -1,0 +1,159 @@
+# ANTs lineage
+
+##
+
+__Image mapping & perception: 1877-8__
+<BR><BR>
+Francis Galton: _Can we see criminality in the face?_
+
+![](./figures/galton.png)
+
+<!--
+Notes:
+* Use of "composite portraiture" and what he called "eugenics"
+* Can we see criminality, mental illness, syphilis, and others in facial features?
+* Despite the obvious prejudices driving his research, he was a pioneer.
+-->
+
+##
+
+<!--
+![](./background/figures/FrancisGalton2.jpg)
+-->
+
+<!--
+Notes:
+* Another example where he has manually categorized facial features and try to combine them
+* Did not find much---composite tends to blend away to normality.
+-->
+
+##
+
+Speaking of criminality...<BR>
+_Can we say anything about the U.S. Congress?_
+
+![](./background/figures/congressPersons.png)
+__Maybe he should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
+
+<!--
+Notes:
+-->
+
+##
+
+__Image mapping & biology: 1917__
+<BR><BR>
+D''Arcy Thompson: _Comparison of related forms_
+
+![](./figures/dthompson.png)
+
+<!--
+Notes:
+* Book: On Growth and Form
+* Descriptive not susceptible to hypothesis testing
+* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
+-->
+
+##
+
+__Image mapping & biology: Current__
+<BR><BR>
+_Look where we are now!_
+<BR><BR>
+![](./background/figures/r16xr85.png)
+
+
+<!--
+Notes:
+* Book: On Growth and Form
+* Descriptive not susceptible to hypothesis testing
+* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
+-->
+
+##
+
+__ANTs family tree__
+
+![](./figures/lineage.jpg)
+
+<!--
+References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
+-->
+
+##
+
+__Initial scope__
+
+![](./figures/ants_initial_scope.png)
+
+<!--
+Notes:
+* Brian work with Murray Grossman
+* First registration paper
+  - WBIR submission
+  - FEM registraiton using B-spline basis functions.
+  - "yeah, that registration is not that good---Jim would not like it."
+-->
+
+
+##
+
+__Diffeomorphisms__:plausible physical modeling
+
+<div align="center"><img src="./figures/sillyputty.png" frameborder="0"></img></div>
+
+"differentiable map with differentiable inverse"
+
+##
+
+__Fine-grained and flexible maps__
+
+![](./figures/highresdiffeos.jpg)
+
+<!--
+... to correct a misconception about diffeomorphisms ...
+-->
+
+##
+
+ __Diffeomorphisms__: image parameterization in a metric space
+
+![](./figures/shape_appearance.png)
+
+##
+
+__General purpose library for multivariate image registration, segmentation & statistical analysis tools__
+
+* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators.
+
+* Generic mathematical methods that are tunable for
+application specific domains.
+
+* <span style="color:red;">no free lunch</span>: <span style="color:black;">_An algorithm must use prior knowledge about a problem to do well on that problem._</span>
+
+<!--
+* Deep testing on multiple platforms ... osx, linux, windows.
+
+* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others )
+-->
+
+
+## Still quite a bit to do
+
+##
+
+__On documentation__
+
+![](figures/Chainsaw.jpg)
+
+<!--
+Notes:
+* ANTs documentation is only slightly better than what is shown here.
+-->
+
+##
+
+Developers can be blind to doc deficiencies while users are blind to what we provide!
+
+![](figures/blindmen.jpg)
+

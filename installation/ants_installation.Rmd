@@ -3,11 +3,13 @@
 
 ##
 
-ANTs is a <span style="color:red;">_dynamic_</span> toolkit so,
+ANTs is a <span style="color:red;">_dynamic_</span> toolkit
 
 ![](./installation/figures/coder2.png)
 
-for the willing, we recommend compiling from source.
+so we generally recommend compiling from source.
+
+Current modifications: ``antsAI`` and ``CreateTieldMosaic``.
 
 ## Requirements for source installation
 
