@@ -1,73 +1,66 @@
 ---
 title: "ANTs in science"
 author: "Brian B. Avants et al."
-date: "May 9, 2015"
+date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
 # Introduction
 
-Advanced Normalization Tools (ANTs, originating at [sourceforge.net](sourceforge.net) on 2008-06-26 and now residing at [http://stnava.github.io/ANTs/](http://stnava.github.io/ANTs/) is a systematic framework for quantitative biological image analysis based on the Insight ToolKit [www.itk.org](www.itk.org).  ANTs was first created to rapidly disseminate our latest research to the community of scientists who depend on imaging analytics and to allow them to study different organ systems, species or modalities with the same sound foundation.  While originally focused on diffeomorphic image registration, ANTs now incorporates novel and cutting-edge methods for segmentation, feature extraction and, more recently, complete statistical pipelines via ANTsR [http://stnava.github.io/ANTsR/](http://stnava.github.io/ANTsR/).  In 2014, there were nearly 2,000 citations to ANTs and the software is cloned, downloaded or otherwise accessed over 100-200 times per week, on average.  Though ANTsR is relatively new, this software is cloned (via github) on average 50 times per week---a substantial number that suggests the value of the software. 
+Advanced Normalization Tools (ANTs, originating at [sourceforge.net](sourceforge.net) on 2008-06-26 and now residing at [http://stnava.github.io/ANTs/](http://stnava.github.io/ANTs/) ) is a systematic framework for quantitative biological image analysis based on the Insight ToolKit [www.itk.org](www.itk.org).  ANTs was first created to rapidly disseminate our latest research to the community of scientists who depend on imaging analytics and to allow them to study different organ systems, species or modalities with the same sound foundation.  While originally focused on diffeomorphic image registration, ANTs now incorporates novel and cutting-edge methods for segmentation, feature extraction and, more recently, complete statistical pipelines via ANTsR [http://stnava.github.io/ANTsR/](http://stnava.github.io/ANTsR/).  In 2014, there were nearly 2,000 citations to ANTs and the software is cloned, downloaded or otherwise accessed over 100-200 times per week, on average at github.  The sourceforge site hosts a similar number of visits and downloads.  ANTsR is accessed on average 50 times per week---a substantial number for a new software.  There are also over 500 discussion topics on the ANTs sourceforge community site, nearly 100 topics on the github site and over 50 help-focused emails to the personal addresses of developers.  Generally, response time to requests for help is within a few hours with rare occasions taking up to a day or two.
 
-# Novelty 
+# Novelty
 
-ANTs and ANTsR support imaging analysis in two, three and four dimensions.  The framework is also designed explicitly for multivariate analyses.  Nearly every tool within ANTs/R that can be multivariate is multivariate.  For example, the ANTs registration tool is capable of combining several metrics each with its own weight function.  Complementary metrics might measure a different imaging modality (e.g. T1 and T2) or might include a different feature (landmarks) or type of similarity (mutual information and correlation) in addition to the core metric.  ANTs registration is also optimized for fast computation of high-dimensional diffeomorphic transformations with regularization over space or over space and time simultaneously, the latter being appropriate for longitudinal studies or studies of cardiac dynamics.  The Atropos segmentation tool also incorporates multiple modalities via parametric models (Mahalanobis distance) or non-parametric models (products of joint probabilities).  More recently, we implemented, in ANTsR, the challenge-winning MRVNRFS algorithm which won the BRATS2013 tumor segmentation challenge.
+ANTs and ANTsR support imaging analysis in two, three and four dimensions.  The framework is also designed explicitly for multivariate analyses.  Nearly every tool within ANTs/R is multivariate.  For example, the ANTs registration tool is capable of combining several metrics each with its own weight function.  Complementary metrics might measure a different imaging modality (e.g. T1 and T2) or might include a different feature (landmarks) or type of similarity (mutual information and correlation) in addition to the core metric.  ANTs registration is also optimized for fast computation of high-dimensional diffeomorphic transformations with regularization over space or over space and time simultaneously, the latter being appropriate for longitudinal studies or studies of cardiac dynamics.  The Atropos segmentation tool also incorporates multiple modalities via parametric models (Mahalanobis distance) or non-parametric models (products of joint probabilities).  More recently, we implemented, in ANTsR, the challenge-winning multi-resolution voxel-wise neighborhood random forest (MRVNRF) prediction algorithm which won the BRATS2013 tumor segmentation challenge.
 
-# Technical solutions 
+# ANTs solutions in science
 
-* Accurate high-dimensional and flexible digital diffeomorphisms with multivariate similarity
+* Accurate high-dimensional and flexible digital diffeomorphisms with multivariate similarity: ANTs implements transformation models that are robust to noise and yet are able to exploit high resolution detail available in modern neuroimaging.
 
-* Multiple modality template building in the digital diffeomorphic space
+* Multiple modality template building in the digital diffeomorphic space: We exploit the fact that diffeomorphisms encode a high-dimensional metric space to compute shape and appearance averages of organs and organ systems based on multiple modality medical imaging.  The recent Pediatric Template of Brain Perfusion, for instance, distributes a dictionary of normal variability in cortical structure, diffusion tensor metrics, resting bold connectivity and cerebral blood flow during adolescence.  We also relate these modalities to demographic metrics such as IQ, age and socioeconomic factors.
 
-* Prior-based multivariate / multiple modality segmentation in the public domain 
+* Prior-based multivariate/multiple modality segmentation in the public domain: ANTs distributes Atropos as a multi-channel segmentation tool that leverages tunable spatial priors.  Atropos is able to segment large numbers of regions from multiple imaging modalities while maintaining the integrity of expert-based prior knowledge.  This work is valuable to both human brain mapping and non-human mammalian imaging FIXME REF-CHIMP REF-MOUSE.
 
-* Volumetric sub-voxel accurate thickness, evaluated against Freesurfer
+* Volumetric sub-voxel accurate thickness, evaluated against Freesurfer: We contributed the first large-scale comparison of voxel-based, volumetric thickness versus the standard Freesurfer surface-based thickness in terms of prediction power in a large lifespan T1 dataset.  The ANTs-based cortical thickness measure improved prediction of both age and gender relative to Freesurfer in a pure training and testing evaluation framework.  FIXME REF.
 
-* Joint intensity and joint label fusion 
+* Joint intensity and joint label fusion: The ANTs toolkit distributes Joint Label Fusion (JLF) for multiple modality segmentation based on large datasets of expert annotated medical images, e.g. neuroanatomical regions defined in T1 MRI or major tracts defined in DTI. JLF has won several international anatomical segmentation challenges in medical imaging FIXME-REF.
 
-* Broad distribution channels: ITK, Slicer, Neurodebian, BrainsFit, etc 
+* Broad distribution channels:  ANTs technology is distributed through the Insight ToolKit (ITK), the Slicer toolkit, Neurodebian, BrainsFit and in SimpleITK.  Thus, the impact of ANTs is beyond what we can directly measure from references in publications or direct software downloads.  Furthermore, our liberal distribution policies for ANTs software cannot enforce specific referencing practices - many papers, for instance, only reference neurodebian or one of the ANTs websites in publication.
 
-* Eigenanatomy and a parameter-free version
+* Eigenanatomy is a parameter-free tool for generating data-driven regions of interest:  Our recent paper defined a novel approach to computing an optimal set of regions of interest from population neuroimaging data.  This is one of the only data-driven image decomposition methods with *in vivo* findings that have been validated post-mortem FIXME-REF.  Indeed, regions of the white matter implicated by Eigenanatomy in a neuroimaging study led to verified pathology in a classification analysis of tau and TDP frontotemporal lobar degeneration FIXME-REF.
 
-* SCCAN 
+* Sparse canonical correlation analysis (SCCAN): ANTs and ANTsR also enable a "supervised" version of Eigenanatomy based on a modernized sparse and geometrically regularized update to Hotelling's classic canonical correlation analysis.  This tool has been used to focus testing for imaging genomics studies, to relate multiple imaging modalities to each other and to map structural networks that underlie cognitive performance. FIXME REFS.
 
-* Automated template construction with priors based on SyGN, JIF and Atropos ... with probability modifiers.
+* Automated template construction with priors based on symmetric normalization (SyN, 800+ references to the original paper), JIF and Atropos: An anatomical or functional template is more than just an average image - it is also the set of probabilistic priors and spatial maps of anatomy that accompany the image.  In the last several years, we have established a system for generating new templates based on existing priors.  This leverages our prior work on template construction, multi-atlas labeling and tissue segmentation to generate probabilistic templates that are ready to use on new problems. 
+Such templates form the basis of our large-scale multiple modality analysis framework.  FIXME-REF chimp, waxholm, lung etc.
 
-* RIPMMARC
+* Learning one imaging modality from another to understand modality redundancy and structure-function relationships:  We recently developed the RIPMMARC algorithm to show that nearly 50\% of the variability in ASL-based cerebral blood flow images can be predicted from T1 neuroimaging.  However, we also established that there is valuable signal in the CBF images that cannot be predicted from the T1 data.  That is, the residual CBF signal (the putative "functional signal") is related to demographic variables as is the structural component.  This tool has value, yet to be explored, for performing imputation and can be extended to other modalities, species or organ systems.  FIXME-REF.
 
-* A highly-customizable adaptive processing pipeline for cerebral blood flow calculation
+* A highly-customizable adaptive processing pipeline for cerebral blood flow calculation from ASL: ANTsR has enabled us to implement a large-scale evaluation of cerebral blood flow calculation from arterial spin labeling.  This pipeline was used in adolescent and neurodegenerative subjects FIXME-REFS but is undergoing further evaluation in a lifespan population and comparison with PET.
 
-* Joint intensity and landmark-based registration
+* Joint intensity and landmark-based registration:  Purely image-driven registration can be improved in terms of accuracy and consistency by using anatomical labels or landmarks to guide a registration.  ANTs is one of the only currently available tools that allows scientists to jointly optimize, in a weighted fashion, the registration of images and anatomy.  This functionality is frequently employed for guided registration with hippocampal subfields or for registration based on structure plus tractography.
 
-* Broad testing across organ systems and species, deep testing of registration and segmentation and detection power capabilities
+* ANTs is founded on deep software testing and practical evaluation across organ systems and species, deep testing of registration and segmentation and detection power capabilities.  Several papers have established the value of our methods for improving the reproducibility of prediction models based on ANTs image processing and statistical methods: FIXME REFS.  We have also won several challenges e.g. in heart [http://www.cardiacatlas.org/web/stacom2014/home](http://www.cardiacatlas.org/web/stacom2014/home), [lung](lung), [brain](brain)  and [other organ systems](www).
 
-* Multi-start optimization
+* Multi-start optimization and feature selection/masking:  ANTs has several powerful but under-utilized registration tools that include global optimization and feature selection.  These tools can be used to improve robustness of registration in large datasets, in challenging datasets or in datasets with only partial structure (lesions, masking, cropped images, images with missing data etc.) FIXME-REF-LESION MAPPING.
 
-* Standardization of registration architecture and transformations through our work on ITK version 4+.
+* Standardization of registration architecture and transformations through our work on ITK version 4+.  We are part of the ITK development team and have worked with the community over the last 15 years to evaluate and improve the standardized transformation frameworks that are used throughout our own and several related software infrastructures FIXME cite elastix etc.
 
-* MRV-NRF ...
+* ANTsR implements and distributes novel MRV-NRF and other prediction algorithms that improve machine learning via image-specific regularization.   FIXME-BRATS-PAPERS, SCCAN, Eanat ...
 
-# Clinical and neuroscience solutions
+* Subject-specific denoising solutions for functional MRI data, specifically arterial spin labeling (ASL), have the potential to revolutionize the applicability of cerebral blood flow to new populations with high variability (neurodegeneration, TBI, etc).  Detection power is also likely to improve when these new methods are combined with our latest registration techniques even in control populations, in non-human mammals or in MRI beyond the brain, e.g. cardiac ASL FIXME-REFS.
 
-* mouse
+* Our ANTs and ITK methods are instrumental to several recent non-human mammal studies including developing the Waxholm template space, the Allen Brain Atlas, the Possum template space and a chimpanzee template.  These methods have been widely adopted and applied to studies published in high-impact journals such as Nature, PNAS, etc.
 
-* chimp, rhesus 
+* We have implemented complete "scanner to study" tutorials that show how to employ ITK, ANTs and ANTsR to transform raw data into a complete and reproducible study.  These studies include ....  We also provide the ANTs Neurobattery **FIXME** a documented/distributable system to analyze multiple modality neuroimaging datasets.  The framework was developed from and is regularly tested on the freely available Pediatric Template of Brain Perfusion (http://www.nature.com/articles/sdata20153).
 
-* lung
 
-* heart 
+* **FIXME** say something about lung ....
+
+* **FIXME** say something about heart ...
 
 # Future
 
-* Sparse transformations
+* We have ongoing work in Advanced Normalization Tools that is devoted to the development of sparse image, transformation and metric representations.  Additional mathematical and software effort is needed to exploit the advantages that these innovative solutions enable. Specifically, our iterative closest data mapping (ICDM for sparse image and pointset/curve/surface matching) framework has the potential to massively reduce computation time as well as the memory footprint of both low and high-dimensional image registration within ANTs.  However, to achieve this goal and reach full potential, both the sparse sampling theory for diffeomorphisms and metric spaces must be resolved to enable a proper software implementation to reach full potential.  With additional effort, we will be able to address emerging needs for sparse and dense registration (with optimal sampling) of massive datasets being collected with the laboratories of collaborators:  Betzig, Seung, Deisseroth, AJohnson, A Badea and more **FIXME**
 
-* Sparse registration
-
-* ICDM - framework for sparse image and pointset/curve/surface matching
-
-* More fully reproducible studies based on ANTsR ...
-
-.....
-
-system to analyze a multiple modality neuroimaging dataset derived from the freely available Pediatric Template of Brain Perfusion (http://www.nature.com/articles/sdata20153).
 
