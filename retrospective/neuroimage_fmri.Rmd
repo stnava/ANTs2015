@@ -1,0 +1,72 @@
+# Retrospective
+
+##
+
+## ANTs evolution
+
+![](./retrospective/figures/retrospective.jpg)
+
+
+<!--
+Notes:
+* No equations, just kind of a look back at where ANTs came from.
+* Manuscripts are a bit deceptive in that they often present a linear development
+  whereas science is messy (e.g. Popper, Carnap, and others).  Review from Fred Bookstein
+  said the same thing---more on that later.
+-->
+
+## FreeSurfer, Bruce Fischl
+
+![](./retrospective/figures/juicyDetails.png)
+
+<!--
+Notes:
+* NeuroImage 26(2)  "20 years of fmri"
+* FreeSurfer, Bruce Fischl "only manuscript where the reviewer requested more juicy details of the history of the development of a set of ideas."
+* Yearly course with FSL, 2003 in Santa Monica "Where's the free surfer course, Dude?"
+* As a quasi-relevant tangent, not a surfer, decade long playful argument with significant other
+-->
+
+<!--
+
+## Other juicy bits
+
+![](./retrospective/figures/logos.png)
+
+Notes:
+* Additional interesting bits of information
+* Logos
+* Why a fish skeleton?
+* "FOSSIL vs EFF ESS ELL"
+* What is the ice cream cone for and what does it have to do with British humour?
+-->
+
+## NeuroImaging research as literature
+
+"Contingency.
+AFNI is one result of unexpected events.
+I met a woman and fell in love."
+
+<!--
+Notes:
+* Love this!
+* Perhaps not in the realm of "It was the best of times it was the worst of times" or "Call me Ishmael."
+but, in our field, that's as close as we're going to get!
+* His love interest was faculty at the University of Milwaukee.
+* I certainly do not expect these stories or discussions to be retained in memory
+but I hope they point to the fact that Brian and I love what we do, we love reproducible
+science and enjoy helping other people, and that ANTs is a set of tools that might be
+worth investigating.
+-->
+
+## ANTs--_begotten in SyN_
+
+![](./retrospective/figures/Welcometotherealm.jpg)
+
+<!--
+Notes:
+* In somewhat playful antithetical terms, ANTs was beggotten in SyN.
+-->
+
+
+

@@ -1,60 +1,103 @@
+
 # But, wait, there's more!
 
 ##
 
 [__Data availability__](https://github.com/ntustison/KapowskiChronicles)
 
-*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"  <span style="color:blue;">Sure, why not?</span>
+*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"  Sure, why not?
 
-*  "_I was wondering if you would make available the CT in each ROI for each subject..._" <span style="color:blue;">Sure, why not?  Would you also like the surface areas and volumes?</span>
+*  "_I was wondering if you would make available the CT in each ROI for each subject..._" Sure, why not?  Would you also like the surface areas and volumes?
 
-*  "_Can I have one or more of the templates that you used for your study?_"  <span style="color:blue;">Would you like the priors as well?</span>
-
-*  "_Hey Nick, can we hire you to do an [EZ-MAP]-type study?_" <span style="color:blue;">What about something better?</span>
+*  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
 
 ##  What about using both the T1 & T2?
 
-##
+## ANTs tools are multivariate
 
-__ANTs tools are multivariate__
+![](./evaluation/figures/rfRmse05ANTsT1T2.png)
 
-<div align="center"><img height="450" src="./evaluation/figures/rfRmse0.5ANTsT1T2.png" frameborder="0"></img></div>
+## Arno-thick-in-the-head (ATITH)
 
-##
+_What if we made a crude estimate of the cortical thickness?_
 
-__Arno-thick-in-the-head (ATITH)__
+$$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
 
-<br><br>
-<span style="color:blue;">_What if we made a crude estimate of the cortical thickness?_</span>
-<br><br>
-
-$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$
-
-##
-
-<span style="color:blue;">Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!</span>
+## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
 
 ![](./evaluation/figures/LabelThickness.png)
 
-
 ## So how does ATITH compare with ANTs, FS?
 
-##
+## Prediction from cortical thickness data
 
-__Prediction from cortical thickness data:<br>gender and age__
+![](./evaluation/figures/atith.png)
 
-<div align="center"><img height="350" src="./evaluation/figures/atith.png" frameborder="0"></img></div>
-
-
-##
+## Brain constellation maps
 
 ![](./evaluation/figures/brainConstellationMaps.png)
+
+## And currently brewing on the UVa cluster...
+
+_Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+
+## Contribution from Jose
+
+* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.h``
+
+* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.hxx``
+
+```bash
+$ DenoiseImage
+
+COMMAND:
+     DenoiseImage
+          Denoise an image using a spatially adaptive filter originally described in J. V.
+          Manjon, P. Coupe, Luis Marti-Bonmati, D. L. Collins, and M. Robles. Adaptive
+          Non-Local Means Denoising of MR Images With Spatially Varying Noise Levels,
+          Journal of Magnetic Resonance Imaging, 31:192-203, June 2010.
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+          This option forces the image to be treated as a specified-dimensional image. If
+          not specified, the program tries to infer the dimensionality from the input
+          image.
+
+     -i, --input-image inputImageFilename
+          A scalar image is expected as input for noise correction.
+
+     -n, --noise-model (Rician)/Gaussian
+          Employ a Rician or Gaussian noise model.
+
+     -s, --shrink-factor (1)/2/3/...
+          Running noise correction on large images can be time consuming. To lessen
+          computation time, the input image can be resampled. The shrink factor, specified
+          as a single integer, describes this resampling. Shrink factor = 1 is the
+          default.
+
+     -o, --output correctedImage
+                  [correctedImage,<noiseImage>]
+          The output consists of the noise corrected version of the input image.
+          Optionally, one can also output the estimated noise image.
+
+     --version
+          Get Version Information.
+
+     -v, --verbose (0)/1
+          Verbose output.
+
+     -h
+          Print the help menu (short version).
+
+     --help
+          Print the help menu.
+```
 
 # But the best part is ...
 
 ## it is absolutely free!
 
-~~~~~~~~~~~~~~~~~~~~~~~
+```bash
 ${ANTSPATH}/antsCorticalThickness.sh \
   -a IXI/T1/IXI002-Guys-0828-T1.nii.gz \
   -e IXI/template/T_template0.nii.gz \
@@ -62,17 +105,11 @@ ${ANTSPATH}/antsCorticalThickness.sh \
   -f IXI/template/T_template0ExtractionMask.nii.gz \
   -p IXI/template/Priors/priors%d.nii.gz \
   -o IXI/ANTsResults/IXI002-Guys-0828-
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 _(as in speech, not beer)_
 
-## Don't worry,
-
-we'll run a 2-D example this afternoon.
-<BR><BR>
+## We'll discuss more this afternoon
 
 https://github.com/ntustison/antsCorticalThicknessExample
-
-# Extensions
-
 

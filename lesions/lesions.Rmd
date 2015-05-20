@@ -1,32 +1,23 @@
 
 # Cortical thickness with lesions
 
-##
-```antsCorticalThickness.sh``` is adaptable!
+## ```antsCorticalThickness.sh``` is adaptable!
 
 1. Register subject (or single subject template) to normal template with priors.
 
 2. Transform lesion mask to normal template.
 
-3. Create additional "lesion" prior, i.e.
-
-~~~~~~~~~~~~~~~~~~~~~~~
-SmoothImage 3 ${lesionMask} 1 ${lesionPrior} 1
-~~~~~~~~~~~~~~~~~~~~~~~
+3. Create additional "lesion" prior, i.e. ``SmoothImage 3 ${lesionMask} 1 ${lesionPrior} 1``
 
 4.  Subtract out lesion prior from all other priors and keep values $\in [0,1]$.
 
-##
+## Modified template spatial priors
 
-__Modified template spatial priors__
+![](lesions/figures/lesionPrior.png)
 
-<div align="center"><img height="450" src="lesions/figures/lesionPrior.png" frameborder="0"></img></div>
+## ```antsCorticalThickness.sh``` using lesion prior
 
-##
-
-```antsCorticalThickness.sh``` using lesion prior
-
-<div align="center"><img height="450" src="lesions/figures/lesionSegmentation.png" frameborder="0"></img></div>
+![](lesions/figures/lesionSegmentation.png)
 
 <!--
 Only change to the command call is an additional '-c WM[7]' which means "combine

@@ -1,13 +1,13 @@
 
 # ANTs installation
 
-##
-
-ANTs is a <span style="color:red;">_dynamic_</span> toolkit so,
+## ANTs is a _dynamic_ toolkit
 
 ![](./installation/figures/coder2.png)
 
-for the willing, we recommend compiling from source.
+so we generally recommend compiling from source.
+
+Current modifications: ``antsAI`` and ``CreateTieldMosaic``.
 
 ## Requirements for source installation
 
@@ -16,7 +16,7 @@ for the willing, we recommend compiling from source.
 * C++ compiler
 * ITK/VTK dependencies are handled by CMake magic
 
-##
+## First source for documentation
 
 https://github.com/stnava/ANTs
 
@@ -32,7 +32,7 @@ https://github.com/stnava/ANTs
 
 ## From the terminal...
 
-~~~~~~~~~~~~~~~~~~
+```bash
 $ cd ${WHICH_PATH}
 $ git clone https://github.com/stnava/ANTs.git
 $ cd ANTs
@@ -41,13 +41,11 @@ $ cd bin
 $ ccmake ..
 $ make
 $ echo "export ANTSPATH=/${WHICH_PATH}/ANTs/bin/bin/" >> ~/.profile
-$ echo "export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=4" >> ~/.profile
+$ echo "export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1" >> ~/.profile
 $ source ~/.profile
-~~~~~~~~~~~~~~~~~~
+```
 
-##
-
-<span style="color:blue;">__Some cmake considerations:__</span>
+## Some cmake considerations
 
 * Installation location?  (default = /usr/local/bin)
 * Enable external applications (only ```jointFusion```)
@@ -55,11 +53,9 @@ $ source ~/.profile
 
 ## Now test installation
 
-##
+## Try calling the ```KellyKapowski``` short help menu.
 
-Try calling the <span style="color:blue;">```KellyKapowski```</span> short help menu.
-
-~~~~~~~~~~~~~~~~~~
+```bash
 $ KellyKapowski -h
 
 COMMAND:
@@ -86,11 +82,9 @@ OPTIONS:
      -v, --verbose (0)/1
      -h
      --help
-~~~~~~~~~~~~~~~~~~
+```
 
-##
-
-or the <span style="color:blue;">```antsRegistration```</span> long help menu.
+## ```antsRegistration``` long help menu.
 
 ~~~~~~~~~~~~~~~~~~
 $ antsRegistration --help

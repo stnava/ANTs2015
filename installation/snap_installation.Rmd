@@ -21,16 +21,16 @@
 
 3. Uncompress the downloaded file and copy the archive directory to ```/usr/local/```.
 
-~~~~~~~~~~~~~~~~~~~~~~~
+## Linux (command line)
+
+```bash
 $ tar -zxvf itksnap-3.2.0-rc2-20140919-Linux_x86_64.tar.gz
 $ sudo cp itksnap-3.2.0-rc2-20140919-Linux_x86_64/ /usr/local/
 $ itksnap
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
+## Ready to go!
 
-## Thanks Paul!
-
-and [others](http://www.itksnap.org/pmwiki/pmwiki.php?n=Main.Credits)
 
 
 

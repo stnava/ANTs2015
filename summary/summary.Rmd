@@ -1,0 +1,35 @@
+# ANTs:  in summary
+
+## Show me the code!
+
+__General purpose library for multivariate image registration, segmentation & statistical analysis tools__
+
+* 170,000+ lines of C++, 6$+$ years of work, 15+ collaborators.
+
+* Generic mathematical methods that are tunable for
+application specific domains.
+
+* <span style="color:red;">no free lunch</span>: <span style="color:black;">_An algorithm must use prior knowledge about a problem to do well on that problem._</span>
+
+<!--
+* Deep testing on multiple platforms ... osx, linux, windows.
+
+* Several "wins" in public knock-abouts ( [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496), [Murphy 2011](http://www.ncbi.nlm.nih.gov/pubmed/21632295), [SATA 2012 and 2013](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3837555/), [BRATS 2013](http://martinos.org/qtim/miccai2013/proc_brats_2013.pdf), others )
+-->
+
+## Still quite a bit to do
+
+## On documentation
+
+![](figures/Chainsaw.jpg)
+
+<!--
+Notes:
+* ANTs documentation is only slightly better than what is shown here.
+-->
+
+## We are blind to deficiencies.  Users blind to features.
+
+![](figures/blindmen.jpg)
+
+
