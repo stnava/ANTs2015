@@ -1,16 +1,21 @@
 ---
-title: <span style="color:red;">ANTs:</span><br />A retrospective
-author: Brian (<span style="color:blue;">PENN</span>) and <br />Nick (<span style="color:orange;">UVA</span>)
+title: <span style="color:red;">ANTs:</span><br /> A retrospective
+author: Brian (Penn) and Nick (UVa)
 bibliography: REFERENCES.bib
-logo:    logo.jpg
+logo:    figures/antsLogoBase.png
 output:
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme:  structurebold
+    highlight: tango
+    incremental: yes
+    theme:  AnnArbor
+    includes:
+      in_header: mystyle.tex
+    toc: yes
   pdf_document:
     toc: true
     highlight: zenburn
-  beamer_presentation:
-    toc: true
-    fig_width: 7
-    fig_height: 6
   html_document:
     toc: true
     theme: readable

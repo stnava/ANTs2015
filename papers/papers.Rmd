@@ -1,18 +1,18 @@
+
+
+
 # Major papers
 
-##
+## Donoho?
 
 <BR><BR>
 <span style="color:red;">_"Papers are just advertisements for the science."_</red>
 <BR>
 
-##
+## Symmetric Normalization (SyN)
 
-__Symmetric Normalization:__  (_SyN_)
 
-$\int_{t=0}^{0.5} \left(\|\mathbf{v}_1(x,t)\|_L^2 + \|\mathbf{v}_2(x,t)\|_L^2\right)dt$
-
-$+ \|I\left(\phi_1(x,0.5)\right) - J_i\left(\phi_2(x,0.5)\right)\|^2$
+$\int_{t=0}^{0.5} \left(\|\mathbf{v}_1(x,t)\|_L^2 + \|\mathbf{v}_2(x,t)\|_L^2\right)dt + \|I\left(\phi_1(x,0.5)\right) - J_i\left(\phi_2(x,0.5)\right)\|^2$
 
 ![](./papers/figures/fishes.png)
 
@@ -22,20 +22,19 @@ NOtes:
 * The variant most widely used
 -->
 
-##
+## Beyond original SyN
 
-__Beyond original SyN__
+\small
 
 ![](./papers/figures/Frontiers_ITK.png)
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
-##
 
-```antsRegistration```
+## ```antsRegistration```
 <BR><BR>
 
-~~~~~~~~~~~~~~~~~~~~~~~
+```bash
 $ antsRegistration --help
 
 COMMAND:
@@ -249,39 +248,31 @@ OPTIONS:
      --help
           Print the help menu. Will also print values used on the current command line
           call.
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-##
-
-__Template building__
-
-##
+## Template building:  creating the average Joe
 
 ![](./papers/figures/template0.jpg)
 
-##
+## "Attractiveness" $\rightarrow$ mental processing?
 
 ![](./papers/figures/template1.jpg)
 
-##
+##  What about brains?
 
 ![](./papers/figures/template3.jpg)
 
-##
+## Templates facilitate computation
 
 ![](./papers/figures/template4.jpg)
 
-##
+## Gender discernibility?
 
 ![](./papers/figures/template5.jpg)
 
-##
+## ```antsMultivariateTemplateConstruction2.sh```
 
-```antsMultivariateTemplateConstruction2.sh```
-
-<BR>
-
-~~~~~~~~~~~~~~~~~~~~~~
+```bash
 $ antsMultivariateTemplateConstruction2.sh
 
 Usage:
@@ -347,7 +338,7 @@ Optional arguments:
             L = fine resolution iteratioxns (here, full resolution).
           Finer resolutions take much more time per iteration than coarser resolutions.
 
-     -f:  Shrink factors (default = 6x4x2x1):  Also in the same form as -q max iterations.  
+     -f:  Shrink factors (default = 6x4x2x1):  Also in the same form as -q max iterations.
           Needs to have the same number of components.
 
      -s:  Smoothing factors (default = 3x2x1x0):  Also in the same form as -q max
@@ -433,12 +424,11 @@ Script by Nick Tustison
 --------------------------------------------------------------------------------------
 Apple XGrid support by Craig Stark
 --------------------------------------------------------------------------------------
-~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
-##
 
-__Nonparametric nonuniform intensity normalization (N3)__
+## Nonparametric nonuniform intensity normalization (N3)
 
 * Developed at the Montreal Neurological Institute (John Sled, 1998)
 
@@ -452,9 +442,7 @@ __Nonparametric nonuniform intensity normalization (N3)__
 
 * "*Let's incorporate N3 into ANTs!*"
 
-##
-
-__N3 adoption issues__
+## N3 adoption issues
 
 ![](./tools/n4/figures/whyN4.png)
 
@@ -464,36 +452,25 @@ __N3 adoption issues__
 
 -->
 
-##
-
-<!--
-__N3 $\rightarrow$ N4<sup>*</sup>__
-
-<p align = "middle"><small><sup>*</sup><u>N</u>ick's N3</small></p>
--->
-
-__N4__
-
+## N4
 
 * comparative [evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20378467)
 
-* smaller spline distances (useful for higher magnet strengths)
+* small spline distances (useful for higher magnet strengths)
 
 * multiresolution
 
 * weighted regional mask (used in [`antsAtroposN4.sh`](https://github.com/stnava/ANTs/blob/master/Scripts/antsAtroposN4.sh))
 
-* faster execution times
+* fast execution times
 
 * _publicly available_
 
-##
+* tested nightly within the ITK dashboard system
 
-```N4BiasFieldCorrection```
+## ```N4BiasFieldCorrection```
 
-<BR>
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```bash
 $ N4BiasFieldCorrection --help
 
 COMMAND:
@@ -587,15 +564,13 @@ OPTIONS:
      --help
           Print the help menu.
           <VALUES>: 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-##
+##  Atropos -- cutting the threads of fate
 
 ![](./papers/figures/Atropos_deGoya.jpg)
 
 "20+ years of development.  <br>_Show me the code!_"
-
-<p align = "right"><small>Brian, MICCAI workshop</small></p>
 
 <!--
 Notes:
@@ -603,33 +578,15 @@ Notes:
 * What about graph cuts?
 -->
 
-##
-
-__Atropos__
+## Atropos:  flexible code base
 
 
 ![](./tools/atropos/figures/atropos.png)
 
-<!-- regular html comment
 
-<div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
+## ```Atropos```
 
--->
-
-##
-
-__Algorithmic workflow__<br>(Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`)
-
-![](./tools/atropos/figures/atroposFlow.png)
-
-
-##
-
-```Atropos```
-
-<BR>
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```bash
 $ Atropos --help
 
 COMMAND:
@@ -807,5 +764,10 @@ OPTIONS:
      --help
           Print the help menu.
           <VALUES>: 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
+## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
+
+![](./tools/atropos/figures/atroposFlow.png)
 

@@ -2,6 +2,8 @@
 
 ##
 
+## ANTs evolution
+
 ![](./retrospective/figures/retrospective.jpg)
 
 
@@ -13,7 +15,7 @@ Notes:
   said the same thing---more on that later.
 -->
 
-##
+## FreeSurfer, Bruce Fischl
 
 ![](./retrospective/figures/juicyDetails.png)
 
@@ -25,11 +27,12 @@ Notes:
 * As a quasi-relevant tangent, not a surfer, decade long playful argument with significant other
 -->
 
-##
+<!--
+
+## Other juicy bits
 
 ![](./retrospective/figures/logos.png)
 
-<!--
 Notes:
 * Additional interesting bits of information
 * Logos
@@ -38,17 +41,11 @@ Notes:
 * What is the ice cream cone for and what does it have to do with British humour?
 -->
 
-##
+## NeuroImaging research as literature
 
-<BR>
-<BR>
-<BR>
-<span style="color:red;">_"Contingency.
-<BR>
+"Contingency.
 AFNI is one result of unexpected events.
-<BR>
-I met a woman and fell in love."_</span>
-<BR>
+I met a woman and fell in love."
 
 <!--
 Notes:
@@ -62,7 +59,9 @@ science and enjoy helping other people, and that ANTs is a set of tools that mig
 worth investigating.
 -->
 
-## <span style="color:red;">ANTs--_begotten in SyN_</red
+## ANTs--_begotten in SyN_
+
+![](./retrospective/figures/Welcometotherealm.jpg)
 
 <!--
 Notes:

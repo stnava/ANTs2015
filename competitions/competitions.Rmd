@@ -1,9 +1,11 @@
 
 # Competitions
 
-##
+## Algorithmic fight club
 
-<span style="color:green;">__Competitions__</span>
+![](./competitions/figures/fightclub.jpg)
+
+## International competitions
 
 * [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496)
 * [EMPIRE 2010](http://empire10.isi.uu.nl)
@@ -14,20 +16,22 @@
 
 <!--- ![](./evaluation/figures/evalhistory.png) -->
 
-##
-
-<span style="color:green;">__Klein 2009__</span>
+## Klein, NeuroImage 2009
 
 ![](./competitions/figures/nihms-130679-f0001.jpg)
 
+<!--
 * 14 algorithms
 * publicly available data
 * different labeling protocols
 * developers tune their own algorithms
+-->
 
-## <span style="color:green;">Results</span>
+## Klein results
 
 ![](./competitions/figures/KleinResults2009.png)
+
+## Take-away message
 
 _"One of the most significant findings of this study is that the relative performances of
 the registration methods under comparison appear to be little affected by the choice of
@@ -35,48 +39,44 @@ subject population, labeling protocol, and type of overlap measure....  ART, SyN
 SPM's DARTEL Toolbox gave the best results according to overlap and distance measures,
 with ART and SyN delivering the most consistently high accuracy across subjects and label sets."_
 
-## <span style="color:green;">EMPIRE 2010</span>
+## EMPIRE 2010
 
 ![](./competitions/figures/EMPIRE10criteria.png)
 
 * Alignment of lung boundaries,
+
 * major fissures,
+
 * annotated landmark pairs, and
+
 * topology of displacement field.
 
 
-##
-
-<span style="color:green;">__Results__</span>
+## EMPIRE 2010 results
 
 ![](./competitions/figures/EMPIRE10Results.png)
 
-##
-
-<span style="color:green;">__Multi-Atlas 2012__</span>
+## Multi-atlas 2012
 
 ![](./competitions/figures/NKI30_MALF.png)
 
-##
-
-<span style="color:green;">__Results__</span>
+## Multi-atlas 2012 results
 
 ![](./competitions/figures/MALF2012.png)
 
 
-##
+## SATA 2013
 
-<span style="color:green;">SATA 2013</span>
+Three very different problem domains
 
 ![](./competitions/figures/SATA_data.png)
 
-##
 
-<span style="color:green;">__BRATS 2013__</span>
+## BRATS 2013
 
 ![](./competitions/figures/brats2013results1.png)
 
-##
+## BRATS 2013 results
 
 <span style="color:green;">__Results__</span>
 
@@ -85,10 +85,8 @@ with ART and SyN delivering the most consistently high accuracy across subjects 
 Optimal symmetric multimodal templates and concatenated random forests for
 supervised brain tumor segmentation (simplified) with ANTsR, _Neuroinformatics_.
 
-##
+## STACOM 2014
 
-<span style="color:green;">__STACOM 2014__</span>
-
-![](./competitions/figures/image_gallery.gif)
+![](./competitions/figures/image_gallery.jpg)
 
 <!--- A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140) -->

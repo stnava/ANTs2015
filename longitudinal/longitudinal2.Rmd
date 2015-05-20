@@ -1,20 +1,18 @@
-# Longitudinal processing
+# Longitudinal processing (current work)
 
-##
+## Previous ANTs work
 
 ![](./longitudinal/figures/unbiasedPapers.png)
 
-##
+## ANTs longitudinal pipeline
 
 ![](./longitudinal/figures/longitudinalPipeline.png)
 
 
-##
+## ``antsLongitudinalCorticalThickness.sh``
 
-``antsLongitudinalCorticalThickness.sh``
-
-~~~~~~~~~~~~~~~~~~~~
-$ antsLongitudinalCorticalThickness.sh
+```bash
+$ antsLongitudinalCorticalThickness.sh -h 1
 
 antsLongitudinalCorticalThickness.sh performs a longitudinal cortical thickness estimation.  The following steps
 are performed:
@@ -124,7 +122,6 @@ Optional arguments:
                                                 reduces bias caused by subject orientation and voxel spacing (default = 0).
      -z:  Test / debug mode                     If > 0, runs a faster version of the script. Only for testing. Implies -u 0.
                                                 Requires single thread computation for complete reproducibility.
-~~~~~~~~~~~~~~~~~~~~
-
+```
 
 

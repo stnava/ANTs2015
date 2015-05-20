@@ -3,79 +3,75 @@
 
 ##
 
-![](./philosophy/circularity/figures/fastForward.png)
-
-##
-
-<BR><BR>
-
 ![](./philosophy/circularity/figures/escherANTs.png)
 
-##
+## "Hey Brian, have you ever used TBSS?"
 
 ![](./philosophy/circularity/figures/tbss.png)
 
-##
+## Use ANTs template building
+
+![](./philosophy/circularity/figures/mappingThroughT1.png)
+
+## Evaluation
 
 ![](./philosophy/circularity/figures/antsFlavoredTbss1.png)
 
-##
+## We'll call the approach...
 
 ![](./philosophy/circularity/figures/antsFlavoredTbss2.png)
 
-##
+## Quantitative results
 
 ![](./philosophy/circularity/figures/antsFlavoredTbss3.png)
 
-##
+## So much for that idea. :(
 
 ![](./philosophy/circularity/figures/antsFlavoredTbss4.png)
 
-##
+## What happened?
 
 ![](./philosophy/circularity/figures/antsFlavoredTbss5.png)
 
-##
+## Insight to the major stumbling block
 
 ![](./philosophy/circularity/figures/brianEmail.png)
 
-##
+## Academically "counting sheep"
 
 ![](./philosophy/circularity/figures/sleeping1.png)
 
-##
+## It sort of looks like the variance but the $N$
 
 ![](./philosophy/circularity/figures/sleeping2.png)
 
-##
+## Wait, that's not right.
 
 ![](./philosophy/circularity/figures/sleeping0.png)
 
-##
+## There's a missing summation!
 
 ![](./philosophy/circularity/figures/sleeping4.png)
 
-##
+## We switch the summations,
 
 ![](./philosophy/circularity/figures/sleeping5.png)
 
-##
+## recast $J$ as the mean image, and
 
 ![](./philosophy/circularity/figures/sleeping6.png)
 
-##
+## there it is!
 
 ![](./philosophy/circularity/figures/sleeping7.png)
 
-##
+## Okay, so now how do we show this?
 
 ![](./philosophy/circularity/figures/benefitsOfOpenScience.png)
 
-##
+## Open science evaluation
 
-<BR><BR>
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```bash
 $ CreateDTICohort -h
 
 COMMAND:
@@ -94,32 +90,37 @@ OPTIONS:
      -o, --output [outputDirectory,fileNameSeriesRootName,<numberOfControls=10>,<numberOfExperimentals=10>]
      -h
      --help
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
-##
-
-_Which one is not warped?_
+## Which one is not warped?
 
 ![](./philosophy/circularity/figures/whichOneIsRegistered.png)
 
 
-##
-
-_Answer_
+## Answer
 
 ![](./philosophy/circularity/figures/whichOneIsRegistered2.png)
 
-##
+## How does this vary with similarity metric?
 
 ![](./philosophy/circularity/figures/blobs1.png)
 
-##
+## How does this vary with similarity metric?
 
 ![](./philosophy/circularity/figures/blobs2.png)
 
-##
+## Bookstein review (blurb 1)
 
 ![](./philosophy/circularity/figures/BooksteinReview1.png)
+
+
+## Bookstein review (blurb 2)
+
 ![](./philosophy/circularity/figures/BooksteinReview2.png)
+
+## Bookstein review (blurb 3)
+
 ![](./philosophy/circularity/figures/BooksteinReview3.png)
+
+<HR WIDTH="60%">
