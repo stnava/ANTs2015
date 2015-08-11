@@ -1,0 +1,30 @@
+
+# Joint label/intensity fusion
+
+## Multi-atlas labeling
+
+![](./competitions/figures/NKI30_MALF.png)
+
+## Multi-atlas segmentation
+
+![](./tools/jointfusion/figures/jointLabelFusion.png)
+
+## Multi-atlas 2012 results
+
+![](./competitions/figures/MALF2012.png)
+
+## New work:  joint intensity fusion
+
+![](./tools/jointfusion/figures/jointIntensityFusion.png)
+
+<!--
+
+## Possible uses
+
+* ``Correct'' images
+    * motion correction
+    * lesions
+* Project atlas set intensity signature
+-->
+
+
