@@ -71,7 +71,7 @@ plot( img, sreg$warpedmovout  %>% iMath("Canny", 5, 0.1, 1) )
 ## Run a population diffeomorphic mapping
 
 ```{r qregpop,message=FALSE,warning=FALSE,results='hide'}
-ilist = list( 
+ilist = list(
   antsImageRead( getANTsRData( 'r27') ),
   antsImageRead( getANTsRData( 'r30') ),
   antsImageRead( getANTsRData( 'r62') ),
@@ -88,7 +88,7 @@ eanat = eanatDef( scale( mat ), nvecs = esel, mask = mask,
   positivity = TRUE, smoother = 0.5, cthresh = 200 )
 ```
 
-## Run a population eigenanatomy
+## Run a population eigenanatomy with deflation
 
 ```{r qreanat,message=FALSE,warning=FALSE,results='hide'}
 eanat = eanatDef( scale( mat ), nvecs = 4, mask = imask,
@@ -98,6 +98,17 @@ eseg = eigSeg( imask, eilist )
 plot( img, eseg )
 ```
 
+
+
+## Run a population eigenanatomy (original method)
+
+```{r qreanat,message=FALSE,warning=FALSE,results='hide'}
+eanat = sparseDecom( scale( mat ), nvecs = 4, inmask = imask,
+  sparseness = 0.05, smooth = 0.5, cthresh = 2200 )
+eilist2 = matrixToImages( eanat$eigenanatomyimages, imask )
+eseg2 = eigSeg( imask, eilist2 )
+plot( img, eseg2 )
+```
 
 
 ## A Quick <span style="color:grey;">*ANTsR*</span> example
@@ -228,4 +239,3 @@ knitr::include_graphics("~/data/antsExamples/ANTs2015/figures/antsgoals.png")
 ```
 
 ... used in ["Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population"](http://www.ncbi.nlm.nih.gov/pubmed/24096125) and several upcoming ...
-
