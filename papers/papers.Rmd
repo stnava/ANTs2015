@@ -304,6 +304,9 @@ OPTIONS:
 
 ![](./papers/figures/template5.jpg)
 
+<!--
+
+
 ## ```antsMultivariateTemplateConstruction.sh```
 
 ```bash
@@ -404,7 +407,7 @@ Apple XGrid support by Craig Stark
 --------------------------------------------------------------------------------------
 ```
 
-<!--
+-->
 
 ## Nonparametric nonuniform intensity normalization (N3)
 
@@ -419,7 +422,7 @@ Apple XGrid support by Craig Stark
 * Public availability --- set of perl scripts coordinating various C++ programs
 
 * "*Let's incorporate N3 into ANTs!*"
--->
+
 
 ## N3 adoption issues
 
@@ -445,6 +448,8 @@ Apple XGrid support by Craig Stark
 
 * tested nightly within the ITK dashboard system
 -->
+
+<!--
 
 ## ```N4BiasFieldCorrection```
 
@@ -543,8 +548,9 @@ OPTIONS:
           Print the help menu.
           <VALUES>: 1
 ```
+-->
 
-<--
+<!--
 ##  Atropos -- cutting the threads of fate
 
 ![](./papers/figures/Atropos_deGoya.jpg)
@@ -561,6 +567,8 @@ Notes:
 "20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
+
+<!--
 
 ## ```Atropos```
 
@@ -744,18 +752,19 @@ OPTIONS:
           <VALUES>: 1
 ```
 
-<!--
-
+-->
 
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
--->
 
 
 
 ## ```DenoiseImage``` --- contribution from Jose Manjon
 
+![](./tools/figures/denoising.png)
+
+<!--
 ```bash
 $ DenoiseImage --help
 
@@ -815,6 +824,7 @@ OPTIONS:
           <VALUES>: 1
 
 ```
+-->
 
 ## Multi-atlas segmentation
 
@@ -835,6 +845,8 @@ OPTIONS:
 * Project atlas set intensity signature
 
 * Use in ``corrective learning''
+
+<!--
 
 ## ```antsJointFusion``` --- contribution from Hongzhi Wang (with some added features)
 
@@ -935,6 +947,4 @@ OPTIONS:
 
 ```
 
-
-
-
+-->
