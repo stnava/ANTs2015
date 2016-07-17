@@ -9,13 +9,13 @@
 
 ![](./evaluation/figures/rfRmse05ANTsT1T2.png)
 
+<!--
+
 ## Arno-thick-in-the-head (ATITH)
 
 _What if we made a crude estimate of the cortical thickness?_
 
 $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
-
-<!--
 
 ## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
 
@@ -27,12 +27,11 @@ $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
 ----
 
 _So how does ATITH compare with ANTs, FS?_
--->
+
+
 ## Prediction from cortical thickness data
 
 ![](./evaluation/figures/atith.png)
-
-<!--
 
 ## Brain constellation maps
 
@@ -99,6 +98,8 @@ OPTIONS:
 
 ![](./longitudinal/figures/longitudinalPipeline.png)
 
+<!--
+
 # But the best part is ...
 
 ## it is absolutely ``free''!
@@ -123,3 +124,4 @@ Sure, why not?---[Hasan, et al., J Neuroimaging](http://www.ncbi.nlm.nih.gov/pub
 *  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
 
 
+-->

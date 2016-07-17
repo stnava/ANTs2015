@@ -30,7 +30,7 @@ knitr::kable( conditionsDF )
 * `KellyKapowski.cxx` and `antsCorticalThickness.sh`
 * _"Let's evaluate on open data."_
 * and, eventually, _"Let's compare with FreeSurfer."_
--->
+
 
 ## Basic components of the pipeline
 
@@ -39,10 +39,12 @@ knitr::kable( conditionsDF )
 3. cortical thickness estimation
 4. cortical parcellation
 
+
 ## Sample results
 
 ![](./evaluation/figures/components.png)
 
+-->
 
 ## The ANTs structural brain mapping workflow
 
@@ -107,11 +109,12 @@ _But without ground truth, how does one evaluate the pipeline?_
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
+<!--
+
 ## Open science principles
 
 ![](./evaluation/figures/ageDistribution.png)
 
-<!--
 * Public data sets (IXI, NKI, OASIS, MMRR)
 * $>$ 1200 subjects, age 4 to over 94 years old
 -->

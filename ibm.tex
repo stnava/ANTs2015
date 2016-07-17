@@ -233,67 +233,11 @@ collaborators}\label{developers-and-collaborators}
 
 \end{frame}
 
-\section{ANTs lineage}\label{ants-lineage}
-
-\begin{frame}{Image mapping and perception: 1877}
-
-Francis Galton: \emph{Can we see criminality in the face?}
-
-\includegraphics{./figures/galton.png}
-
-\emph{What about syphilis, mental illness?}
-
-\end{frame}
-
-\begin{frame}{Speaking of criminality\ldots{}}
-
-\emph{Can we say anything about the U.S. Congress?}
-
-\includegraphics{./background/figures/congressPersons.png}
-
-\textbf{Maybe they should have used
-\href{https://github.com/ntustison/CongressionalFaceTemplates}{ANTs}?}
-
-\end{frame}
-
-\begin{frame}{Image mapping \& biology: 1917}
-
-D'Arcy Thompson: \emph{Comparison of related forms}
-
-\includegraphics{./figures/dthompson.png} --\textgreater{}
-
-\end{frame}
-
-\begin{frame}{Image mapping \& biology: Current}
-
- \emph{Look where we are now!}
-\includegraphics{./background/figures/r16xr85.png}
-
-\end{frame}
-
 \section{Major ANTs utilities}\label{major-ants-utilities}
 
 \begin{frame}{Donoho?}
 
  \emph{``Papers are just advertisements for the science.''}
-
-\end{frame}
-
-\begin{frame}{Neuro tools}
-
-\includegraphics{./tools/figures/coreANtsToolsNeuro.png}
-
-\end{frame}
-
-\begin{frame}{Pulmonary tools}
-
-\includegraphics{./tools/figures/coreANtsToolsLung.png}
-
-\end{frame}
-
-\begin{frame}{Diffeomoprhisms: differentiable map with diff. inverse}
-
-\includegraphics{./figures/highresdiffeos.jpg}
 
 \end{frame}
 
@@ -1204,29 +1148,6 @@ transsexuality\tabularnewline
 
 \end{frame}
 
-\begin{frame}{Basic components of the pipeline}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  template building (offline)
-\item
-  brain extraction
-\item
-  cortical thickness estimation
-\item
-  cortical parcellation
-\end{enumerate}
-
-\end{frame}
-
-\begin{frame}{Sample results}
-
-\includegraphics{./evaluation/figures/components.png}
-
-\end{frame}
-
 \begin{frame}{The ANTs structural brain mapping workflow}
 
 \includegraphics{./evaluation/figures/pipeline.png}
@@ -1270,12 +1191,6 @@ estimating thickness.
 
 \end{frame}
 
-\begin{frame}{Open science principles}
-
-\includegraphics{./evaluation/figures/ageDistribution.png}
-
-\end{frame}
-
 \begin{frame}{Prediction from cortical thickness data}
 
 \includegraphics{./evaluation/figures/evaluation.png}
@@ -1310,59 +1225,9 @@ ANTs (left) vs.~FreeSurfer (right)
 
 \end{frame}
 
-\begin{frame}{Arno-thick-in-the-head (ATITH)}
-
-\emph{What if we made a crude estimate of the cortical thickness?}
-
-\[thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}\]
-
-\end{frame}
-
-\begin{frame}{Prediction from cortical thickness data}
-
-\includegraphics{./evaluation/figures/atith.png}
-
-\end{frame}
-
 \begin{frame}{Longitudinal processing}
 
 \includegraphics{./longitudinal/figures/longitudinalPipeline.png}
-
-\end{frame}
-
-\section{But the best part is \ldots{}}\label{but-the-best-part-is}
-
-\begin{frame}[fragile]{it is absolutely ``free''!}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{$\{ANTSPATH\}}\KeywordTok{/antsCorticalThickness.sh} \NormalTok{\textbackslash{}}
-  \NormalTok{-a IXI/T1/IXI002-Guys-0828-T1.nii.gz \textbackslash{}}
-  \NormalTok{-e IXI/template/T_template0.nii.gz \textbackslash{}}
-  \NormalTok{-m IXI/template/T_template0ProbabilityMask.nii.gz \textbackslash{}}
-  \NormalTok{-f IXI/template/T_template0ExtractionMask.nii.gz \textbackslash{}}
-  \NormalTok{-p IXI/template/Priors/priors%d.nii.gz \textbackslash{}}
-  \NormalTok{-o IXI/ANTsResults/IXI002-Guys-0828-}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}
-
-\href{https://github.com/ntustison/KapowskiChronicles}{\textbf{Data
-availability}}
-
-\begin{itemize}
-\item
-  ``\emph{Hey, can I have the FreeSurfer measurements for the entorhinal
-  cortex?}'' Sure, why
-  not?---\href{http://www.ncbi.nlm.nih.gov/pubmed/26565394}{Hasan, et
-  al., J Neuroimaging}
-\item
-  ``\emph{Can I have one or more of the templates that you used for your
-  study?}'' Would you like the priors as well?
-\end{itemize}
 
 \end{frame}
 

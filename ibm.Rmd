@@ -240,93 +240,6 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 -->
 
 <!--- A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140) -->
-# ANTs lineage
-
-## Image mapping and perception: 1877
-
-Francis Galton: _Can we see criminality in the face?_
-
-![](./figures/galton.png)
-
-_What about syphilis, mental illness?_
-
-<!--
-Notes:
-* Use of "composite portraiture" and what he called "eugenics"
-* Can we see criminality, mental illness, syphilis, and others in facial features?
-* Despite the obvious prejudices driving his research, he was a pioneer.
--->
-
-<!--
-
-##
-
-![](./background/figures/FrancisGalton2.jpg)
--->
-
-<!--
-Notes:
-* Another example where he has manually categorized facial features and try to combine them
-* Did not find much---composite tends to blend away to normality.
--->
-
-##  Speaking of criminality...
-
-_Can we say anything about the U.S. Congress?_
-
-![](./background/figures/congressPersons.png)
-
-__Maybe they should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
-
-<!--
-Notes:
--->
-
-##  Image mapping & biology:  1917
-
-D'Arcy Thompson: _Comparison of related forms_
-
-![](./figures/dthompson.png)
--->
-
-<!--
-Notes:
-* Book: On Growth and Form
-* Descriptive
-* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
--->
-
-## Image mapping & biology: Current
-<BR><BR>
-_Look where we are now!_
-<BR><BR>
-![](./background/figures/r16xr85.png)
-
-
-<!--
-## ANTs family tree
-
-![](./figures/lineage.jpg)
--->
-
-<!--
-References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
--->
-
-<!--
-## Initial scope
-
-![](./figures/ants_initial_scope.png)
--->
-
-<!--
-Notes:
-* Brian work with Murray Grossman
-* First registration paper
-  - WBIR submission
-  - FEM registraiton using B-spline basis functions.
-  - "yeah, that registration is not that good---Jim would not like it."
--->
 
 
 
@@ -338,6 +251,8 @@ Notes:
 _\`\`Papers are just advertisements for the science.\'\'_
 <BR>
 
+<!--
+
 ## Neuro tools
 
 ![](./tools/figures/coreANtsToolsNeuro.png)
@@ -346,6 +261,7 @@ _\`\`Papers are just advertisements for the science.\'\'_
 
 ![](./tools/figures/coreANtsToolsLung.png)
 
+-->
 
 <!--
 
@@ -368,11 +284,11 @@ NOtes:
 
 _differentiable map with differentiable inverse_
 
--->
-
 ## Diffeomoprhisms:  differentiable map with diff. inverse
 
 ![](./figures/highresdiffeos.jpg)
+
+-->
 
 <!--
 
@@ -1296,7 +1212,7 @@ knitr::kable( conditionsDF )
 * `KellyKapowski.cxx` and `antsCorticalThickness.sh`
 * _"Let's evaluate on open data."_
 * and, eventually, _"Let's compare with FreeSurfer."_
--->
+
 
 ## Basic components of the pipeline
 
@@ -1305,10 +1221,12 @@ knitr::kable( conditionsDF )
 3. cortical thickness estimation
 4. cortical parcellation
 
+
 ## Sample results
 
 ![](./evaluation/figures/components.png)
 
+-->
 
 ## The ANTs structural brain mapping workflow
 
@@ -1373,11 +1291,12 @@ _But without ground truth, how does one evaluate the pipeline?_
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
+<!--
+
 ## Open science principles
 
 ![](./evaluation/figures/ageDistribution.png)
 
-<!--
 * Public data sets (IXI, NKI, OASIS, MMRR)
 * $>$ 1200 subjects, age 4 to over 94 years old
 -->
@@ -1415,13 +1334,13 @@ ANTs (left) vs. FreeSurfer (right)
 
 ![](./evaluation/figures/rfRmse05ANTsT1T2.png)
 
+<!--
+
 ## Arno-thick-in-the-head (ATITH)
 
 _What if we made a crude estimate of the cortical thickness?_
 
 $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
-
-<!--
 
 ## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
 
@@ -1433,12 +1352,11 @@ $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
 ----
 
 _So how does ATITH compare with ANTs, FS?_
--->
+
+
 ## Prediction from cortical thickness data
 
 ![](./evaluation/figures/atith.png)
-
-<!--
 
 ## Brain constellation maps
 
@@ -1505,6 +1423,8 @@ OPTIONS:
 
 ![](./longitudinal/figures/longitudinalPipeline.png)
 
+<!--
+
 # But the best part is ...
 
 ## it is absolutely ``free''!
@@ -1529,6 +1449,7 @@ Sure, why not?---[Hasan, et al., J Neuroimaging](http://www.ncbi.nlm.nih.gov/pub
 *  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
 
 
+-->
 
 # Current work and Advanced Normalization Tools in R (ANTsR)
 

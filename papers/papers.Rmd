@@ -9,6 +9,8 @@
 _\`\`Papers are just advertisements for the science.\'\'_
 <BR>
 
+<!--
+
 ## Neuro tools
 
 ![](./tools/figures/coreANtsToolsNeuro.png)
@@ -17,6 +19,7 @@ _\`\`Papers are just advertisements for the science.\'\'_
 
 ![](./tools/figures/coreANtsToolsLung.png)
 
+-->
 
 <!--
 
@@ -39,11 +42,11 @@ NOtes:
 
 _differentiable map with differentiable inverse_
 
--->
-
 ## Diffeomoprhisms:  differentiable map with diff. inverse
 
 ![](./figures/highresdiffeos.jpg)
+
+-->
 
 <!--
 
