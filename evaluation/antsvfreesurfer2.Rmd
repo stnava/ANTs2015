@@ -1,51 +1,5 @@
----
-title: ANTs brain morphology
-author: Nick (UVa) and Brian (Penn)
-bibliography: REFERENCES.bib
-logo:    figures/antsLogoBase.png
-output:
-  beamer_presentation:
-    colortheme: dolphin
-    fonttheme:  structurebold
-    highlight: tango
-    incremental: yes
-    theme:  AnnArbor
-    includes:
-      in_header: mystyle.tex
-    toc: yes
-  pdf_document:
-    toc: true
-    highlight: zenburn
-  html_document:
-    toc: true
-    theme: readable
-  revealjs_presentation:
-    pandoc_args: [ "--slide-level", "2" ]
-    incremental: true
-    widescreen: true
-    smaller: false
-    theme: night
-    transition: fade
-    highlight: zenburn
-    center: true
-    self_contained: false
-  ioslides_presentation:
-    css: atk.css
-    incremental: false
-    widescreen: true
-    smaller: false
-    fig_width: 5
----
 
-```{r global options, include=FALSE}
-library(rmarkdown)
-library(knitr)
-figpath<-'figures/'
-opts_chunk$set(fig.width=9, fig.height=6, fig.path=figpath,
-               warning=FALSE, message=FALSE)
-```
-
-
+# Putting it all together---the ANTs cortical thickness pipeline
 
 ## Cortical thickness studies
 
@@ -65,6 +19,8 @@ conditionsDF <- data.frame( Column1 = conditions[1:floor( 0.5*length(conditions)
 knitr::kable( conditionsDF )
 ```
 
+<!--
+
 ## ANTs-related background
 
 * Sandy, Brian, and <span style="color:red;">DiReCT</span>
@@ -74,6 +30,7 @@ knitr::kable( conditionsDF )
 * `KellyKapowski.cxx` and `antsCorticalThickness.sh`
 * _"Let's evaluate on open data."_
 * and, eventually, _"Let's compare with FreeSurfer."_
+-->
 
 ## Basic components of the pipeline
 
@@ -111,34 +68,37 @@ Each template is [processed](https://github.com/ntustison/antsCookTemplatePriors
 to produce auxiliary images which are used for brain extraction and brain segmentation.
 -->
 
+<!--
 
 
 ## Brain extraction comparison
 
 ![](./evaluation/figures/brainExtraction.png)
 
-<!--
 Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
 the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
 -->
+
+<!--
 
 ## Brain segmentation
 
 ![](./evaluation/figures/brainSegmentation.png)
 
-<!--
 Randomly selected healthy individuals.  ```Atropos``` gets good performance across ages.
 -->
 
-## Cortical thickness estimation
+## Cortical thickness maps
 
 ![](./evaluation/figures/corticalThicknessEstimation.png)
 
-<!--
-In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter, *ANTs* diffeomorphically registers the white matter to the combined gray/white matters while simultaneously estimating thickness.
--->
+In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter,
+*ANTs* diffeomorphically registers the white matter to the combined gray/white matters
+while simultaneously estimating thickness.
 
-## _But without ground truth, how does one evaluate the pipeline?_
+----
+
+_But without ground truth, how does one evaluate the pipeline?_
 
 
 
@@ -147,7 +107,7 @@ In contrast to FreeSurfer which warps coupled surface meshes to segment the gray
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
-## Open science prinicples
+## Open science principles
 
 ![](./evaluation/figures/ageDistribution.png)
 
@@ -173,7 +133,6 @@ ANTs (left) vs. FreeSurfer (right)
 ## Regional measurements
 
 ![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
-
 
 
 

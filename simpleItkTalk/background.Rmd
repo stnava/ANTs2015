@@ -1,0 +1,71 @@
+# Brief image registration history
+
+## Image mapping and perception: 1877
+
+Francis Galton: _Can we see criminality in the face?_
+
+![](./figures/galton.png)
+
+_What about syphilis, mental illness?_
+
+<!--
+Notes:
+* Use of "composite portraiture" and what he called "eugenics"
+* Can we see criminality, mental illness, syphilis, and others in facial features?
+* Despite the obvious prejudices driving his research, he was a pioneer.
+-->
+
+<!--
+
+##
+
+![](./background/figures/FrancisGalton2.jpg)
+-->
+
+<!--
+Notes:
+* Another example where he has manually categorized facial features and try to combine them
+* Did not find much---composite tends to blend away to normality.
+-->
+
+##  Speaking of criminality...
+
+_Can we say anything about the U.S. Congress?_
+
+![](./background/figures/congressPersons.png)
+
+__Maybe they should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
+
+<!--
+Notes:
+-->
+
+##  Image mapping & biology:  1917
+
+D'Arcy Thompson: _Comparison of related forms_
+
+![](./figures/dthompson.png)
+-->
+
+<!--
+Notes:
+* Book: On Growth and Form
+* Descriptive not susceptible to hypothesis testing
+* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
+-->
+
+## Image mapping & biology: current
+<BR><BR>
+_Look where we are now!_
+<BR><BR>
+![](./background/figures/r16xr85.png)
+
+
+## Family tree
+
+![](./figures/lineage.jpg)
+
+
+<!--
+References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
+-->

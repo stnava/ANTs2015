@@ -43,7 +43,7 @@ NOtes:
 * have written quite a bit of code together
 -->
 
-## ANTs Long term collaborators
+## ANTs long term collaborators
 
 ![](./figures/antscollab.jpg)
 

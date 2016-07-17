@@ -1,17 +1,9 @@
 
 # But, wait, there's more!
 
-##
-
-[__Data availability__](https://github.com/ntustison/KapowskiChronicles)
-
-*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"  Sure, why not?
-
-*  "_I was wondering if you would make available the CT in each ROI for each subject..._" Sure, why not?  Would you also like the surface areas and volumes?
-
-*  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
-
+<!--
 ##  What about using both the T1 & T2?
+-->
 
 ## ANTs tools are multivariate
 
@@ -23,29 +15,33 @@ _What if we made a crude estimate of the cortical thickness?_
 
 $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
 
+<!--
+
 ## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
 
 ![](./evaluation/figures/LabelThickness.png)
 
-## So how does ATITH compare with ANTs, FS?
+-->
 
+<!--
+----
+
+_So how does ATITH compare with ANTs, FS?_
+-->
 ## Prediction from cortical thickness data
 
 ![](./evaluation/figures/atith.png)
+
+<!--
 
 ## Brain constellation maps
 
 ![](./evaluation/figures/brainConstellationMaps.png)
 
-## And currently brewing on the UVa cluster...
 
-_Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
 
 ## Contribution from Jose
-
-* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.h``
-
-* ``itkAdaptiveNonLocalMeansDenoisingImageFilter.hxx``
 
 ```bash
 $ DenoiseImage
@@ -93,9 +89,19 @@ OPTIONS:
           Print the help menu.
 ```
 
+## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+
+![](./evaluation/figures/rfRmseDenoise05.png)
+
+-->
+
+## Longitudinal processing
+
+![](./longitudinal/figures/longitudinalPipeline.png)
+
 # But the best part is ...
 
-## it is absolutely free!
+## it is absolutely ``free''!
 
 ```bash
 ${ANTSPATH}/antsCorticalThickness.sh \
@@ -107,9 +113,13 @@ ${ANTSPATH}/antsCorticalThickness.sh \
   -o IXI/ANTsResults/IXI002-Guys-0828-
 ```
 
-_(as in speech, not beer)_
+----
 
-## We'll discuss more this afternoon
+[__Data availability__](https://github.com/ntustison/KapowskiChronicles)
 
-https://github.com/ntustison/antsCorticalThicknessExample
+*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"
+Sure, why not?---[Hasan, et al., J Neuroimaging](http://www.ncbi.nlm.nih.gov/pubmed/26565394)
+
+*  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
+
 

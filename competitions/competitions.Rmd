@@ -1,31 +1,43 @@
 
+<!--
 # Competitions
+-->
+
+<!--
 
 ## Algorithmic fight club
 
 ![](./competitions/figures/fightclub.jpg)
 
+-->
+
 ## International competitions
 
-* [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496)
-* [EMPIRE 2010](http://empire10.isi.uu.nl)
-* [Multi-Atlas Label Challenge 2012](https://masi.vuse.vanderbilt.edu/workshop2012/index.php/Main_Page)
-* [SATA Challenge 2013](https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events)
-* [BRATS 2013](http://martinos.org/qtim/miccai2013/)
-* [STACOM 2014 MoCo Challenge](http://www.cardiacatlas.org/web/stacom2014/moco-introduction)
+* [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496): MRI brain registration
+
+* [EMPIRE 2010](http://empire10.isi.uu.nl):  CT lung registration
+
+* [Multi-Atlas Label Challenge 2012](https://masi.vuse.vanderbilt.edu/workshop2012/index.php/Main_Page):  MRI brain registration and segmentation
+
+* [SATA Challenge 2013](https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events): MRI cardiac and canine hind leg registration
+
+* [BRATS 2013](http://martinos.org/qtim/miccai2013/): Multi-modal MRI brain segmentation
+
+* [STACOM 2014 MoCo Challenge](http://www.cardiacatlas.org/web/stacom2014/moco-introduction):  MRI cardiac motion estimation
 
 <!--- ![](./evaluation/figures/evalhistory.png) -->
+
+
+<!--
 
 ## Klein, NeuroImage 2009
 
 ![](./competitions/figures/nihms-130679-f0001.jpg)
 
-<!--
 * 14 algorithms
 * publicly available data
 * different labeling protocols
 * developers tune their own algorithms
--->
 
 ## Klein results
 
@@ -60,10 +72,10 @@ with ART and SyN delivering the most consistently high accuracy across subjects 
 
 ![](./competitions/figures/NKI30_MALF.png)
 
+
 ## Multi-atlas 2012 results
 
 ![](./competitions/figures/MALF2012.png)
-
 
 ## SATA 2013
 
@@ -78,15 +90,15 @@ Three very different problem domains
 
 ## BRATS 2013 results
 
-<span style="color:green;">__Results__</span>
-
 ![](./competitions/figures/brats2013results2.png)
 
-Optimal symmetric multimodal templates and concatenated random forests for
-supervised brain tumor segmentation (simplified) with ANTsR, _Neuroinformatics_.
+[Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
 
 ## STACOM 2014
 
 ![](./competitions/figures/image_gallery.jpg)
+
+-->
 
 <!--- A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140) -->

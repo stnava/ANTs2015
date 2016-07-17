@@ -34,7 +34,7 @@ _Can we say anything about the U.S. Congress?_
 
 ![](./background/figures/congressPersons.png)
 
-__Maybe he should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
+__Maybe they should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
 
 <!--
 Notes:
@@ -45,11 +45,12 @@ Notes:
 D'Arcy Thompson: _Comparison of related forms_
 
 ![](./figures/dthompson.png)
+-->
 
 <!--
 Notes:
 * Book: On Growth and Form
-* Descriptive not susceptible to hypothesis testing
+* Descriptive
 * "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
 -->
 
@@ -61,23 +62,20 @@ _Look where we are now!_
 
 
 <!--
-Notes:
-* Book: On Growth and Form
-* Descriptive not susceptible to hypothesis testing
-* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
--->
-
 ## ANTs family tree
 
 ![](./figures/lineage.jpg)
+-->
 
 <!--
 References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
 -->
 
+<!--
 ## Initial scope
 
 ![](./figures/ants_initial_scope.png)
+-->
 
 <!--
 Notes:
@@ -87,22 +85,3 @@ Notes:
   - FEM registraiton using B-spline basis functions.
   - "yeah, that registration is not that good---Jim would not like it."
 -->
-
-
-## Diffeomorphisms:  Occam's razor modeling
-
-![](./figures/sillyputty.png)
-
-_differentiable map with differentiable inverse_
-
-## Diffeomoprhisms:  fine-grained and flexible maps
-
-![](./figures/highresdiffeos.jpg)
-
-<!--
-... to correct a misconception about diffeomorphisms ...
--->
-
-## Diffeomorphisms: image parameterization in a metric space
-
-![](./figures/shape_appearance.png)

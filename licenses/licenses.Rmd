@@ -1,0 +1,93 @@
+
+# Why would you care?
+
+<!--
+
+## \`\`Free beer\'\'
+
+![](./licenses/figures/freebeerfreespeech.jpg)
+
+-->
+
+## Software for medical image analysis
+
+* [FSL](http://fsl.fmrib.ox.ac.uk/fsldownloads/)
+
+* [SPM](http://www.fil.ion.ucl.ac.uk/spm/software/)
+
+* [FreeSurfer](http://www.fil.ion.ucl.ac.uk/spm/software/)
+
+* [MIPAV](http://mipav.cit.nih.gov)
+
+* [AFNI](https://afni.nimh.nih.gov/afni)
+
+* Slicer, Elastix, SimpleITK, ANTs $\longleftrightarrow$ [Insight Toolkit](http://www.itk.org)
+
+* Many more at [idoimaging.com](http://idoimaging.com)
+
+
+<!--
+
+## [FSL](http://fsl.fmrib.ox.ac.uk/fsldownloads/)
+
+> No part of the Software may be reproduced, modified, transmitted or
+> transferred in any form or by any means, electronic or mechanical,
+> without the express permission of the University. The permission of
+> the University is not required if the said reproduction, modification,
+> transmission or transference is done without financial return, ...
+> You may be held legally responsible for any copyright infringement
+> that is caused or encouraged by your failure to abide by these terms
+> and conditions.
+>
+> __You are not permitted under this Licence to use this Software
+> commercially.__
+
+## [SPM](http://www.fil.ion.ucl.ac.uk/spm/software/)
+
+> SPM is free but copyright software, distributed under the terms of
+> the GNU General Public Licence as published by the Free Software
+> Foundation (either version 2, as given in file spm_LICENCE.man,
+> or at your option, any later version). Further details on "copyleft"
+> can be found at http://www.gnu.org/copyleft/. In particular, SPM is
+> supplied as is. No formal support or maintenance is provided or implied.
+
+> "Copyleft" says that anyone who redistributes the software, with or
+> without changes, must pass along the freedom to further copy and change
+> it. Copyleft guarantees that every user has freedom... __it is illegal to
+> distribute the improved version except as free software__...
+
+## [FreeSurfer](http://www.fil.ion.ucl.ac.uk/spm/software/)
+
+> The license granted in this Software License includes without limitation
+> the right to (i) incorporate the Software into proprietary programs
+> (subject to any restrictions applicable to such programs), (ii) add
+> your own copyright statement to your modifications of the Software, and
+> (iii) provide additional or different license terms and conditions in your
+> sublicenses of modifications of the Software; provided that in each case your
+> use, reproduction or distribution of such modifications otherwise complies
+> with the conditions stated in this Software License.
+
+## [ANTs](https://github.com/stnava/ANTs/blob/master/ANTSCopyright.txt)
+
+> Redistribution and use in source and binary forms, with or without
+> modification, are permitted provided that the following conditions
+> are met:
+> 1. _Redistributions of source code must retain the above copyright
+>   notice, this list of conditions and the following disclaimer._
+> 2. _Redistributions in binary form must reproduce the above copyright
+>   notice, this list of conditions and the following disclaimer in the
+>   documentation and/or other materials provided with the distribution._
+> 3. _Neither the name of the consortium nor the names of its contributors
+>  may be used to endorse or promote products derived from this software
+>  without specific prior written permission._
+
+## [ITK](https://itk.org/ITK/project/licenseversion1.html)
+
+> The license of the Insight Toolkit is an open-source Apache 2.0 license. It
+> allows unrestricted use, including use in commercial products.
+> Starting with ITK 4.0, The Insight Toolkit is distributed under the Apache 2.0
+> license approved by the Open Source Initiative (OSI).
+
+-->
+
+

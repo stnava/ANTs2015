@@ -1,0 +1,27 @@
+
+
+# Developers and collaborators
+
+##  Founders:  Brian and Nick
+
+![](./figures/brian_and_nick.png)
+
+<!--
+NOtes:
+* Worked together for almost 10 years
+* have learned tons
+* have written quite a bit of code together
+-->
+
+----
+
+![](./figures/antsCollaborators2.png)
+
+$+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+<!--
+NOtes:
+* However, it is not just us
+* Other people have done quite a bit
+* and others who are not shown such as Arman
+-->

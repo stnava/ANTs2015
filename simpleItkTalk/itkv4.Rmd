@@ -1,0 +1,61 @@
+
+# ITKv3 $\longrightarrow$ ITKv4
+
+## Extensions of ITKv3
+
+* [Elastix](http://elastix.isi.uu.nl)
+* [Diffeomorphic Demons](http://www.insight-journal.org/browse/publication/154)
+* [BrainsFit](http://www.insight-journal.org/browse/publication/180)
+* [Advanced Normalization Tools (ANTs)](http://www.insight-journal.org/browse/publication/681)
+
+## Basic components
+
+* Optimizers (v4)
+* Metrics (v4)
+* Transforms
+* Image registration methods (v4)
+
+## Optimizers (v4) and scales estimators
+
+* Scales estimator
+
+## Metrics (v4)
+
+* Intensity metrics
+    * mean squares
+    * mutual information (Mattes and joint histogram)
+    * neighborhood cross-correlation
+    * demons
+    * global correlation
+* Point-set metrics
+    * iterative closest point
+    * point-set expectation
+    * Jensen-Havrda-Charvat-Tsallis
+* Multi-metrics
+
+## Transforms
+
+* Linear (translation, rigid, \ldots)
+* B-spline
+* Displacement field (Gaussian, B-spline, SyN)
+* Velocity field (exponential, time-varying)
+* Composite
+
+## Image registration methods (v4)
+
+* $\rightarrow$ Input:
+    * Fixed image and initial fixed transform
+    * Moving image and initial moving transform
+    * metric(s)
+* $\leftarrow$ Output:
+    * Optimized moving transform
+* Special methods for SyN and velocity field transforms
+
+## Beyond original SyN
+
+\small
+
+![](./papers/figures/Frontiers_ITK.png)
+
+![](./papers/figures/Frontiers_BSplineSyN.png)
+

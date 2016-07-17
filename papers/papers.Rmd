@@ -1,26 +1,58 @@
 
 
 
-# Major papers
+# Major ANTs utilities
 
 ## Donoho?
 
 <BR><BR>
-<span style="color:red;">_"Papers are just advertisements for the science."_</red>
+_\`\`Papers are just advertisements for the science.\'\'_
 <BR>
 
-## Symmetric Normalization (SyN)
+## Neuro tools
 
+![](./tools/figures/coreANtsToolsNeuro.png)
+
+## Pulmonary tools
+
+![](./tools/figures/coreANtsToolsLung.png)
+
+
+<!--
+
+## Symmetric Normalization (SyN)
 
 $\int_{t=0}^{0.5} \left(\|\mathbf{v}_1(x,t)\|_L^2 + \|\mathbf{v}_2(x,t)\|_L^2\right)dt + \|I\left(\phi_1(x,0.5)\right) - J_i\left(\phi_2(x,0.5)\right)\|^2$
 
 ![](./papers/figures/fishes.png)
 
-<!--
 NOtes:
 * Previously discussed Brians work
 * The variant most widely used
 -->
+
+<!--
+
+## Diffeomorphisms:  Occam's razor modeling
+
+![](./figures/sillyputty.png)
+
+_differentiable map with differentiable inverse_
+
+-->
+
+## Diffeomoprhisms:  differentiable map with diff. inverse
+
+![](./figures/highresdiffeos.jpg)
+
+<!--
+
+## Diffeomorphisms: image parameterization in a metric space
+
+![](./figures/shape_appearance.png)
+-->
+
+
 
 ## Beyond original SyN
 
@@ -29,7 +61,6 @@ NOtes:
 ![](./papers/figures/Frontiers_ITK.png)
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
-
 
 ## ```antsRegistration```
 <BR><BR>
@@ -270,22 +301,21 @@ OPTIONS:
 
 ![](./papers/figures/template5.jpg)
 
-## ```antsMultivariateTemplateConstruction2.sh```
+## ```antsMultivariateTemplateConstruction.sh```
 
 ```bash
-$ antsMultivariateTemplateConstruction2.sh
+$ antsMultivariateTemplateConstruction.sh
 
 Usage:
 
-antsMultivariateTemplateConstruction2.sh -d ImageDimension -o OutputPrefix <other options> <images>
+antsMultivariateTemplateConstruction.sh -d ImageDimension -o OUTPREFIX <other options> <images>
 
-Compulsory arguments (minimal command line requires SGE/PBS cluster, otherwise use -c and
-  -j options):
+Compulsory arguments (minimal command line requires SGE cluster, otherwise use -c & -j options):
 
      -d:  ImageDimension: 2 or 3 (for 2 or 3 dimensional registration of single volume)
    ImageDimension: 4 (for template generation of time-series data)
 
-     -o:  OutputPrefix; A prefix that is prepended to all output files.
+     -o:  OUTPREFIX; A prefix that is prepended to all output files.
 
 <images>  List of images in the current directory, eg *_t1.nii.gz. Should be at the end
           of the command.  Optionally, one can specify a .csv or .txt file where each
@@ -294,87 +324,36 @@ Compulsory arguments (minimal command line requires SGE/PBS cluster, otherwise u
           For the multi-modal case, the templates will be consecutively numbered (e.g.
           template0.nii.gz, template1.nii.gz, ...).
 
-NB: All images to be added to the template should be in the same directory, and this
-    script should be invoked from that directory.
+NB: All images to be added to the template should be in the same directory, and this script
+should be invoked from that directory.
 
 Optional arguments:
 
-     -a   image statistic used to summarize images (default 1)
-          0 = mean
-          1 = mean of normalized intensities
-          2 = median
+     -c:  Control for parallel computation (default 1) -- 0 == run serially,  1 == SGE qsub,
+          2 == use PEXEC (localhost), 3 == Apple XGrid, 4 == PBS qsub, 5 == SLURM
 
-     -b:  Backup images and results from all iterations (default = 0):  Boolean to save
-          the transform files, bias corrected, and warped images for each iteration.
+     -g:  Gradient step size (default 0.25) -- smaller in magnitude results in more cautious steps
 
-     -c:  Control for parallel computation (default 0):
-          0 = run serially
-          1 = SGE qsub
-          2 = use PEXEC (localhost)
-          3 = Apple XGrid
-          4 = PBS qsub
+     -i:  Iteration limit (default 4) -- iterations of the template construction (Iteration limit)*NumImages registrations.
 
-     -e   use single precision ( default 1 )
+     -j:  Number of cpu cores to use (default 2; -- requires "-c 2")
 
-     -g:  Gradient step size (default 0.25): smaller in magnitude results in more
-          cautious steps.
+     -k:  Number of modalities used to construct the template (default 1)
 
-     -i:  Iteration limit (default 4): iterations of the template construction
-          (Iteration limit)*NumImages registrations.
+     -w:  Modality weights used in the similarity metric (default = 1) --- specified as e.g. 1x0.5x0.75
 
-     -j:  Number of cpu cores to use locally for pexec option (default 2; requires "-c 2")
+     -m:  Max-iterations in each registration
 
-     -k:  Number of modalities used to construct the template (default 1):  For example,
-          if one wanted to create a multimodal template consisting of T1,T2,and FA
-          components ("-k 3").
+     -n:  N4BiasFieldCorrection of moving image (default 1) -- 0 == off, 1 == on
 
-     -w:  Modality weights used in the similarity metric (default = 1): specified as
-          e.g. 1x0.5x0.75.
+     -p:  Commands to prepend to job scripts (e.g., change into appropriate directory, set paths, etc)
 
-     -q:  Max iterations for each pairwise registration (default = 100x100x70x20):
-          specified in the form ...xJxKxL where
-            J = max iterations at coarsest resolution (here, reduced by power of 2^2)
-            K = middle resolution iterations (here, reduced by power of 2)
-            L = fine resolution iteratioxns (here, full resolution).
-          Finer resolutions take much more time per iteration than coarser resolutions.
+     -r:  Do rigid-body registration of inputs before creating template (default 0) -- 0 == off 1 == on. Only useful when
+          you do not have an initial template
 
-     -f:  Shrink factors (default = 6x4x2x1):  Also in the same form as -q max iterations.
-          Needs to have the same number of components.
+     -s:  Type of similarity metric used for registration.
 
-     -s:  Smoothing factors (default = 3x2x1x0):  Also in the same form as -q max
-          iterations.  Needs to have the same number of components.
-
-     -n:  N4BiasFieldCorrection of moving image: 0 == off, 1 == on (default 1).
-
-     -p:  Commands to prepend to job scripts (e.g., change into appropriate directory, set
-          paths, etc)
-
-     -r:  Do rigid-body registration of inputs before creating template (default 0):
-          0 == off 1 == on. Only useful when you do not have an initial template
-
-     -l:  Use linear image registration stages during the pairwise (template/subject)
-          deformable registration.  Otherwise, registration is limited to SyN or
-          B-spline SyN (see '-t' option).  This is '1' by default.
-
-     -m:  Type of similarity metric used for registration (default = CC):  Options are
-            CC = cross-correlation
-            MI = mutual information
-            MSQ = mean square difference
-            DEMONS = demon's metric
-          A similarity metric per modality can be specified.  If the CC metric is chosen,
-          one can also specify the radius in brackets, e.g. '-m CC[4]'.
-
-     -t:  Type of transformation model used for registration (default = SyN):  Options are
-            SyN = Greedy SyN
-            BSplineSyN = Greedy B-spline SyN
-            TimeVaryingVelocityField = Time-varying velocity field
-            TimeVaryingBSplineVelocityField = Time-varying B-spline velocity field
-
-     -u:  Walltime (default = 20:00:00):  Option for PBS qsub specifying requested time
-          per pairwise registration.
-
-     -v:  Memory limit (default = 8gb):  Option for PBS qsub specifying requested memory
-          per pairwise registration.
+     -t:  Type of transformation model used for registration.
 
      -x:  XGrid arguments (e.g., -x "-p password -h controlhost")
 
@@ -383,24 +362,19 @@ Optional arguments:
           template drifts in translation or orientation try -y 0.
 
      -z:  Use this this volume as the target of all inputs. When not used, the script
-          will create an unbiased starting point by averaging all inputs. Use the full
-          path.
-          For multiple modalities, specify -z modality1.nii.gz -z modality2.nii.gz ...
-          in the same modality order as the input images.
+          will create an unbiased starting point by averaging all inputs. Use the full path!
+
+     -b:  Boolean for saving iteration output to directories (default = 0).
 
 Example:
 
-antsMultivariateTemplateConstruction2.sh -d 3 -i 3 -k 1 -f 4x2x1 -s 2x1x0vox -q 30x20x4 -t SyN  -m CC -c 0 -o MY sub*avg.nii.gz
+antsMultivariateTemplateConstruction.sh -d 3 -m 30x50x20 -t GR -s CC -c 1 -o MY -z InitialTemplate.nii.gz  *RF*T1x.nii.gz
 
-Multimodal example:
-
-antsMultivariateTemplateConstruction2.sh -d 3 -i 3 -k 2 -f 4x2x1 -s 2x1x0vox -q 30x20x4 -t SyN -z t1.nii.gz -z t2.nii.gz  -m CC -c 0 -o MY templateInput.csv
-
-where templateInput.csv contains
-
-subjectA_t1.nii.gz,subjectA_t2.nii.gz
-subjectB_t1.nii.gz,subjectB_t2.nii.gz
-...
+- In this example 30x50x20 iterations per registration are used for template creation (that is the default)
+- Greedy-SyN and CC are the metrics to guide the mapping.
+- Output is prepended with MY and the initial template is InitialTemplate.nii.gz (optional).
+- The -c option is set to 1, which will result in using the Sun Grid Engine (SGE) to distribute the computation.
+- if you do not have SGE, read the help for multi-core computation on the local machine, or Apple X-grid options.
 
 --------------------------------------------------------------------------------------
 ANTS was created by:
@@ -420,13 +394,14 @@ Also see http://www.ncbi.nlm.nih.gov/pubmed/19818860 for more details.
 The script has been updated and improved since this publication.
 
 --------------------------------------------------------------------------------------
-Script by Nick Tustison
+script adapted by N.M. van Strien, http://www.mri-tutorial.com | NTNU MR-Center
+multivariate template adaption by Nick Tustison
 --------------------------------------------------------------------------------------
 Apple XGrid support by Craig Stark
 --------------------------------------------------------------------------------------
 ```
 
-
+<!--
 
 ## Nonparametric nonuniform intensity normalization (N3)
 
@@ -441,16 +416,15 @@ Apple XGrid support by Craig Stark
 * Public availability --- set of perl scripts coordinating various C++ programs
 
 * "*Let's incorporate N3 into ANTs!*"
+-->
 
 ## N3 adoption issues
 
 ![](./tools/n4/figures/whyN4.png)
 
-<!-- regular html comment
-
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
 
--->
+<!--
 
 ## N4
 
@@ -467,6 +441,7 @@ Apple XGrid support by Craig Stark
 * _publicly available_
 
 * tested nightly within the ITK dashboard system
+-->
 
 ## ```N4BiasFieldCorrection```
 
@@ -566,11 +541,11 @@ OPTIONS:
           <VALUES>: 1
 ```
 
+<--
 ##  Atropos -- cutting the threads of fate
 
 ![](./papers/figures/Atropos_deGoya.jpg)
-
-"20+ years of development.  <br>_Show me the code!_"
+-->
 
 <!--
 Notes:
@@ -580,9 +555,9 @@ Notes:
 
 ## Atropos:  flexible code base
 
+"20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
-
 
 ## ```Atropos```
 
@@ -766,8 +741,197 @@ OPTIONS:
           <VALUES>: 1
 ```
 
+<!--
+
 
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
+-->
+
+
+
+## ```DenoiseImage``` --- contribution from Jose Manjon
+
+```bash
+$ DenoiseImage --help
+
+
+COMMAND:
+     DenoiseImage
+          Denoise an image using a spatially adaptive filter originally described in J. V.
+          Manjon, P. Coupe, Luis Marti-Bonmati, D. L. Collins, and M. Robles. Adaptive
+          Non-Local Means Denoising of MR Images With Spatially Varying Noise Levels,
+          Journal of Magnetic Resonance Imaging, 31:192-203, June 2010.
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+          This option forces the image to be treated as a specified-dimensional image. If
+          not specified, the program tries to infer the dimensionality from the input
+          image.
+
+     -i, --input-image inputImageFilename
+          A scalar image is expected as input for noise correction.
+
+     -n, --noise-model Rician/(Gaussian)
+          Employ a Rician or Gaussian noise model.
+
+     -x, --mask-image maskImageFilename
+          If a mask image is specified, denoising is only performed in the mask region.
+
+     -s, --shrink-factor (1)/2/3/...
+          Running noise correction on large images can be time consuming. To lessen
+          computation time, the input image can be resampled. The shrink factor, specified
+          as a single integer, describes this resampling. Shrink factor = 1 is the
+          default.
+
+     -p, --patch-radius 1
+                        1x1x1
+          Patch radius. Default = 1x1x1
+
+     -r, --search-radius 3
+                         3x3x3
+          Search radius. Default = 3x3x3.
+
+     -o, --output correctedImage
+                  [correctedImage,<noiseImage>]
+          The output consists of the noise corrected version of the input image.
+          Optionally, one can also output the estimated noise image.
+
+     --version
+          Get Version Information.
+
+     -v, --verbose (0)/1
+          Verbose output.
+
+     -h
+          Print the help menu (short version).
+
+     --help
+          Print the help menu.
+          <VALUES>: 1
+
+```
+
+## Multi-atlas segmentation
+
+![](./tools/jointfusion/figures/jointLabelFusion.png)
+
+## New work:  joint intensity fusion
+
+![](./tools/jointfusion/figures/jointIntensityFusion.png)
+
+## Possible uses
+
+* ``Correct'' images
+
+    * motion correction
+
+    * ``remove'' lesions
+
+* Project atlas set intensity signature
+
+* Use in ``corrective learning''
+
+## ```antsJointFusion``` --- contribution from Hongzhi Wang (with some added features)
+
+```bash
+$ antsJointFusion --help
+
+COMMAND:
+     antsJointFusion
+          antsJointFusion is an image fusion algorithm developed by Hongzhi Wang and Paul
+          Yushkevich which won segmentation challenges at MICCAI 2012 and MICCAI 2013. The
+          original label fusion framework was extended to accommodate intensities by Brian
+          Avants. This implementation is based on Paul's original ITK-style implementation
+          and Brian's ANTsR implementation. References include 1) H. Wang, J. W. Suh, S.
+          Das, J. Pluta, C. Craige, P. Yushkevich, Multi-atlas segmentation with joint
+          label fusion IEEE Trans. on Pattern Analysis and Machine Intelligence, 35(3),
+          611-623, 2013. and 2) H. Wang and P. A. Yushkevich, Multi-atlas segmentation
+          with joint label fusion and corrective learning--an open source implementation,
+          Front. Neuroinform., 2013.
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+          This option forces the image to be treated as a specified-dimensional image. If
+          not specified, the program tries to infer the dimensionality from the input
+          image.
+
+     -t, --target-image targetImage
+                        [targetImageModality0,targetImageModality1,...,targetImageModalityN]
+          The target image (or multimodal target images) assumed to be aligned to a common
+          image domain.
+
+     -g, --atlas-image atlasImage
+                       [atlasImageModality0,atlasImageModality1,...,atlasImageModalityN]
+          The atlas image (or multimodal atlas images) assumed to be aligned to a common
+          image domain.
+
+     -l, --atlas-segmentation atlasSegmentation
+          The atlas segmentation images. For performing label fusion the number of
+          specified segmentations should be identical to the number of atlas image sets.
+
+     -a, --alpha 0.1
+          Regularization term added to matrix Mx for calculating the inverse. Default =
+          0.1
+
+     -b, --beta 2.0
+          Exponent for mapping intensity difference to the joint error. Default = 2.0
+
+     -r, --retain-label-posterior-images (0)/1
+          Retain label posterior probability images. Requires atlas segmentations to be
+          specified. Default = false
+
+     -f, --retain-atlas-voting-images (0)/1
+          Retain atlas voting images. Default = false
+
+     -c, --constrain-nonnegative (0)/1
+          Constrain solution to non-negative weights.
+
+     -p, --patch-radius 2
+                        2x2x2
+          Patch radius for similarity measures. Default = 2x2x2
+
+     -m, --patch-metric (PC)/MSQ
+          Metric to be used in determining the most similar neighborhood patch. Options
+          include Pearson's correlation (PC) and mean squares (MSQ). Default = PC (Pearson
+          correlation).
+
+     -s, --search-radius 3
+                         3x3x3
+                         searchRadiusMap.nii.gz
+          Search radius for similarity measures. Default = 3x3x3. One can also specify an
+          image where the value at the voxel specifies the isotropic search radius at that
+          voxel.
+
+     -e, --exclusion-image label[exclusionImage]
+          Specify an exclusion region for the given label.
+
+     -x, --mask-image maskImageFilename
+          If a mask image is specified, fusion is only performed in the mask region.
+
+     -o, --output labelFusionImage
+                  intensityFusionImageFileNameFormat
+                  [labelFusionImage,intensityFusionImageFileNameFormat,<labelPosteriorProbabilityImageFileNameFormat>,<atlasVotingWeightImageFileNameFormat>]
+          The output is the intensity and/or label fusion image. Additional optional
+          outputs include the label posterior probability images and the atlas voting
+          weight images.
+
+     --version
+          Get version information.
+
+     -v, --verbose (0)/1
+          Verbose output.
+
+     -h
+          Print the help menu (short version).
+
+     --help
+          Print the help menu.
+          <VALUES>: 1
+
+```
+
+
+
 

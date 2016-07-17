@@ -1,10 +1,44 @@
-\pgfdeclareimage[height=0.1cm, width=1cm]{logo}{}
-\logo{\pgfuseimage{logo}}
-\institute{}
-\definecolor{links}{HTML}{2A1B81}
+
+
+% \pgfdeclareimage[width=1cm]{logo}{./figures/monkeyTypewriter.png}
+%\logo{\pgfuseimage{logo}}
+
+\institute{University of Virginia}
+\definecolor{links}{RGB}{42, 27, 129}
 \definecolor{mypink2}{RGB}{219, 48, 122}
-\hypersetup{colorlinks,linkcolor=links,urlcolor=mypink2}
+%\hypersetup{colorlinks,linkcolor=links,urlcolor=mypink2}
 \usefonttheme{professionalfonts}
-\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
-\usepackage{helvet}
+
+% \setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+
+\setbeamerfont{subtitle}{size=\small}
+
+\definecolor{uvablue}{RGB}{0,85,150}
+\definecolor{uvalibraryorange}{RGB}{252,175,23}
+\definecolor{uvacream}{RGB}{241,229,199}
+\definecolor{uvalightblue}{RGB}{163,220,230}
+
+\setbeamercolor{block body}{bg=green,fg=green}
+\setbeamercolor{block body alerted}{bg=green,fg=green}
+\setbeamercolor{block body example}{bg=green,fg=green}
+
+\setbeamercolor{caption name}{fg=uvablue}
+
+\setbeamercolor{headline}{fg=uvacream,bg=uvacream}
+\setbeamercolor{section}{fg=uvalibraryorange,bg=uvablue}
+\setbeamercolor{frametitle}{fg=uvalibraryorange,bg=uvablue}
+\setbeamercolor{palette primary}{bg=uvalibraryorange,fg=uvablue}
+\setbeamercolor{palette secondary}{bg=uvablue,fg=uvablue}
+\setbeamercolor{palette tertiary}{bg=uvalibraryorange,fg=uvablue}
+\setbeamercolor{palette quarternary}{fg=uvalibraryorange,bg=uvablue}
+\setbeamercolor{palette sidebar primary}{bg=uvalibraryorange,fg=uvablue}
+\setbeamercolor{palette sidebar secondary}{fg=uvablue,bg=uvablue}
+\setbeamercolor{palette sidebar tertiary}{fg=uvalibraryorange,bg=uvablue}
+\setbeamercolor{palette sidebar quarternary}{fg=uvalibraryorange,bg=uvablue}
+\setbeamercolor{structure}{bg=uvablue}
+
+
+
 \useinnertheme{rectangles}
+
+\titlegraphic{\vspace{-7.5mm}\includegraphics[width=0.45\paperwidth]{./figures/monkeyTypewriter.png}}

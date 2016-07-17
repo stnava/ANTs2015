@@ -1,0 +1,27 @@
+
+# Current work and Advanced Normalization Tools in R (ANTsR)
+
+## Multimodal Brain Tumor Segmentation (BRATS 2013)
+
+![](./competitions/figures/brats2013results2.png)
+
+[Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
+
+## White matter hyperintensities in TBI
+
+![](./wmhs/figures/wmhPipeline.png)
+
+## Social behavior and immunity dysfunction in mice
+
+![](./antsr/figures/filiano_rsfmri.png)
+
+## Other ANTsR work
+
+* [Pediatric template of brain perfusion](http://www.nature.com/articles/sdata20153)
+
+* [Automated segmentation of chronic stroke lesions using LINDA: Lesion identification with neighborhood data analysis](http://www.ncbi.nlm.nih.gov/pubmed/26756101)
+
+* [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/25448483)
+
+* Corrective learning for segmentation refinement

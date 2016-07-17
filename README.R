@@ -19,13 +19,14 @@ buildrmd='ants2015build.Rmd'
 ########   Morning    ##########
 
 # Retrospective
-rawrmds <- c( "retrospective/retrospective.Rmd", "retrospective/neuroimage_fmri.Rmd",
-              "background/people.Rmd", "background/background.Rmd",
+rawrmds <- c( "format.Rmd",
+              "background/people2.Rmd",
+              "background/background.Rmd",
               "papers/papers.Rmd",
-              "philosophy/circularity/circularity.Rmd",
-              "competitions/competitions.Rmd",
-              "summary/summary.Rmd"
-                )
+              "evaluation/antsvfreesurfer2.Rmd",
+              "evaluation/antsvfreesurfer2_extra.Rmd",
+              "tools/jointfusion/jointfusion.Rmd"
+               )
 
 # Research talk
 # rawrmds <- c( "evaluation/antsvfreesurfer2.Rmd",
