@@ -20,7 +20,9 @@ output:
 
 # Developers and collaborators
 
+<!--
 ##  Founders:  Brian and Nick
+-->
 
 ![](./figures/brian_and_nick.png)
 
@@ -35,7 +37,9 @@ NOtes:
 
 ![](./figures/antsCollaborators2.png)
 
+<!--
 $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+-->
 
 <!--
 NOtes:
@@ -307,8 +311,12 @@ _differentiable map with differentiable inverse_
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
+
+<!--
+
 ## ```antsRegistration```
 <BR><BR>
+
 
 ```bash
 $ antsRegistration --help
@@ -526,6 +534,8 @@ OPTIONS:
           call.
 ```
 
+-->
+
 ## Template building:  creating the average Joe
 
 ![](./papers/figures/template0.jpg)
@@ -542,9 +552,14 @@ OPTIONS:
 
 ![](./papers/figures/template4.jpg)
 
-## Gender discernibility?
+
+<!--
+
+## Gender?
 
 ![](./papers/figures/template5.jpg)
+
+-->
 
 <!--
 
@@ -665,16 +680,16 @@ Apple XGrid support by Craig Stark
 
 * "*Let's incorporate N3 into ANTs!*"
 
-
-## N3 adoption issues
+<!--
+## Nonparametric nonuniform intensity normalization (N3)
 
 ![](./tools/n4/figures/whyN4.png)
 
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
 
-<!--
+-->
 
-## N4
+## N4 ("Nick's N3")
 
 * comparative [evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20378467)
 
@@ -689,7 +704,6 @@ Apple XGrid support by Craig Stark
 * _publicly available_
 
 * tested nightly within the ITK dashboard system
--->
 
 <!--
 
@@ -804,11 +818,15 @@ Notes:
 * What about graph cuts?
 -->
 
+<!--
+
 ## Atropos:  flexible code base
 
 "20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
+
+-->
 
 <!--
 
@@ -996,15 +1014,18 @@ OPTIONS:
 
 -->
 
+<!--
+
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
 
 
-
 ## ```DenoiseImage``` --- contribution from Jose Manjon
 
 ![](./tools/figures/denoising.png)
+
+-->
 
 <!--
 ```bash
@@ -1315,9 +1336,12 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
 ![](./evaluation/figures/evaluation.png)
 
+<!--
+
 ## Age prediction per site
 
 ![](./evaluation/figures/agePredictionPerSite.png)
+
 
 ## Regional importance comparison
 
@@ -1329,143 +1353,17 @@ ANTs (left) vs. FreeSurfer (right)
 
 ![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
 
-
-
-
-
-
-# But, wait, there's more!
-
-<!--
-##  What about using both the T1 & T2?
 -->
 
-## ANTs tools are multivariate
-
-![](./evaluation/figures/rfRmse05ANTsT1T2.png)
-
-<!--
-
-## Arno-thick-in-the-head (ATITH)
-
-_What if we made a crude estimate of the cortical thickness?_
-
-$$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
-
-## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
-
-![](./evaluation/figures/LabelThickness.png)
-
--->
-
-<!--
-----
-
-_So how does ATITH compare with ANTs, FS?_
 
 
-## Prediction from cortical thickness data
 
-![](./evaluation/figures/atith.png)
-
-## Brain constellation maps
-
-![](./evaluation/figures/brainConstellationMaps.png)
-
-
-## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
-
-## Contribution from Jose
-
-```bash
-$ DenoiseImage
-
-COMMAND:
-     DenoiseImage
-          Denoise an image using a spatially adaptive filter originally described in J. V.
-          Manjon, P. Coupe, Luis Marti-Bonmati, D. L. Collins, and M. Robles. Adaptive
-          Non-Local Means Denoising of MR Images With Spatially Varying Noise Levels,
-          Journal of Magnetic Resonance Imaging, 31:192-203, June 2010.
-
-OPTIONS:
-     -d, --image-dimensionality 2/3/4
-          This option forces the image to be treated as a specified-dimensional image. If
-          not specified, the program tries to infer the dimensionality from the input
-          image.
-
-     -i, --input-image inputImageFilename
-          A scalar image is expected as input for noise correction.
-
-     -n, --noise-model (Rician)/Gaussian
-          Employ a Rician or Gaussian noise model.
-
-     -s, --shrink-factor (1)/2/3/...
-          Running noise correction on large images can be time consuming. To lessen
-          computation time, the input image can be resampled. The shrink factor, specified
-          as a single integer, describes this resampling. Shrink factor = 1 is the
-          default.
-
-     -o, --output correctedImage
-                  [correctedImage,<noiseImage>]
-          The output consists of the noise corrected version of the input image.
-          Optionally, one can also output the estimated noise image.
-
-     --version
-          Get Version Information.
-
-     -v, --verbose (0)/1
-          Verbose output.
-
-     -h
-          Print the help menu (short version).
-
-     --help
-          Print the help menu.
-```
-
-## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
-
-![](./evaluation/figures/rfRmseDenoise05.png)
-
--->
-
-## Longitudinal processing
-
-![](./longitudinal/figures/longitudinalPipeline.png)
-
-<!--
-
-# But the best part is ...
-
-## it is absolutely ``free''!
-
-```bash
-${ANTSPATH}/antsCorticalThickness.sh \
-  -a IXI/T1/IXI002-Guys-0828-T1.nii.gz \
-  -e IXI/template/T_template0.nii.gz \
-  -m IXI/template/T_template0ProbabilityMask.nii.gz \
-  -f IXI/template/T_template0ExtractionMask.nii.gz \
-  -p IXI/template/Priors/priors%d.nii.gz \
-  -o IXI/ANTsResults/IXI002-Guys-0828-
-```
-
-----
-
-[__Data availability__](https://github.com/ntustison/KapowskiChronicles)
-
-*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"
-Sure, why not?---[Hasan, et al., J Neuroimaging](http://www.ncbi.nlm.nih.gov/pubmed/26565394)
-
-*  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
-
-
--->
 
 # Current work and Advanced Normalization Tools in R (ANTsR)
 
 ## Multimodal Brain Tumor Segmentation (BRATS 2013)
 
-![](./competitions/figures/brats2013results2.png)
+![](./competitions/figures/brats2013results1.png)
 
 [Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
 supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
@@ -1478,6 +1376,8 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 
 ![](./antsr/figures/filiano_rsfmri.png)
 
+<!--
+
 ## Other ANTsR work
 
 * [Pediatric template of brain perfusion](http://www.nature.com/articles/sdata20153)
@@ -1487,3 +1387,5 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 * [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/25448483)
 
 * Corrective learning for segmentation refinement
+
+-->

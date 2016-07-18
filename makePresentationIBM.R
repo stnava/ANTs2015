@@ -25,7 +25,6 @@ rawrmds <- c( "format.Rmd",
               "competitions/competitions.Rmd",
               "papers/papers.Rmd",
               "evaluation/antsvfreesurfer2.Rmd",
-              "evaluation/antsvfreesurfer2_extra.Rmd",
               "antsr/antsr.Rmd"
                )
 

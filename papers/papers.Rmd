@@ -65,8 +65,12 @@ _differentiable map with differentiable inverse_
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
+
+<!--
+
 ## ```antsRegistration```
 <BR><BR>
+
 
 ```bash
 $ antsRegistration --help
@@ -284,6 +288,8 @@ OPTIONS:
           call.
 ```
 
+-->
+
 ## Template building:  creating the average Joe
 
 ![](./papers/figures/template0.jpg)
@@ -300,9 +306,14 @@ OPTIONS:
 
 ![](./papers/figures/template4.jpg)
 
-## Gender discernibility?
+
+<!--
+
+## Gender?
 
 ![](./papers/figures/template5.jpg)
+
+-->
 
 <!--
 
@@ -423,16 +434,16 @@ Apple XGrid support by Craig Stark
 
 * "*Let's incorporate N3 into ANTs!*"
 
-
-## N3 adoption issues
+<!--
+## Nonparametric nonuniform intensity normalization (N3)
 
 ![](./tools/n4/figures/whyN4.png)
 
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
 
-<!--
+-->
 
-## N4
+## N4 ("Nick's N3")
 
 * comparative [evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20378467)
 
@@ -447,7 +458,6 @@ Apple XGrid support by Craig Stark
 * _publicly available_
 
 * tested nightly within the ITK dashboard system
--->
 
 <!--
 
@@ -562,11 +572,15 @@ Notes:
 * What about graph cuts?
 -->
 
+<!--
+
 ## Atropos:  flexible code base
 
 "20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
+
+-->
 
 <!--
 
@@ -754,15 +768,18 @@ OPTIONS:
 
 -->
 
+<!--
+
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
 
 
-
 ## ```DenoiseImage``` --- contribution from Jose Manjon
 
 ![](./tools/figures/denoising.png)
+
+-->
 
 <!--
 ```bash

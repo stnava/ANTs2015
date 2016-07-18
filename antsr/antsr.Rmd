@@ -3,7 +3,7 @@
 
 ## Multimodal Brain Tumor Segmentation (BRATS 2013)
 
-![](./competitions/figures/brats2013results2.png)
+![](./competitions/figures/brats2013results1.png)
 
 [Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
 supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
@@ -16,6 +16,8 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 
 ![](./antsr/figures/filiano_rsfmri.png)
 
+<!--
+
 ## Other ANTsR work
 
 * [Pediatric template of brain perfusion](http://www.nature.com/articles/sdata20153)
@@ -25,3 +27,5 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 * [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/25448483)
 
 * Corrective learning for segmentation refinement
+
+-->

@@ -123,9 +123,12 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
 ![](./evaluation/figures/evaluation.png)
 
+<!--
+
 ## Age prediction per site
 
 ![](./evaluation/figures/agePredictionPerSite.png)
+
 
 ## Regional importance comparison
 
@@ -137,6 +140,7 @@ ANTs (left) vs. FreeSurfer (right)
 
 ![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
 
+-->
 
 
 
