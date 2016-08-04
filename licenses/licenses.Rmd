@@ -1,13 +1,9 @@
 
 # Why would you care?
 
-<!--
-
 ## \`\`Free beer\'\'
 
 ![](./licenses/figures/freebeerfreespeech.jpg)
-
--->
 
 ## Software for medical image analysis
 

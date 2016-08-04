@@ -1,15 +1,9 @@
 
-<!--
 # Competitions
--->
-
-<!--
 
 ## Algorithmic fight club
 
 ![](./competitions/figures/fightclub.jpg)
-
--->
 
 ## International competitions
 

@@ -20,9 +20,7 @@ output:
 
 # Developers and collaborators
 
-<!--
 ##  Founders:  Brian and Nick
--->
 
 ![](./figures/brian_and_nick.png)
 
@@ -37,9 +35,7 @@ NOtes:
 
 ![](./figures/antsCollaborators2.png)
 
-<!--
 $+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
--->
 
 <!--
 NOtes:
@@ -50,13 +46,9 @@ NOtes:
 
 # Why would you care?
 
-<!--
-
 ## \`\`Free beer\'\'
 
 ![](./licenses/figures/freebeerfreespeech.jpg)
-
--->
 
 ## Software for medical image analysis
 
@@ -140,18 +132,99 @@ NOtes:
 -->
 
 
+# ANTs lineage
+
+## Image mapping and perception: 1877
+
+Francis Galton: _Can we see criminality in the face?_
+
+![](./figures/galton.png)
+
+_What about syphilis, mental illness?_
 
 <!--
-# Competitions
+Notes:
+* Use of "composite portraiture" and what he called "eugenics"
+* Can we see criminality, mental illness, syphilis, and others in facial features?
+* Despite the obvious prejudices driving his research, he was a pioneer.
 -->
 
 <!--
+
+##
+
+![](./background/figures/FrancisGalton2.jpg)
+-->
+
+<!--
+Notes:
+* Another example where he has manually categorized facial features and try to combine them
+* Did not find much---composite tends to blend away to normality.
+-->
+
+##  Speaking of criminality...
+
+_Can we say anything about the U.S. Congress?_
+
+![](./background/figures/congressPersons.png)
+
+__Maybe they should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
+
+<!--
+Notes:
+-->
+
+##  Image mapping & biology:  1917
+
+D'Arcy Thompson: _Comparison of related forms_
+
+![](./figures/dthompson.png)
+-->
+
+<!--
+Notes:
+* Book: On Growth and Form
+* Descriptive
+* "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
+-->
+
+## Image mapping & biology: Current
+<BR><BR>
+_Look where we are now!_
+<BR><BR>
+![](./background/figures/r16xr85.png)
+
+
+<!--
+## ANTs family tree
+
+![](./figures/lineage.jpg)
+-->
+
+<!--
+References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
+-->
+
+<!--
+## Initial scope
+
+![](./figures/ants_initial_scope.png)
+-->
+
+<!--
+Notes:
+* Brian work with Murray Grossman
+* First registration paper
+  - WBIR submission
+  - FEM registraiton using B-spline basis functions.
+  - "yeah, that registration is not that good---Jim would not like it."
+-->
+
+# Competitions
 
 ## Algorithmic fight club
 
 ![](./competitions/figures/fightclub.jpg)
-
--->
 
 ## International competitions
 
@@ -255,8 +328,6 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 _\`\`Papers are just advertisements for the science.\'\'_
 <BR>
 
-<!--
-
 ## Neuro tools
 
 ![](./tools/figures/coreANtsToolsNeuro.png)
@@ -265,15 +336,13 @@ _\`\`Papers are just advertisements for the science.\'\'_
 
 ![](./tools/figures/coreANtsToolsLung.png)
 
--->
-
-<!--
-
 ## Symmetric Normalization (SyN)
 
 $\int_{t=0}^{0.5} \left(\|\mathbf{v}_1(x,t)\|_L^2 + \|\mathbf{v}_2(x,t)\|_L^2\right)dt + \|I\left(\phi_1(x,0.5)\right) - J_i\left(\phi_2(x,0.5)\right)\|^2$
 
 ![](./papers/figures/fishes.png)
+
+-->
 
 NOtes:
 * Previously discussed Brians work
@@ -288,20 +357,15 @@ NOtes:
 
 _differentiable map with differentiable inverse_
 
+-->
+
 ## Diffeomoprhisms:  differentiable map with diff. inverse
 
 ![](./figures/highresdiffeos.jpg)
 
--->
-
-<!--
-
 ## Diffeomorphisms: image parameterization in a metric space
 
 ![](./figures/shape_appearance.png)
--->
-
-
 
 ## Beyond original SyN
 
@@ -311,8 +375,6 @@ _differentiable map with differentiable inverse_
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
-
-<!--
 
 ## ```antsRegistration```
 <BR><BR>
@@ -534,7 +596,7 @@ OPTIONS:
           call.
 ```
 
--->
+
 
 ## Template building:  creating the average Joe
 
@@ -553,13 +615,9 @@ OPTIONS:
 ![](./papers/figures/template4.jpg)
 
 
-<!--
-
 ## Gender?
 
 ![](./papers/figures/template5.jpg)
-
--->
 
 <!--
 
@@ -680,14 +738,11 @@ Apple XGrid support by Craig Stark
 
 * "*Let's incorporate N3 into ANTs!*"
 
-<!--
 ## Nonparametric nonuniform intensity normalization (N3)
 
 ![](./tools/n4/figures/whyN4.png)
 
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
-
--->
 
 ## N4 ("Nick's N3")
 
@@ -818,15 +873,11 @@ Notes:
 * What about graph cuts?
 -->
 
-<!--
-
 ## Atropos:  flexible code base
 
 "20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
-
--->
 
 <!--
 
@@ -1014,8 +1065,6 @@ OPTIONS:
 
 -->
 
-<!--
-
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
@@ -1025,9 +1074,6 @@ OPTIONS:
 
 ![](./tools/figures/denoising.png)
 
--->
-
-<!--
 ```bash
 $ DenoiseImage --help
 
@@ -1087,7 +1133,7 @@ OPTIONS:
           <VALUES>: 1
 
 ```
--->
+
 
 ## Multi-atlas segmentation
 
@@ -1269,22 +1315,16 @@ knitr::kable( conditionsDF )
 
 ![](./evaluation/figures/templates.png)
 
-<!--
-* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
+* Templates representing the average mean shape and intensity are built directly from the
+* cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
 * Acquisition and anonymization (e.g. defacing) protocols are often different.
--->
 
 ## Template priors
 
 ![](./evaluation/figures/templatePriors.png)
 
-<!--
 Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
 to produce auxiliary images which are used for brain extraction and brain segmentation.
--->
-
-<!--
-
 
 ## Brain extraction comparison
 
@@ -1292,16 +1332,13 @@ to produce auxiliary images which are used for brain extraction and brain segmen
 
 Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
 the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
--->
-
-<!--
 
 ## Brain segmentation
 
 ![](./evaluation/figures/brainSegmentation.png)
 
 Randomly selected healthy individuals.  ```Atropos``` gets good performance across ages.
--->
+
 
 ## Cortical thickness maps
 
@@ -1322,21 +1359,16 @@ _But without ground truth, how does one evaluate the pipeline?_
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
-<!--
-
 ## Open science principles
 
 ![](./evaluation/figures/ageDistribution.png)
 
 * Public data sets (IXI, NKI, OASIS, MMRR)
 * $>$ 1200 subjects, age 4 to over 94 years old
--->
 
 ## Prediction from cortical thickness data
 
 ![](./evaluation/figures/evaluation.png)
-
-<!--
 
 ## Age prediction per site
 
@@ -1353,7 +1385,6 @@ ANTs (left) vs. FreeSurfer (right)
 
 ![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
 
--->
 
 
 

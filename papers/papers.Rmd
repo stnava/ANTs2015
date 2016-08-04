@@ -9,8 +9,6 @@
 _\`\`Papers are just advertisements for the science.\'\'_
 <BR>
 
-<!--
-
 ## Neuro tools
 
 ![](./tools/figures/coreANtsToolsNeuro.png)
@@ -19,15 +17,13 @@ _\`\`Papers are just advertisements for the science.\'\'_
 
 ![](./tools/figures/coreANtsToolsLung.png)
 
--->
-
-<!--
-
 ## Symmetric Normalization (SyN)
 
 $\int_{t=0}^{0.5} \left(\|\mathbf{v}_1(x,t)\|_L^2 + \|\mathbf{v}_2(x,t)\|_L^2\right)dt + \|I\left(\phi_1(x,0.5)\right) - J_i\left(\phi_2(x,0.5)\right)\|^2$
 
 ![](./papers/figures/fishes.png)
+
+-->
 
 NOtes:
 * Previously discussed Brians work
@@ -42,20 +38,15 @@ NOtes:
 
 _differentiable map with differentiable inverse_
 
+-->
+
 ## Diffeomoprhisms:  differentiable map with diff. inverse
 
 ![](./figures/highresdiffeos.jpg)
 
--->
-
-<!--
-
 ## Diffeomorphisms: image parameterization in a metric space
 
 ![](./figures/shape_appearance.png)
--->
-
-
 
 ## Beyond original SyN
 
@@ -65,8 +56,6 @@ _differentiable map with differentiable inverse_
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
-
-<!--
 
 ## ```antsRegistration```
 <BR><BR>
@@ -288,7 +277,7 @@ OPTIONS:
           call.
 ```
 
--->
+
 
 ## Template building:  creating the average Joe
 
@@ -307,13 +296,9 @@ OPTIONS:
 ![](./papers/figures/template4.jpg)
 
 
-<!--
-
 ## Gender?
 
 ![](./papers/figures/template5.jpg)
-
--->
 
 <!--
 
@@ -434,14 +419,11 @@ Apple XGrid support by Craig Stark
 
 * "*Let's incorporate N3 into ANTs!*"
 
-<!--
 ## Nonparametric nonuniform intensity normalization (N3)
 
 ![](./tools/n4/figures/whyN4.png)
 
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
-
--->
 
 ## N4 ("Nick's N3")
 
@@ -572,15 +554,11 @@ Notes:
 * What about graph cuts?
 -->
 
-<!--
-
 ## Atropos:  flexible code base
 
 "20+ years of development.  <br>_Show me the code!_"
 
 ![](./tools/atropos/figures/atropos.png)
-
--->
 
 <!--
 
@@ -768,8 +746,6 @@ OPTIONS:
 
 -->
 
-<!--
-
 ## Atropos + N4 $\rightarrow$ `antsAtroposN4.sh`
 
 ![](./tools/atropos/figures/atroposFlow.png)
@@ -779,9 +755,6 @@ OPTIONS:
 
 ![](./tools/figures/denoising.png)
 
--->
-
-<!--
 ```bash
 $ DenoiseImage --help
 
@@ -841,7 +814,7 @@ OPTIONS:
           <VALUES>: 1
 
 ```
--->
+
 
 ## Multi-atlas segmentation
 

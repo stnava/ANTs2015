@@ -56,22 +56,16 @@ knitr::kable( conditionsDF )
 
 ![](./evaluation/figures/templates.png)
 
-<!--
-* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
+* Templates representing the average mean shape and intensity are built directly from the
+* cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
 * Acquisition and anonymization (e.g. defacing) protocols are often different.
--->
 
 ## Template priors
 
 ![](./evaluation/figures/templatePriors.png)
 
-<!--
 Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
 to produce auxiliary images which are used for brain extraction and brain segmentation.
--->
-
-<!--
-
 
 ## Brain extraction comparison
 
@@ -79,16 +73,13 @@ to produce auxiliary images which are used for brain extraction and brain segmen
 
 Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
 the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
--->
-
-<!--
 
 ## Brain segmentation
 
 ![](./evaluation/figures/brainSegmentation.png)
 
 Randomly selected healthy individuals.  ```Atropos``` gets good performance across ages.
--->
+
 
 ## Cortical thickness maps
 
@@ -109,21 +100,16 @@ _But without ground truth, how does one evaluate the pipeline?_
 
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 
-<!--
-
 ## Open science principles
 
 ![](./evaluation/figures/ageDistribution.png)
 
 * Public data sets (IXI, NKI, OASIS, MMRR)
 * $>$ 1200 subjects, age 4 to over 94 years old
--->
 
 ## Prediction from cortical thickness data
 
 ![](./evaluation/figures/evaluation.png)
-
-<!--
 
 ## Age prediction per site
 
@@ -140,7 +126,6 @@ ANTs (left) vs. FreeSurfer (right)
 
 ![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
 
--->
 
 
 

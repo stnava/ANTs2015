@@ -22,6 +22,7 @@ buildrmd <- 'ibm.Rmd'
 rawrmds <- c( "format.Rmd",
               "background/people2.Rmd",
               "licenses/licenses.Rmd",
+              "background/background.Rmd",
               "competitions/competitions.Rmd",
               "papers/papers.Rmd",
               "evaluation/antsvfreesurfer2.Rmd",
