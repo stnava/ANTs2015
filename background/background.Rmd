@@ -1,5 +1,7 @@
 # ANTs lineage
 
+<!--
+
 ## Image mapping and perception: 1877
 
 Francis Galton: _Can we see criminality in the face?_
@@ -7,6 +9,8 @@ Francis Galton: _Can we see criminality in the face?_
 ![](./figures/galton.png)
 
 _What about syphilis, mental illness?_
+
+-->
 
 <!--
 Notes:
@@ -28,6 +32,7 @@ Notes:
 * Did not find much---composite tends to blend away to normality.
 -->
 
+<!--
 ##  Speaking of criminality...
 
 _Can we say anything about the U.S. Congress?_
@@ -36,10 +41,13 @@ _Can we say anything about the U.S. Congress?_
 
 __Maybe they should have used [ANTs](https://github.com/ntustison/CongressionalFaceTemplates)?__
 
+-->
+
 <!--
 Notes:
 -->
 
+<!--
 ##  Image mapping & biology:  1917
 
 D'Arcy Thompson: _Comparison of related forms_
@@ -54,12 +62,13 @@ Notes:
 * "This book of mine has little need of preface, for indeed it is 'all preface' from beginning to end."
 -->
 
+<!--
 ## Image mapping & biology: Current
 <BR><BR>
 _Look where we are now!_
 <BR><BR>
 ![](./background/figures/r16xr85.png)
-
+-->
 
 <!--
 ## ANTs family tree
@@ -71,11 +80,9 @@ _Look where we are now!_
 References: @Horn1981, @Gee1993, @Grenander1993, @Thompson2001, @Miller2002, @Shen2002, @Arnold2014, @Thirion1998, @Rueckert1999, @Fischl2012, @Ashburner2012
 -->
 
-<!--
 ## Initial scope
 
 ![](./figures/ants_initial_scope.png)
--->
 
 <!--
 Notes:

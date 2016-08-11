@@ -40,6 +40,8 @@ _differentiable map with differentiable inverse_
 
 -->
 
+<!--
+
 ## Diffeomoprhisms:  differentiable map with diff. inverse
 
 ![](./figures/highresdiffeos.jpg)
@@ -47,6 +49,8 @@ _differentiable map with differentiable inverse_
 ## Diffeomorphisms: image parameterization in a metric space
 
 ![](./figures/shape_appearance.png)
+
+-->
 
 ## Beyond original SyN
 
@@ -56,6 +60,8 @@ _differentiable map with differentiable inverse_
 
 ![](./papers/figures/Frontiers_BSplineSyN.png)
 
+
+<!--
 
 ## ```antsRegistration```
 <BR><BR>
@@ -277,8 +283,10 @@ OPTIONS:
           call.
 ```
 
+-->
 
 
+<!--
 ## Template building:  creating the average Joe
 
 ![](./papers/figures/template0.jpg)
@@ -299,6 +307,8 @@ OPTIONS:
 ## Gender?
 
 ![](./papers/figures/template5.jpg)
+
+-->
 
 <!--
 
@@ -425,6 +435,8 @@ Apple XGrid support by Craig Stark
 
 <div align="center"><img src="./tools/n4/figures/whyN4.png" frameborder="0"></img></div>
 
+<!--
+
 ## N4 ("Nick's N3")
 
 * comparative [evaluation](http://www.ncbi.nlm.nih.gov/pubmed/20378467)
@@ -440,6 +452,8 @@ Apple XGrid support by Craig Stark
 * _publicly available_
 
 * tested nightly within the ITK dashboard system
+
+-->
 
 <!--
 
@@ -755,6 +769,10 @@ OPTIONS:
 
 ![](./tools/figures/denoising.png)
 
+<!--
+
+##
+
 ```bash
 $ DenoiseImage --help
 
@@ -814,7 +832,7 @@ OPTIONS:
           <VALUES>: 1
 
 ```
-
+-->
 
 ## Multi-atlas segmentation
 
@@ -824,6 +842,8 @@ OPTIONS:
 
 ![](./tools/jointfusion/figures/jointIntensityFusion.png)
 
+
+<!--
 ## Possible uses
 
 * ``Correct'' images
@@ -835,6 +855,8 @@ OPTIONS:
 * Project atlas set intensity signature
 
 * Use in ``corrective learning''
+
+-->
 
 <!--
 

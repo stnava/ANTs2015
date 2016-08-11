@@ -1,9 +1,13 @@
 
 # Why would you care?
 
+<!--
+
 ## \`\`Free beer\'\'
 
 ![](./licenses/figures/freebeerfreespeech.jpg)
+
+-->
 
 ## Software for medical image analysis
 
@@ -21,8 +25,6 @@
 
 * Many more at [idoimaging.com](http://idoimaging.com)
 
-
-<!--
 
 ## [FSL](http://fsl.fmrib.ox.ac.uk/fsldownloads/)
 
@@ -83,7 +85,5 @@
 > allows unrestricted use, including use in commercial products.
 > Starting with ITK 4.0, The Insight Toolkit is distributed under the Apache 2.0
 > license approved by the Open Source Initiative (OSI).
-
--->
 
 
