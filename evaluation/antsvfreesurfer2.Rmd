@@ -3,6 +3,8 @@
 
 ## Cortical thickness studies
 
+\scriptsize
+
 ```{r, results='asis', echo = FALSE}
 conditions <- c( "Tetris-playing ability", "Huntington’s disease", "schizophrenia", "bipolar disorder",
                  "Alzheimer’s disease", "frontotemporal dementia", "Parkinson’s disease",
@@ -48,42 +50,75 @@ knitr::kable( conditionsDF )
 
 ## The ANTs structural brain mapping workflow
 
-![](./evaluation/figures/pipeline.png)
+\begin{centering}
+
+\includegraphics[width=4.5in]{./evaluation/figures/pipeline.png}
+
+\end{centering}
 
 ## Template building
 
 *Tailor data to your specific cohort*
 
-![](./evaluation/figures/templates.png)
+\begin{centering}
 
-* Templates representing the average mean shape and intensity are built directly from the
-* cohort to be analyzed, e.g. pediatric vs. middle-aged brains.
+\includegraphics[width=3in]{./evaluation/figures/templates.png}
+
+\end{centering}
+
+\small
+
+* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.  
 * Acquisition and anonymization (e.g. defacing) protocols are often different.
 
 ## Template priors
 
-![](./evaluation/figures/templatePriors.png)
+\begin{centering}
+
+\includegraphics[width=2.5in]{./evaluation/figures/templatePriors.png}
+
+\end{centering}
+
+\small
 
 Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
 to produce auxiliary images which are used for brain extraction and brain segmentation.
 
 ## Brain extraction comparison
 
-![](./evaluation/figures/brainExtraction.png)
+\begin{centering}
+
+\includegraphics[width=3.5in]{./evaluation/figures/brainExtraction.png}
+
+\end{centering}
+
+\small
 
 Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
 the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
 
 ## Brain segmentation
 
-![](./evaluation/figures/brainSegmentation.png)
+\begin{centering}
+
+\includegraphics[width=3.5in]{./evaluation/figures/brainSegmentation.png}
+
+\end{centering}
+
+\small
 
 Randomly selected healthy individuals.  ```Atropos``` gets good performance across ages.
 
 
 ## Cortical thickness maps
 
-![](./evaluation/figures/corticalThicknessEstimation.png)
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/corticalThicknessEstimation.png}
+
+\end{centering}
+
+\small
 
 In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter,
 *ANTs* diffeomorphically registers the white matter to the combined gray/white matters
@@ -91,14 +126,25 @@ while simultaneously estimating thickness.
 
 ----
 
-_But without ground truth, how does one evaluate the pipeline?_
 
+\begin{centering}
 
+\Large
+
+{\bf But without ground truth, how does one evaluate the pipeline?}
+
+\end{centering}
 
 
 ## Predict age and gender
 
+\begin{centering}
+
 $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
+
+\end{centering}
+
+<!--
 
 ## Open science principles
 
@@ -107,26 +153,48 @@ $AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
 * Public data sets (IXI, NKI, OASIS, MMRR)
 * $>$ 1200 subjects, age 4 to over 94 years old
 
+-->
+
 ## Prediction from cortical thickness data
 
-![](./evaluation/figures/evaluation.png)
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/evaluation.png}
+
+\end{centering}
+
+<!--
 
 ## Age prediction per site
 
-![](./evaluation/figures/agePredictionPerSite.png)
+\begin{centering}
 
+\includegraphics[width=4in]{./evaluation/figures/agePredictionPerSite.png}
+
+\end{centering}
+
+-->
 
 ## Regional importance comparison
 
-![](./evaluation/figures/antsvfreesurfer_Importance.png)
 
+\begin{centering}
+
+\small
 ANTs (left) vs. FreeSurfer (right)
+
+\includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_Importance.png}
+
+\end{centering}
+
+<!--
 
 ## Regional measurements
 
-![](./evaluation/figures/antsvfreesurfer_regionalPlots.png)
+\begin{centering}
 
+\includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_regionalPlots.png}
 
+\end{centering}
 
-
-
+-->

@@ -1,0 +1,408 @@
+---
+title: Quantitative neuroimaging with ANTs
+subtitle:
+author: Nick Tustison
+bibliography: REFERENCES.bib
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme:  professionalfonts
+    highlight: tango
+    incremental: false
+    theme:  AnnArbor
+    includes:
+      in_header: mystyle.tex
+ #   toc: yes
+    keep_tex: yes
+    slide_level: 2
+    fig_width: 6
+    fig_height: 4.5
+    fig_caption: false
+---
+
+---
+
+# What is ANTs?
+
+## NLM's The Visible Human Project and The Insight Toolkit
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./figures/VisibleHumanProject_ITK.pdf}
+
+\end{center}
+
+## ANTs _began with a clinical research need._
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./figures/ANTsEvolutionarySummary.pdf}
+
+\end{center}
+
+## Advanced Normalization Tools
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./tools/figures/coreANtsToolsNeuro.png}
+
+\end{center}
+
+## Advanced Normalization Tools $\rightarrow$ ``ITK-Lung''
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./tools/figures/coreANtsToolsLung.png}
+
+\end{center}
+
+<!--
+
+# Competitions
+
+## Algorithmic fight club
+
+![](./competitions/figures/fightclub.jpg)
+
+-->
+
+## International competitions
+
+* [Klein 2009](http://www.ncbi.nlm.nih.gov/pubmed/19195496): MRI brain registration
+
+* [EMPIRE 2010](http://empire10.isi.uu.nl):  CT lung registration
+
+* [Multi-Atlas Label Challenge 2012](https://masi.vuse.vanderbilt.edu/workshop2012/index.php/Main_Page):  MRI brain registration and segmentation
+
+* [SATA Challenge 2013](https://masi.vuse.vanderbilt.edu/workshop2013/index.php/MICCAI_2013_SATA_Challenge_and_Workshop:Current_events): MRI cardiac and canine hind leg registration
+
+* [BRATS 2013](http://martinos.org/qtim/miccai2013/): Multi-modal MRI brain segmentation
+
+* [STACOM 2014 MoCo Challenge](http://www.cardiacatlas.org/web/stacom2014/moco-introduction):  MRI cardiac motion estimation
+
+<!--- ![](./evaluation/figures/evalhistory.png) -->
+
+
+<!--
+
+## Klein, NeuroImage 2009
+
+![](./competitions/figures/nihms-130679-f0001.jpg)
+
+* 14 algorithms
+* publicly available data
+* different labeling protocols
+* developers tune their own algorithms
+
+## Klein results
+
+![](./competitions/figures/KleinResults2009.png)
+
+## Take-away message
+
+_"One of the most significant findings of this study is that the relative performances of
+the registration methods under comparison appear to be little affected by the choice of
+subject population, labeling protocol, and type of overlap measure....  ART, SyN, IRTK, and
+SPM's DARTEL Toolbox gave the best results according to overlap and distance measures,
+with ART and SyN delivering the most consistently high accuracy across subjects and label sets."_
+
+## EMPIRE 2010
+
+![](./competitions/figures/EMPIRE10criteria.png)
+
+* Alignment of lung boundaries,
+
+* major fissures,
+
+* annotated landmark pairs, and
+
+* topology of displacement field.
+
+
+## EMPIRE 2010 results
+
+![](./competitions/figures/EMPIRE10Results.png)
+
+## Multi-atlas 2012
+
+![](./competitions/figures/NKI30_MALF.png)
+
+
+## Multi-atlas 2012 results
+
+![](./competitions/figures/MALF2012.png)
+
+## SATA 2013
+
+Three very different problem domains
+
+![](./competitions/figures/SATA_data.png)
+
+
+## BRATS 2013
+
+![](./competitions/figures/brats2013results1.png)
+
+## BRATS 2013 results
+
+![](./competitions/figures/brats2013results2.png)
+
+[Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
+
+## STACOM 2014
+
+![](./competitions/figures/image_gallery.jpg)
+
+-->
+
+<!--- A great opportunity to showcase a [new SyN variant](http://www.ncbi.nlm.nih.gov/pubmed/24409140) -->
+
+# Putting it all together---the ANTs cortical thickness pipeline
+
+## Cortical thickness studies
+
+\scriptsize
+
+```{r, results='asis', echo = FALSE}
+conditions <- c( "Tetris-playing ability", "Huntington’s disease", "schizophrenia", "bipolar disorder",
+                 "Alzheimer’s disease", "frontotemporal dementia", "Parkinson’s disease",
+                 "Williams syndrome", "multiple sclerosis", "autism", "migraines",
+                 "chronic smoking", "alcoholism", "cocaine addiction", "Tourette syndrome in children",
+                 "scoliosis in female adolescents", "early-onset blindness", "chronic pancreatitis",
+                 "obsessive-compulsive disorder", "ADHD", "obesity", "heritable depression",
+                 "elderly depression", "age", "gender",
+                 "handedness", "intelligence", "athletic ability", "meditative practices", "musical ability",
+                 "tendency toward criminality", "childhood sexual abuse in female adolescents",
+                  "traumatic brain injury", "untreated male-to-female transsexuality" )
+
+conditionsDF <- data.frame( Column1 = conditions[1:floor( 0.5*length(conditions) )], Column2 = conditions[( 1+floor( 0.5*length(conditions) ) ):length(conditions)] )
+knitr::kable( conditionsDF )
+```
+
+<!--
+
+## ANTs-related background
+
+* Sandy, Brian, and <span style="color:red;">DiReCT</span>
+    + used other tools such as FMRIB Automated Segmentation Tool (FAST)
+    + `KellySlater.cxx`
+* pipedream scripts "adequate for Penn data."
+* `KellyKapowski.cxx` and `antsCorticalThickness.sh`
+* _"Let's evaluate on open data."_
+* and, eventually, _"Let's compare with FreeSurfer."_
+
+
+## Basic components of the pipeline
+
+1. template building (offline)
+2. brain extraction
+3. cortical thickness estimation
+4. cortical parcellation
+
+
+## Sample results
+
+![](./evaluation/figures/components.png)
+
+-->
+
+## The ANTs structural brain mapping workflow
+
+\begin{centering}
+
+\includegraphics[width=4.5in]{./evaluation/figures/pipeline.png}
+
+\end{centering}
+
+## Template building
+
+*Tailor data to your specific cohort*
+
+\begin{centering}
+
+\includegraphics[width=3in]{./evaluation/figures/templates.png}
+
+\end{centering}
+
+\small
+
+* Templates representing the average mean shape and intensity are built directly from the cohort to be analyzed, e.g. pediatric vs. middle-aged brains.  
+* Acquisition and anonymization (e.g. defacing) protocols are often different.
+
+## Template priors
+
+\begin{centering}
+
+\includegraphics[width=2.5in]{./evaluation/figures/templatePriors.png}
+
+\end{centering}
+
+\small
+
+Each template is [processed](https://github.com/ntustison/antsCookTemplatePriorsExample)
+to produce auxiliary images which are used for brain extraction and brain segmentation.
+
+## Brain extraction comparison
+
+\begin{centering}
+
+\includegraphics[width=3.5in]{./evaluation/figures/brainExtraction.png}
+
+\end{centering}
+
+\small
+
+Comparison with de facto standard FreeSurfer package.  Note the difference in separation of
+the gray matter from the surrounding CSF.  (0 failures out of 1205 scans)
+
+## Brain segmentation
+
+\begin{centering}
+
+\includegraphics[width=3.5in]{./evaluation/figures/brainSegmentation.png}
+
+\end{centering}
+
+\small
+
+Randomly selected healthy individuals.  ```Atropos``` gets good performance across ages.
+
+
+## Cortical thickness maps
+
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/corticalThicknessEstimation.png}
+
+\end{centering}
+
+\small
+
+In contrast to FreeSurfer which warps coupled surface meshes to segment the gray matter,
+*ANTs* diffeomorphically registers the white matter to the combined gray/white matters
+while simultaneously estimating thickness.
+
+----
+
+
+\begin{centering}
+
+\Large
+
+{\bf But without ground truth, how does one evaluate the pipeline?}
+
+\end{centering}
+
+
+## Predict age and gender
+
+\begin{centering}
+
+$AGE \sim VOLUME + GENDER + \sum_{i=1}^{62} T(DKT_i)$
+
+\end{centering}
+
+<!--
+
+## Open science principles
+
+![](./evaluation/figures/ageDistribution.png)
+
+* Public data sets (IXI, NKI, OASIS, MMRR)
+* $>$ 1200 subjects, age 4 to over 94 years old
+
+-->
+
+## Prediction from cortical thickness data
+
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/evaluation.png}
+
+\end{centering}
+
+<!--
+
+## Age prediction per site
+
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/agePredictionPerSite.png}
+
+\end{centering}
+
+-->
+
+## Regional importance comparison
+
+
+\begin{centering}
+
+\small
+ANTs (left) vs. FreeSurfer (right)
+
+\includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_Importance.png}
+
+\end{centering}
+
+<!--
+
+## Regional measurements
+
+\begin{centering}
+
+\includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_regionalPlots.png}
+
+\end{centering}
+
+-->
+
+# Advanced Normalization Tools in R (ANTsR)
+
+## Multimodal Brain Tumor Segmentation (BRATS 2013)
+
+\begin{centering}
+
+\includegraphics[width=4.5in]{./competitions/figures/brats2013results1.png}
+
+\end{centering}
+
+\small
+
+[Tustison, et al., Optimal symmetric multimodal templates and concatenated random forests for
+supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics_.](http://www.ncbi.nlm.nih.gov/pubmed/25433513)
+
+## White matter hyperintensities in TBI
+
+\begin{centering}
+
+\includegraphics[width=4.5in]{./wmhs/figures/wmhPipeline.png}
+
+\end{centering}
+
+
+## Social behavior and immunity dysfunction in mice
+
+\begin{centering}
+
+\includegraphics[width=3in]{./antsr/figures/filiano_rsfmri.png}
+
+\end{centering}
+
+## Other ANTsR work
+
+* [Pediatric template of brain perfusion](http://www.nature.com/articles/sdata20153)
+
+* [Automated segmentation of chronic stroke lesions using LINDA: Lesion identification with neighborhood data analysis](http://www.ncbi.nlm.nih.gov/pubmed/26756101)
+
+* [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/25448483)
+
+* Corrective learning for segmentation refinement
+
+----
+
+## Open source
+
+* https://github.com/stnava/ANTs
+* https://github.com/stnava/ANTsR

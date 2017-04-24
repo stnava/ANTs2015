@@ -1,7 +1,7 @@
 ---
-title: ANTs Overview
+title: Quantitative neuroimaging with ANTs
 subtitle:
-author: Brian Avants and Nick Tustison
+author: Nick Tustison
 bibliography: REFERENCES.bib
 output:
   beamer_presentation:
@@ -15,4 +15,9 @@ output:
  #   toc: yes
     keep_tex: yes
     slide_level: 2
+    fig_width: 6
+    fig_height: 4.5
+    fig_caption: false
+---
+
 ---

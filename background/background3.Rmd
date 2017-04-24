@@ -1,0 +1,34 @@
+
+# What is ANTs?
+
+## NLM's The Visible Human Project and The Insight Toolkit
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./figures/VisibleHumanProject_ITK.pdf}
+
+\end{center}
+
+## ANTs _began with a clinical research need._
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./figures/ANTsEvolutionarySummary.pdf}
+
+\end{center}
+
+## Advanced Normalization Tools
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./tools/figures/coreANtsToolsNeuro.png}
+
+\end{center}
+
+## Advanced Normalization Tools $\rightarrow$ ``ITK-Lung''
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./tools/figures/coreANtsToolsLung.png}
+
+\end{center}
