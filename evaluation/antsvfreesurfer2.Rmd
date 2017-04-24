@@ -187,7 +187,6 @@ ANTs (left) vs. FreeSurfer (right)
 
 \end{centering}
 
-<!--
 
 ## Regional measurements
 
@@ -196,5 +195,3 @@ ANTs (left) vs. FreeSurfer (right)
 \includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_regionalPlots.png}
 
 \end{centering}
-
--->

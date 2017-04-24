@@ -346,7 +346,6 @@ ANTs (left) vs. FreeSurfer (right)
 
 \end{centering}
 
-<!--
 
 ## Regional measurements
 
@@ -355,6 +354,127 @@ ANTs (left) vs. FreeSurfer (right)
 \includegraphics[width=4in]{./evaluation/figures/antsvfreesurfer_regionalPlots.png}
 
 \end{centering}
+
+<!--
+
+# But, wait, there's more!
+
+##  What about using both the T1 & T2?
+
+## ANTs tools are multivariate
+
+![](./evaluation/figures/rfRmse05ANTsT1T2.png)
+
+## Arno-thick-in-the-head (ATITH)
+
+_What if we made a crude estimate of the cortical thickness?_
+
+$$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
+
+## Make sure you estimate the [surface area](http://www.insight-journal.org/browse/publication/852) correctly!
+
+![](./evaluation/figures/LabelThickness.png)
+
+
+----
+
+_So how does ATITH compare with ANTs, FS?_
+
+
+## Prediction from cortical thickness data
+
+![](./evaluation/figures/atith.png)
+
+## Brain constellation maps
+
+![](./evaluation/figures/brainConstellationMaps.png)
+
+
+## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+
+## Contribution from Jose
+
+```bash
+$ DenoiseImage
+
+COMMAND:
+     DenoiseImage
+          Denoise an image using a spatially adaptive filter originally described in J. V.
+          Manjon, P. Coupe, Luis Marti-Bonmati, D. L. Collins, and M. Robles. Adaptive
+          Non-Local Means Denoising of MR Images With Spatially Varying Noise Levels,
+          Journal of Magnetic Resonance Imaging, 31:192-203, June 2010.
+
+OPTIONS:
+     -d, --image-dimensionality 2/3/4
+          This option forces the image to be treated as a specified-dimensional image. If
+          not specified, the program tries to infer the dimensionality from the input
+          image.
+
+     -i, --input-image inputImageFilename
+          A scalar image is expected as input for noise correction.
+
+     -n, --noise-model (Rician)/Gaussian
+          Employ a Rician or Gaussian noise model.
+
+     -s, --shrink-factor (1)/2/3/...
+          Running noise correction on large images can be time consuming. To lessen
+          computation time, the input image can be resampled. The shrink factor, specified
+          as a single integer, describes this resampling. Shrink factor = 1 is the
+          default.
+
+     -o, --output correctedImage
+                  [correctedImage,<noiseImage>]
+          The output consists of the noise corrected version of the input image.
+          Optionally, one can also output the estimated noise image.
+
+     --version
+          Get Version Information.
+
+     -v, --verbose (0)/1
+          Verbose output.
+
+     -h
+          Print the help menu (short version).
+
+     --help
+          Print the help menu.
+```
+
+## _Does [denoising](http://www.ncbi.nlm.nih.gov/pubmed/20027588) help?_
+
+![](./evaluation/figures/rfRmseDenoise05.png)
+
+-->
+
+## Longitudinal processing
+
+![](./longitudinal/figures/longitudinalPipeline.png)
+
+<!--
+
+# But the best part is ...
+
+## it is absolutely ``free''!
+
+```bash
+${ANTSPATH}/antsCorticalThickness.sh \
+  -a IXI/T1/IXI002-Guys-0828-T1.nii.gz \
+  -e IXI/template/T_template0.nii.gz \
+  -m IXI/template/T_template0ProbabilityMask.nii.gz \
+  -f IXI/template/T_template0ExtractionMask.nii.gz \
+  -p IXI/template/Priors/priors%d.nii.gz \
+  -o IXI/ANTsResults/IXI002-Guys-0828-
+```
+
+----
+
+[__Data availability__](https://github.com/ntustison/KapowskiChronicles)
+
+*  "_Hey, can I have the FreeSurfer measurements for the entorhinal cortex?_"
+Sure, why not?---[Hasan, et al., J Neuroimaging](http://www.ncbi.nlm.nih.gov/pubmed/26565394)
+
+*  "_Can I have one or more of the templates that you used for your study?_" Would you like the priors as well?
+
 
 -->
 

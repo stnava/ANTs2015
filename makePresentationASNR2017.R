@@ -23,6 +23,7 @@ rawrmds <- c( "format.Rmd",
               "background/background3.Rmd",
               "competitions/competitions.Rmd",
               "evaluation/antsvfreesurfer2.Rmd",
+              "evaluation/antsvfreesurfer2_extra.Rmd",
               "antsr/antsr.Rmd",
               "finalSlide.Rmd"
                )

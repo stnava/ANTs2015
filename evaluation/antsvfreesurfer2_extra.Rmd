@@ -1,15 +1,13 @@
 
+<!--
+
 # But, wait, there's more!
 
-<!--
 ##  What about using both the T1 & T2?
--->
 
 ## ANTs tools are multivariate
 
 ![](./evaluation/figures/rfRmse05ANTsT1T2.png)
-
-<!--
 
 ## Arno-thick-in-the-head (ATITH)
 
@@ -21,9 +19,7 @@ $$thickness_{ROI} = \frac{volume_{ROI}}{area_{ROI}}$$
 
 ![](./evaluation/figures/LabelThickness.png)
 
--->
 
-<!--
 ----
 
 _So how does ATITH compare with ANTs, FS?_
