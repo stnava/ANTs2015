@@ -39,4 +39,4 @@ supervised brain tumor segmentation (simplified) with _ANTsR_, _Neuroinformatics
 
 * [Eigenanatomy](http://www.ncbi.nlm.nih.gov/pubmed/25448483)
 
-* Corrective learning for segmentation refinement
+* [ANTsRNet](https://github.com/stnava/ANTsRNet): a growing collection of popular deep learning architectures

@@ -17,6 +17,28 @@
 
 \end{center}
 
+## Founding developers
+
+\begin{center}
+\includegraphics[width=4.75in]{./figures/brian_and_nick.png}
+\end{center}
+
+\begin{center}
+BBA \& NJT
+\end{center}
+
+
+## Collaborators
+
+\begin{center}
+
+\includegraphics[width=4.75in]{./figures/antsCollaborators2.png}
+
+\end{center}
+
+$+$ [neurodebian](http://neuro.debian.net/pkgs/ants.html), [slicer](http://www.slicer.org/), [brainsfit](https://github.com/BRAINSia/BRAINSTools), [nipype](http://nipy.sourceforge.net/nipype/), [itk](http://www.itk.org) and more ...
+
+
 ## Advanced Normalization Tools
 
 \begin{center}
